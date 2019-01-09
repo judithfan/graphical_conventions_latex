@@ -9,6 +9,8 @@ __pycache__/
 .DS_Store
 *.aux
 *.bbl
+*.fls
+*.pdf
 *.blg
 *.fdb_latexmk
 *.synctex.gz
