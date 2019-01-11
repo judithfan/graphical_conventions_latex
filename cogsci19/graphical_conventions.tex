@@ -1,9 +1,7 @@
-
 %
 % Annual Cognitive Science Conference
 % Sample LaTeX Paper -- Proceedings Format
 %
-
 % Original : Ashwin Ram (ashwin@cc.gatech.edu)       04/01/1994
 % Modified : Johanna Moore (jmoore@cs.pitt.edu)      03/17/1995
 % Modified : David Noelle (noelle@ucsd.edu)          03/15/1996
@@ -87,22 +85,24 @@ sketch understanding; visual abstraction; iconicity; social coordination
 
 \section{Methods}
 
-\subsubsection{Participants}
-A total of 130 unique participants (verify), who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment. They were provided a base compensation of \$1.50 for participation and earned up to \$0.03 bonus for each correct trial, inversely proportional to the amount of time taken. In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.
+\subsection{Participants}
+A total of 130 unique participants (verify), who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
+They were provided a base compensation of \$1.50 for participation and earned up to \$0.03 bonus for each correct trial, inversely proportional to the amount of time taken. 
+In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.
 \footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
 
-\subsubsection{Stimuli}
+\subsection{Stimuli}
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 Because our goal was to understand the formation of \textit{ad hoc} graphical conventions, we sought to construct communicative contexts wherein people could not solely rely on pre-existing conventions to distinguish objects.
 However, it was also important to use objects that were familiar and naturalistic for some good reason.
 Our approach was to define sets of perceptually similar real-world objects belonging to the same basic-level category \cite{MervisRosch81_CategorizationReview}.
 To accomplish this, we utilize the collection of chair objects in the ShapeNet database \cite{chang2015shapenet}.
-This shape collection is  geometrically complex, highly diverse, and abundant in the real world.
-To identify groups of perceptually similar chairs within the collection, we first extracted high-level visual features of each of the 3,096 images using a pre-trained convolutional neural network \cite{simonyan2014very}. 
+This collection contains objects that are geometrically complex, highly diverse, and abundant in the real world.
+To identify groups of perceptually similar chairs within the collection, we first extracted high-level visual features of each of the 3,096 object images using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}. 
 We then applied principal component analysis and $k$-means clustering to the model's top-layer feature representation of the images. 
 This yielded 70 clusters containing between 2 and 80 objects each (\red{verify}).
-To form 2 clusters of highly visually similar objects, we manually selected 8 objects from 2 of these clusters (see Figure 1). 
+Based on the results of this feature extraction and clustering procedure, we defined two categories of perceptually similar objects containing eight exemplars each (Fig.~\ref{fig:1a}). 
 
 % In order to identify groups of objects that are drawn similarly prior to training, we applied a clustering algorithm (affinity propagation with damping = 0.9; \cite{frey2007clustering}) to the model's top-layer feature representation of drawings from the same dataset analyzed above \cite{Eitz:2012dk}. This yielded 16 clusters containing between 3 and 20 objects each. Among clusters containing at least 8 objects, we defined 8 ``visual categories'' containing 8 objects each (Table \ref{cluster_obj_list}). Each participant was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
@@ -114,60 +114,110 @@ To form 2 clusters of highly visually similar objects, we manually selected 8 ob
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
 \begin{subfigure}{0.23\textwidth}
-\includegraphics[width=\linewidth]{fig_a.jpg}
+\includegraphics[width=\linewidth]{figures/fig_a.png}
 \caption{Stimuli} \label{fig:1a}
 \end{subfigure}
 \hspace*{\fill}
 \begin{subfigure}{0.23\textwidth}
-\includegraphics[width=\linewidth]{fig_b.jpg}
+\includegraphics[width=\linewidth]{figures/fig_b.png}
 \caption{Sketcher / Viewer interface} \label{fig:1b}
 \end{subfigure}
-\caption{} \label{fig:1}
+\caption{} \label{fig:1b}
 \end{figure}
 
-\subsubsection{Drawing Task Procedure}
+\subsection{Communication Task}
+
 %% Trial-level event structure
-Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. On each trial, both participants were shown the same array of four objects; however, the positions of these objects were randomized for each participant. On each trial, one of the four objects was highlighted on the sketcher's screen to designate it as the target.
+Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. 
+The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. 
+On each trial, both participants were shown the same array of four objects; however, the positions of these objects were randomized for each participant. 
+One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 
 %% Trial-level objective of sketcher and viewer
-Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window using Paper.js (http://paperjs.org/). Participants drew using the mouse cursor, and were not able to delete previous strokes. Each stroke was rendered on the viewer's screen immediately upon the completion of each stroke. The sketcher was instructed to take no longer than 30 seconds to produce their drawings. The viewer was allowed guess the identity of the drawn object by clicking one of the four objects in the array even when the sketcher had not completed the drawing. Both participants received immediate task-related feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target. Otherwise, the viewer had no other means of communicating with the sketcher. Both participants earned accuracy bonus points for each correct response. If the correct response was made under the 30-second time limit, they also received speed bonus points inversely proportional to the time taken until the response.
+Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window using Paper.js (http://paperjs.org/). 
+Participants drew using the mouse cursor, and were not able to delete previous strokes. Each stroke was rendered on the viewer's screen immediately upon the completion of each stroke. 
+The sketcher was instructed to take no longer than 30 seconds to produce their drawings. 
+The viewer was allowed guess the identity of the drawn object by clicking one of the four objects in the array even when the sketcher had not completed the drawing. 
+Both participants received immediate task-related feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target. 
+Otherwise, the viewer had no other means of communicating with the sketcher. 
+Both participants earned accuracy bonus points for each correct response. 
+If the correct response was made under the 30-second time limit, they also received speed bonus points inversely proportional to the time taken until the response.
 
 %% Two conditions: repeated and control
-We used a within-subject design where for each pair, eight objects were grouped into two sets: Four objects were assigned to the repeated condition; the other four were assigned to the control condition. Each set was presented four times within a repetition, such that each object in the set of four served as the target exactly once. The assignment of objects to the conditions was randomized across pairs.
 
-An experiment consists of three phases. The \textit{pre} phase consists of eight trials. Four of these trials are constructed using objects from the repeated condition and the other four use objects from the control condition. The \textit{repeated} phase consists of 32 trials, each of which are constructed using objects from the repeated condition. Lastly, the \textit{post} phase uses the same design as the \textit{pre} phase, in which there are four trials of the repeated condition and four trials of the control condition.
+% Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
-Successful communication was primarily quantified as the viewer's accuracy in identifying the target. The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each sketch and the proportion of the drawing canvas filled by ink.
+Each pair of participants was randomly assigned two sets of four objects: one set was was assigned to the repeated condition; the other to the control condition.
+In order to explore the degree to which the effects of repeated communication were object-specific, we varied the perceptual similarity between the two sets across pairs. 
+Specifically, in half of the pairs (N=XX pairs), one set contained four randomly sampled objects from one category and the second set contained the remaining four objects from the same category. 
+In the other half of pairs (N=XX pairs), one set contained four randomly sampled objects from one category and the second set contained four randomly sampled objects from the other category.
+The assignment of each set to the repeated and control conditions was randomized across pairs. 
+
+The communication task consisted of three phases. 
+During the \textit{repeated} phase, the sketcher drew the four repeated objects six times each, in an interleaved order.
+Specifically, there were six repetition epochs wherein each object in the repeated set served as the target exactly once, and object order was randomized across repetition cycles. 
+Before and after the \textit{repeated} phase, the sketcher drew all eight objects one time each, again in randomly interleaved order. 
+Including the control condition in this pre-post design allowed us to assess the specificity of repetition effects: control objects from the same category were maximally perceptually similar to the repeated objects but were not repeatedly drawn, and control objects from the other object category provided a measure of the generic effects of production task practice. 
+
+Successful communication was primarily quantified as the viewer's accuracy in identifying the target. 
+The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each sketch and the proportion of the drawing canvas filled by ink.
 
 %% Design -- pre/repeated/post
 
-\subsubsection{Recognition Task Procedure}
-While the repeated and control conditions in the drawing task help us investigate the importance of repeated communication in graphical convention formation, we are also interested in the effect of interaction-specificity on efficient communication. How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction-specificity? Here, we define interaction-specificity based on both temporal structure (path dependence) and partner-specificity. Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. The first is a yoked control design where each subject sees the sketches of all trials in one reference game with preserved temporal structure. In the second design, we manipulate partner specificity scrambling sketches within a repetition across reference games, so that each subject sees sketches from 40 trials, every four from four different reference games but with preserved temporal structure. In the last design,
+\subsection{Recognition Task}
+While the repeated and control conditions in the drawing task help us investigate the importance of repeated communication in graphical convention formation, we are also interested in the effect of interaction-specificity on efficient communication. 
+How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction-specificity? 
+Here, we define interaction-specificity based on both temporal structure (path dependence) and partner-specificity. 
+Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
+The first is a yoked control design where each subject sees the sketches of all trials in one reference game with preserved temporal structure. 
+In the second design, we manipulate partner specificity scrambling sketches within a repetition across reference games, so that each subject sees sketches from 40 trials, every four from four different reference games but with preserved temporal structure. In the last design,
 
 % More about method design:
 % Yoked
-Similarly to the drawing task, a subject was given the role of a Viewer, with access to the same four-object context the original Sketcher in the reference game had access to and asked to select which object the drawing is referring to on each trial. The only difference between this design and the reference game is the absence of feedback -- because this is not a real-time two-player game, the Sketcher does not know which object the third-party viewer had guessed on each trial. The subject is awarded with a bonus system similar to the one in the reference game.
+Just as in the communication task, a subject was given the role of a Viewer, with access to the same four-object context the original Sketcher in the reference game had access to and asked to select which object the drawing is referring to on each trial. 
+The only difference between this design and the reference game is the absence of feedback -- because this is not a real-time two-player game, the Sketcher does not know which object the third-party viewer had guessed on each trial. 
+The subject is awarded with a bonus system similar to the one in the reference game.
 
 \section{Results}
 
 %% Figure 2 around here: Behavioral Results
 \begin{figure}
-\includegraphics[width=\linewidth]{fig_2.png}
-\caption{Players learn to communicate more efficiently. The Balanced Integration Score (BIS) measures the difference between the $z$-scores of accuracy and drawing duration, calculated across repetitions within an interaction.} \label{fig:1a}
+\includegraphics[width=\linewidth]{figures/refgame_BIS_timeseries.pdf}
+\caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
 \end{figure}
 
-\subsubsection{Players learn to communicate more efficiently} We predict that the repeated communication of a particular set of objects will lead to more efficient production for those objects compared to the control condition objects. To test this hypothesis, we used a composite measure called the Balanced Integration Score (BIS), which combines accuracy and a cost metric such as reaction time to measure the change in efficiency of a subject's performance at a particular task. For our experiment, we used drawing duration, the time taken from the start of the first stroke to the end of the last stroke of a sketch, as the cost metric. To calculate BIS, we normalize both accuracy and drawing duration across repetitions within subjects and take the difference between the two. We found that the efficiency of communication does increase over time (see Figure 2).
+\subsubsection{Repeated reference leads to more efficient communication} 
+We predicted that repeatedly referring to an object would lead to more efficient communication about that object.
+% compared to baseline control objects
+% the difference between the $z$-scores of accuracy and drawing duration
+To evaluate this prediction, we 
 
-Furthermore, while both conditions showed an increase in efficiency, we tested the extent to which improvements in efficiency from pre-test to post-test differed across the repeated and control conditions using a mixed-effects regression of condition and test phase on BIS score. Because our design was completely within-pair, we included a maximum random effect structure with random intercept, slopes, and interactions at the level of both pair and target object. We found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than control targets shown only at the beginning and end ($b = 0.73. t = -2.93, p = 0.0047$; see Figure ). We also see a similar effect when we examine number of strokes per sketch as the cost metric instead of drawing duration. This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
+
+To test this hypothesis, we used a composite measure called the Balanced Integration Score (BIS), which combines accuracy and a cost metric such as reaction time to measure the change in efficiency of a subject's performance at a particular task. 
+For our experiment, we used drawing duration, the time taken from the start of the first stroke to the end of the last stroke of a sketch, as the cost metric. 
+To calculate BIS, we normalize both accuracy and drawing duration across repetitions within subjects and take the difference between the two. We found that the efficiency of communication does increase over time (see Figure 2).
+
+Furthermore, while both conditions showed an increase in efficiency, we tested the extent to which improvements in efficiency from pre-test to post-test differed across the repeated and control conditions using a mixed-effects regression of condition and test phase on BIS score. 
+Because our design was completely within-pair, we included a maximum random effect structure with random intercept, slopes, and interactions at the level of both pair and target object. 
+We found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than control targets shown only at the beginning and end ($b = 0.73. t = -2.93, p = 0.0047$; see Figure ). 
+We also see a similar effect when we examine number of strokes per sketch as the cost metric instead of drawing duration. 
+This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. 
+We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
 
 % With increasing repetition number, we saw a decrease in the average number of seconds taken from the start of the first stroke to the end of the last stroke of a sketch and in the average number of strokes required to draw it. Along with this cost reduction, we saw an increase in task performance, measured by the proportion of trials for which the viewer guesses the target accurately.
 
 
+\subsubsection{Gains in efficiency are not explained by task practice alone} 
 
+\subsubsection{Sketches become more consistent across repeated interaction}
 
-\subsubsection{XXX}
+\subsubsection{Different pairs develop different graphical conventions} 
+To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
+(Explain more why this is appropriate.) 
+We define the similarity between two sketches by the correlation between their respective features.
+% perhaps move this similarity explanation in the earlier subsubsection.
 
-\subsubsection{Different pairs develop different conventions} To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. (Explain more why this is appropriate.) We define the similarity between two sketches by the correlation between their respective features.% perhaps move this similarity explanation in the earlier subsubsection.
+ 
 
 
 \subsection{Discussion}
@@ -177,7 +227,7 @@ XXXX
 %\vspace{-.30cm}
 \section{\bf Acknowledgments}
 \small
-This work was supported by ONR grant N000141310341 and a Sloan Foundation fellowship to NDG. RXDH was supported by the Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship under Grant No. DGE-114747.
+MS was supported by the Center for the Study of Language and Information at Stanford University. RXDH was supported by the Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747). NDG was supported by ONR grant N000141310341 and a Sloan Foundation fellowship.
 %\vspace{-.20cm}
 \bibliographystyle{apacite}
 
