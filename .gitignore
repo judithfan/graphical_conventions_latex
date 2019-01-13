@@ -3,12 +3,15 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.DS_Store
 # C extensions
 *.so
 
 .DS_Store
 *.aux
 *.bbl
+*.fls
+*.pdf
 *.blg
 *.fdb_latexmk
 *.synctex.gz
