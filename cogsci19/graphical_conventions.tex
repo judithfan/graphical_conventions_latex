@@ -38,6 +38,7 @@
 
 \definecolor{Red}{RGB}{178,34,34}
 \newcommand{\red}[1]{\textcolor{Red}{#1}}
+\newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
 \definecolor{Green}{RGB}{10,200,100}
 
  \newcommand{\denote}[1]{\mbox{ $[\![ #1 ]\!]$}}
@@ -90,13 +91,13 @@ Over time, humans have developed sophisticated graphical conventions to communic
 
 \section{Part I: How does repeated reference support successful visual communication?}
 
+\rdh{eventually need to compress these methods quite a bit (participants can be 1 sentence, much less detail about stim selecttion and procedure, etc.)} 
 %% intro to this section
 
 %% methods
 \subsection{Methods: Visual Communication Experiment}
 
-Lorem ipsum.
-
+\red{what was exclusion criteria? -- definition of crazy in df generation helpers?}
 \subsubsection{Participants} A total of 130 unique participants (verify), who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
 They were provided a base compensation of \$1.50 for participation and earned up to \$0.03 bonus for each correct trial, inversely proportional to the amount of time taken. 
 In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
@@ -172,19 +173,27 @@ Specifically, there were six repetition epochs wherein each object in the repeat
 Before and after the \textit{repeated} phase, the sketcher drew all eight objects one time each, again in randomly interleaved order. 
 Including the control condition in this pre-post design allowed us to assess the specificity of repetition effects: control objects from the same category were maximally perceptually similar to the repeated objects but were not repeatedly drawn, and control objects from the other object category provided a measure of the generic effects of production task practice. 
 
-
-\subsection{Results: Repeated reference leads to more efficient communication}
-
-Successful communication was primarily quantified as the viewer's accuracy in identifying the target. 
-The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each sketch and the proportion of the drawing canvas filled by ink.
-
-\red{btw, what was game inclusion criteria -- definition of crazy in df generation helpers?}
+\subsection{Result: communication becomes more efficient across interaction}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/refgame_BIS_timeseries.pdf}
 \caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
 \end{figure}
 
+Following prior studies of repeated verbal communication \cite<e.g>{ClarkWilkesGibbs86_ReferringCollaborative} and graphical communication using non-pictorial stimuli \shortcite<e.g.>{garrod_foundations_2007}, we predicted that repeatedly referring to an object would lead to more efficient communication about that object.
+However, the control condition included in our experimental design also allows us to test the extent to which improvements in efficiency are item-specific; if the effect is instead attributable to task-general drawing practice, the control objects would improve just as much.
+
+We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of successful listener responses) and speed (the time elapsed during drawing).
+More specifically, we normalize both accuracy and drawing duration within each game and take the difference between these scores \cite<the \emph{balanced integration score,}>{Liesefeld2018}.
+To compare the effect of repetition across the control and repeated conditions, we conducted a mixed-effects regression including a maximum random effect structure with random intercepts, slopes, and interactions for each pair of participants and each target object. 
+While pairs became increasingly efficient between the pre-test and post-test for both control and repeated objects, we also found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than the control targets which were shown only at the beginning and end ($b = X.XX. t = X.XX, p = X.XX$; see Figure \ref{refgame_bis}). 
+%This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. 
+We find a similar effect when we examine number of strokes per sketch as the `speed' measure instead of drawing duration. 
+Thus, \rdh{need short summary sentence}
+%We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
+
+%Successful communication was primarily quantified as the viewer's accuracy in identifying the target. 
+%The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each sketch and the proportion of the drawing canvas filled by ink.
 
 \section{Part II: What explains gains in communication efficiency?}
 
@@ -206,20 +215,6 @@ The subject is awarded with a bonus system similar to the one in the reference g
 
 \subsection{Results: Gains in efficiency are not explained by task practice alone}
 
-We predicted that repeatedly referring to an object would lead to more efficient communication about that object.
-To evaluate this prediction, we employed a measure of communication efficiency that combines both accuracy and speed (i.e., Balanced Integration Score; \citeNP{Liesefeld2018}). 
-Accuracy was quantified as the proportion 
-
-
-For our experiment, we used drawing duration, the time taken from the start of the first stroke to the end of the last stroke of a sketch, as the cost metric. 
-To calculate BIS, we normalize both accuracy and drawing duration across repetitions within subjects and take the difference between the two. We found that the efficiency of communication does increase over time (see Figure 2).
-
-Furthermore, while both conditions showed an increase in efficiency, we tested the extent to which improvements in efficiency from pre-test to post-test differed across the repeated and control conditions using a mixed-effects regression of condition and test phase on BIS score. 
-Because our design was completely within-pair, we included a maximum random effect structure with random intercept, slopes, and interactions at the level of both pair and target object. 
-We found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than control targets shown only at the beginning and end ($b = X.XX. t = X.XX, p = X.XX$; see Figure ). 
-We also see a similar effect when we examine number of strokes per sketch as the cost metric instead of drawing duration. 
-This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. 
-We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
 
 % With increasing repetition number, we saw a decrease in the average number of seconds taken from the start of the first stroke to the end of the last stroke of a sketch and in the average number of strokes required to draw it. Along with this cost reduction, we saw an increase in task performance, measured by the proportion of trials for which the viewer guesses the target accurately.
 
