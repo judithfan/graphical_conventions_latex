@@ -222,7 +222,7 @@ Specifically, there were six repetition epochs wherein each object in the repeat
 Before and after the \textit{repeated} phase, the sketcher drew all eight objects one time each, again in randomly interleaved order. 
 Including the control condition in this pre-post design allowed us to assess the specificity of repetition effects: control objects from the same category were maximally perceptually similar to the repeated objects but were not repeatedly drawn, and control objects from the other object category provided a measure of the generic effects of production task practice. 
 
-\subsection{Result: communication becomes more efficient across interaction}
+\subsection{Result: conventions are efficient and item-specific}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/refgame_BIS_timeseries.pdf}
@@ -245,10 +245,11 @@ Thus, \rdh{need short summary sentence}
 
 \subsection{Methods: Recognition Experiment}
 
+%% need a better transition here (rather than `we were also interested'...)
 While the repeated and control conditions in the drawing task help us investigate the importance of repeated communication in graphical convention formation, we are also interested in the effect of interaction-specificity on efficient communication. 
 
-How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction-specificity? 
-Here, we define interaction-specificity based on both temporal structure (path dependence) and partner-specificity. 
+How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction specificity? 
+Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity. 
 Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
 The first is a yoked control design where each subject sees the sketches of all trials in one reference game with preserved temporal structure. 
 In the second design, we manipulate partner specificity scrambling sketches within a repetition across reference games, so that each subject sees sketches from 40 trials, every four from four different reference games but with preserved temporal structure. In the last design,
@@ -259,7 +260,7 @@ Just as in the communication task, a subject was given the role of a Viewer, wit
 The only difference between this design and the reference game is the absence of feedback -- because this is not a real-time two-player game, the Sketcher does not know which object the third-party viewer had guessed on each trial. 
 The subject is awarded with a bonus system similar to the one in the reference game.
 
-\subsection{Results: Gains in efficiency are not explained by task practice alone}
+\subsection{Results: conventions are interaction-specific}
 
 
 % With increasing repetition number, we saw a decrease in the average number of seconds taken from the start of the first stroke to the end of the last stroke of a sketch and in the average number of strokes required to draw it. Along with this cost reduction, we saw an increase in task performance, measured by the proportion of trials for which the viewer guesses the target accurately.
@@ -272,14 +273,21 @@ The subject is awarded with a bonus system similar to the one in the reference g
 
 \section{Part III: How do visual features of sketches change across repetitions?}
 
+\begin{figure}
+\includegraphics[width=\linewidth/2-1]{figures/within.pdf}
+\includegraphics[width=\linewidth/2-1]{figures/across.pdf}
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: only need to show }} \label{within-across}
+\end{figure}
+
+
 \subsubsection{Sketches become more consistent across repeated interaction}
 
-\todo[inline]{Report results from yoked and scrambled recognition controls}
+\red{Report results from yoked and scrambled recognition controls}
 
 \subsubsection{Different pairs develop different graphical conventions} 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
-(Explain more why this is appropriate.) 
-We define the similarity between two sketches by the correlation between their respective features.
+\red{(Explain more why this is appropriate.) }
+We define the similarity between two sketches as the correlation between their feature vectors.
 % perhaps move this similarity explanation in the earlier subsubsection.
 
 
