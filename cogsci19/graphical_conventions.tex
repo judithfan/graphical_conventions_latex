@@ -229,13 +229,13 @@ Including the control condition in this pre-post design allowed us to assess the
 \caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
 \end{figure}
 
-We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of successful listener responses) and speed (the time elapsed during drawing).
+We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of successful listener responses) and speed (time elapsed during each drawing).
 More specifically, we normalize both accuracy and drawing duration within each game and take the difference between these scores \cite<the \emph{balanced integration score,}>{Liesefeld2018}.
 To compare the effect of repetition across the control and repeated conditions, we conducted a mixed-effects regression including a maximum random effect structure with random intercepts, slopes, and interactions for each pair of participants and each target object. 
-While pairs became increasingly efficient between the pre-test and post-test for both control and repeated objects, we also found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than the control targets which were shown only at the beginning and end ($b = X.XX. t = X.XX, p = X.XX$; see Figure \ref{refgame_bis}). 
+While pairs became increasingly efficient between the pre-test and post-test for both control and repeated objects, we found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than the control targets which were shown only at the beginning and end of the task ($b = 0.68, ~t = 3.4,~p = 0.001$; see Figure \ref{refgame_bis}). 
 %This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. 
-We find a similar effect when we examine number of strokes per sketch as the `speed' measure instead of drawing duration. 
-Thus, \rdh{need short summary sentence}
+We find a similar effect when we examine number of strokes per sketch instead of drawing duration. 
+Thus, participants converged on simpler, faster, and more communicatively successful graphical conventions for repeated objects, which only partially transferred to other objects.
 %We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
 
 %Successful communication was primarily quantified as the viewer's accuracy in identifying the target. 
@@ -243,10 +243,12 @@ Thus, \rdh{need short summary sentence}
 
 \section{Part II: What explains gains in communication efficiency?}
 
+To what extent are the 
+
 \subsection{Methods: Recognition Experiment}
 
 %% need a better transition here (rather than `we were also interested'...)
-While the repeated and control conditions in the drawing task help us investigate the importance of repeated communication in graphical convention formation, we are also interested in the effect of interaction-specificity on efficient communication. 
+  we are also interested in the effect of \emph{interaction-specificity} on efficient communication. 
 
 How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction specificity? 
 Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity. 
@@ -262,6 +264,7 @@ The subject is awarded with a bonus system similar to the one in the reference g
 
 \subsection{Results: conventions are interaction-specific}
 
+\red{Report results from yoked and scrambled recognition controls}
 
 % With increasing repetition number, we saw a decrease in the average number of seconds taken from the start of the first stroke to the end of the last stroke of a sketch and in the average number of strokes required to draw it. Along with this cost reduction, we saw an increase in task performance, measured by the proportion of trials for which the viewer guesses the target accurately.
 
@@ -276,13 +279,12 @@ The subject is awarded with a bonus system similar to the one in the reference g
 \begin{figure}
 \includegraphics[width=\linewidth/2-1]{figures/within.pdf}
 \includegraphics[width=\linewidth/2-1]{figures/across.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: only need to show }} \label{within-across}
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} \label{within-across}
 \end{figure}
 
 
 \subsubsection{Sketches become more consistent across repeated interaction}
 
-\red{Report results from yoked and scrambled recognition controls}
 
 \subsubsection{Different pairs develop different graphical conventions} 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
