@@ -67,7 +67,17 @@
 \maketitle
 
 \begin{abstract}
-Over time, humans have developed sophisticated graphical conventions to communicate, ranging from maps to musical notation to modern data visualization. Where do these conventions come from? A key hypothesis is that their emergence is fundamentally driven by local patterns of usage among communicators and their functional needs. Here we investigated how novel graphical conventions form across extended visual communication between agents. Specifically, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects. On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
+Humans have developed sophisticated graphical conventions to communicate, ranging from maps to musical notation to modern data visualization. 
+How do these abstract visualizations derive meaning? 
+A key hypothesis is that their capacity to be effective carriers of meaning is driven by the functional needs of the people who develop and use them to communicate. 
+Here we investigated the formation of novel graphical conventions across extended visual communication between two people. 
+We developed a drawing-based reference game in which two participants repeatedly communicate about visual objects. 
+On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
+The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
+Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. 
+While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
+Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
+Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
 
 \textbf{Keywords:}
 sketch understanding; drawing; iconicity; visual abstraction; social coordination
@@ -77,40 +87,81 @@ sketch understanding; drawing; iconicity; visual abstraction; social coordinatio
 \section{Introduction}
 
 \red{Seeding intro section with text from abstract ...}
-Over time, humans have developed sophisticated graphical conventions to communicate, ranging from maps to musical notation to modern data visualization. Where do these conventions come from? A key hypothesis is that their emergence is fundamentally driven by local patterns of usage among communicators and their functional needs. Here we investigated how novel graphical conventions form across extended visual communication between agents. Specifically, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects. On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
 
-%% Big picture: What do we mean by graphical conventions? Why are they cool and important to study?
+\red{Big picture: What do we mean by graphical conventions? Why are they cool and important to study?}
+Over time, humans have developed sophisticated systems to communicate complex ideas in compact graphical form, ranging from maps to musical notation to modern data visualization. 
+How do these abstract visualizations derive meaning? 
+A key hypothesis is that their capacity to be effective carriers of meaning is driven by the functional needs of the people who develop and use them to communicate. 
 
-%% What prior work has been done to understand them?
 
-%% What is the gap in knowledge that this paper aims to help fill?
+As a consequence, the way these 
 
-%% What is the approach we take to fill that gap?
+ may come to denote objects through culturally-specific conventions much the same way that verbal labels denote objects \cite{goodman1976languages,gombrich1969art}. 
+While a strong version of this view is controversial \cite{kennedy1975drawings,Gibson:1971fj,abell2009canny}, the interpretation of drawings \textit{can} crucially depend on social and cultural factors. 
+Indeed, many drawings that people use to communicate are quite sparse, emphasizing information that is currently relevant, and omitting other details. 
+In the appropriate context, even a few strokes can express the identity of a face \cite{bergmann2013impact}, a suggested route \cite{agrawala2001rendering}, or an intention to act \cite{Galantucci:2005uh}. 
+Over time, repeated communication between members of the same community can lead to novel graphical conventions \cite{Garrod:2007wk,fay2010interactive}. 
+However, in the absence of contextual cues or prior interaction history, such sparse representations may be insufficient to communicate specific meanings \cite{Healey:2007vq}.
 
-%% High-level summary of main findings and contributions
+\red{What prior work has been done to understand them?}
+
+
+\red{perimetric complexity to quantify changes to drawings across repetitions, some exploration of role of viewer feedback, some initial use of recognition task to probe properties of drawings in absence of interaction history}
+\cite{garrod_foundations_2007}
+
+\red{some compositionality using pictionary task}
+\cite{theisen2010systematicity}
+
+\red{abstraction, systematicity using pictionary task}
+\cite{healey2007graphical}
+
+\red{exploration of lexical coordination in linguistic reference}
+\cite{ClarkWilkesGibbs86_ReferringCollaborative}
+\cite{HawkinsFrankGoodman17_ConventionFormation}
+
+\red{What is the gap in knowledge that this paper aims to help fill?}
+
+\red{What is the approach we take to fill that gap?}
+Here we investigated how novel graphical conventions form across extended visual communication between agents. 
+Specifically, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects. 
+On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
+The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
+
+\red{High-level summary of main findings and contributions}
+
+We make the following main contributions:
+-- tighter control over stimulus set and communicative demands
+-- deeper experimental exploration of the degree to which changes in communication performance reflect interaction history vs. either production task practice (sketcher getting better at producing sketches overall) or comprehension task practice (viewer getting better at matching sketches overall)
+-- using task setup that is in principle image-computable
+-- novel use of modern vision models to characterize high-level perceptual information in sketches
+
+Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. 
+While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
+Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
+Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
 
 \section{Part I: How does repeated reference support successful visual communication?}
 
-\rdh{eventually need to compress these methods quite a bit (participants can be 1 sentence, much less detail about stim selecttion and procedure, etc.)} 
 %% intro to this section
+\rdh{eventually need to compress these methods quite a bit (participants can be 1 sentence, much less detail about stim selection and procedure, etc.)} 
+
+To investigate the formation of \textit{ad hoc} graphical conventions in a naturalistic setting, we developed a visual communication task in which people repeatedly referred to familiar real-world objects, but where pre-existing graphical conventions were unlikely to be sufficient to succeed. 
+In line with prior studies of repeated verbal communication \cite<e.g>{ClarkWilkesGibbs86_ReferringCollaborative} and visual communication about verbal stimuli \shortcite<e.g.>{garrod_foundations_2007}, we hypothesized that repeated visual reference to a visual object would lead to more efficient communication about that object.
+Departing from prior studies, our experiment critically includes a control set of visual objects that are not repeatedly referenced, which allows us to measure the extent to which changes in efficiency are item-specific or attributable to task practice. 
 
 %% methods
 \subsection{Methods: Visual Communication Experiment}
 
+\subsubsection{Participants} A total of 138 unique participants (verify), who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
+They were provided a base compensation of \$1.50 for participation and earned up to \$0.04 bonus for each correct trial, inversely proportional to the amount of time taken. 
 \red{what was exclusion criteria? -- definition of crazy in df generation helpers?}
-\subsubsection{Participants} A total of 130 unique participants (verify), who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
-They were provided a base compensation of \$1.50 for participation and earned up to \$0.03 bonus for each correct trial, inversely proportional to the amount of time taken. 
+Data from two pairs were excluded due to unusually low performance on the task (i.e., proportion correct $<$3 s.d. below the mean).
 In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
 
 \subsubsection{Stimuli} 
-
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-Because our goal was to understand the formation of \textit{ad hoc} graphical conventions, we developed a -- 
-
-sought to construct communicative contexts wherein people could not solely rely on pre-existing conventions to distinguish objects.
-However, it was also important to use objects that were familiar and naturalistic for some good reason.
 Our approach was to define sets of perceptually similar real-world objects belonging to the same basic-level category \cite{MervisRosch81_CategorizationReview}.
 To accomplish this, we utilize the collection of chair objects in the ShapeNet database \cite{chang2015shapenet}.
 This collection contains objects that are geometrically complex, highly diverse, and abundant in the real world.
@@ -142,13 +193,14 @@ Based on the results of this feature extraction and clustering procedure, we def
 \subsubsection{Procedure} 
 
 %% Trial-level event structure
+
 Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. 
 The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. 
 On each trial, both participants were shown the same array of four objects; however, the positions of these objects were randomized for each participant. 
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 
 %% Trial-level objective of sketcher and viewer
-Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window using Paper.js (http://paperjs.org/). 
+Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window. 
 Participants drew using the mouse cursor, and were not able to delete previous strokes. Each stroke was rendered on the viewer's screen immediately upon the completion of each stroke. 
 The sketcher was instructed to take no longer than 30 seconds to produce their drawings. 
 The viewer was allowed guess the identity of the drawn object by clicking one of the four objects in the array even when the sketcher had not completed the drawing. 
@@ -180,9 +232,6 @@ Including the control condition in this pre-post design allowed us to assess the
 \caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
 \end{figure}
 
-Following prior studies of repeated verbal communication \cite<e.g>{ClarkWilkesGibbs86_ReferringCollaborative} and graphical communication using non-pictorial stimuli \shortcite<e.g.>{garrod_foundations_2007}, we predicted that repeatedly referring to an object would lead to more efficient communication about that object.
-However, the control condition included in our experimental design also allows us to test the extent to which improvements in efficiency are item-specific; if the effect is instead attributable to task-general drawing practice, the control objects would improve just as much.
-
 We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of successful listener responses) and speed (the time elapsed during drawing).
 More specifically, we normalize both accuracy and drawing duration within each game and take the difference between these scores \cite<the \emph{balanced integration score,}>{Liesefeld2018}.
 To compare the effect of repetition across the control and repeated conditions, we conducted a mixed-effects regression including a maximum random effect structure with random intercepts, slopes, and interactions for each pair of participants and each target object. 
@@ -199,10 +248,11 @@ Thus, \rdh{need short summary sentence}
 
 \subsection{Methods: Recognition Experiment}
 
+%% need a better transition here (rather than `we were also interested'...)
 While the repeated and control conditions in the drawing task help us investigate the importance of repeated communication in graphical convention formation, we are also interested in the effect of interaction-specificity on efficient communication. 
 
-How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction-specificity? 
-Here, we define interaction-specificity based on both temporal structure (path dependence) and partner-specificity. 
+How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction specificity? 
+Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity. 
 Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
 The first is a yoked control design where each subject sees the sketches of all trials in one reference game with preserved temporal structure. 
 In the second design, we manipulate partner specificity scrambling sketches within a repetition across reference games, so that each subject sees sketches from 40 trials, every four from four different reference games but with preserved temporal structure. In the last design,
@@ -228,7 +278,7 @@ The subject is awarded with a bonus system similar to the one in the reference g
 
 \subsubsection{Sketches become more consistent across repeated interaction}
 
-\todo[inline]{Report results from yoked and scrambled recognition controls}
+\red{Report results from yoked and scrambled recognition controls}
 
 \subsubsection{Different pairs develop different graphical conventions} 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
