@@ -281,17 +281,15 @@ Thus, we preserved the temporal structure of sketches but disrupted the continui
 % Yoked
 %Just as in the communication task, 
 
-\subsection{Results: conventions are interaction-specific}
-
 \subsection{Result: yoked similar to reference game}
 
 The only difference was the inability to give feedback to the Sketcher.
 %Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
 
+\subsection{Result: conventions are interaction-specific}
 
-\red{Report results from yoked and scrambled recognition controls}
-
-% With increasing repetition number, we saw a decrease in the average number of seconds taken from the start of the first stroke to the end of the last stroke of a sketch and in the average number of strokes required to draw it. Along with this cost reduction, we saw an increase in task performance, measured by the proportion of trials for which the viewer guesses the target accurately.
+Next, we compared the yoked condition against the scrambled condition using a mixed-effects model.
+We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
 
 
 \begin{figure}
@@ -300,6 +298,11 @@ The only difference was the inability to give feedback to the Sketcher.
 \end{figure}
 
 \section{Part III: How do visual features of sketches change across repetitions?}
+
+To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
+Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{Fan18}. 
+In addition, features extracted from \emph{fc6} have been successful in predicting neural responses in high-level visual cortex \cite{Yamins}.
+We therefore define the similarity between two sketches as the correlation between their feature vectors.
 
 \begin{figure}
 \includegraphics[width=\linewidth/2-1]{figures/within.pdf}
@@ -310,11 +313,9 @@ The only difference was the inability to give feedback to the Sketcher.
 
 \subsubsection{Sketches become more consistent across repeated interaction}
 
+First, we examine the 
 
 \subsubsection{Different pairs develop different graphical conventions} 
-To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
-\red{(Explain more why this is appropriate.) }
-We define the similarity between two sketches as the correlation between their feature vectors.
 % perhaps move this similarity explanation in the earlier subsubsection.
 
 
