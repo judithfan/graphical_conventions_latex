@@ -37,13 +37,11 @@
 %\newcommand{\url}[1]{$#1$}
 
 \definecolor{Red}{RGB}{178,34,34}
-\newcommand{\red}[1]{\textcolor{Red}{#1}}
-\newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
 \definecolor{Green}{RGB}{10,200,100}
 
- \newcommand{\denote}[1]{\mbox{ $[\![ #1 ]\!]$}}
-
-
+\newcommand{\red}[1]{\textcolor{Red}{#1}}
+\newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
+\newcommand{\denote}[1]{\mbox{ $[\![ #1 ]\!]$}}
 \newcommand{\subsubsubsection}[1]{{\em #1}}
 \newcommand{\eref}[1]{(\ref{#1})}
 \newcommand{\tableref}[1]{Table \ref{#1}}
@@ -67,7 +65,7 @@
 \maketitle
 
 \begin{abstract}
-Today we rely upon widely shared graphical conventions to communicate complex information, ranging from maps to musical notation to modern data visualization. 
+We rely upon widely shared graphical conventions to communicate complex information, ranging from maps to musical notation to modern data visualization. 
 How do these abstract graphical representations derive meaning? 
 A key hypothesis is that their capacity to be effective carriers of meaning is driven by local patterns of usage and the functional needs of the individuals who use them to communicate. 
 Here we investigated the formation of novel graphical conventions across extended visual communication between two people. 
@@ -86,26 +84,31 @@ sketch understanding; social coordination; drawing; iconicity; visual abstractio
 
 \section{Introduction}
 
-Communication is central to the success of our species: it allows us to learn from each other, coordinate our actions, and express otherwise hidden thoughts. 
-Critically, human communication goes beyond vocal production --- humans also express their ideas in visible, durable forms. 
 From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization), and forms the foundation for the cultural transmission of knowledge and higher-level reasoning. 
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u,Aubert:2014jy}, and which has since been adapted to a broad diversity of applications, spanning photorealistic rendering from observation and schematic diagrams consisting entirely of symbols. 
 
-How does a medium spanning such a broad range of appearances, ranging from the faithfully mimetic to the abstractly symbolic, reliably convey meaning? 
-On the one hand, prior work suggests that key semantic information in a drawing, e.g., what it represents, can be derived from its visual properties alone \cite{FanCommon2018,sayim2011line}. 
-On the other hand, other work has argued that socially-mediated contextual factors are crucial to make appropriate inferences about what a given drawing means \cite{goodman1976languages,gombrich1969art}.
+How does a medium spanning such a broad range of appearances reliably convey meaning? 
+On the one hand, prior work suggests that semantic information in a figurative drawing, e.g., what it represents, can be derived from its perceptual properties alone \cite{FanCommon2018,sayim2011line}. 
+On the other hand, other work has argued that socially-mediated information and context is crucial to make appropriate inferences about even what a figurative drawing means \cite{goodman1976languages,gombrich1969art}.
 
-Our paper combines these two perspectives by proposing that both visual information and social context may jointly explain how drawings derive meaning \cite{fan2018modeling}, and that a critical factor affecting the balance between the two may be the degree of shared knowledge between communicators. 
-Here we explore the possibility that the accumulation of shared knowledge via extended visual communication may promote the development of simple, consistent, and effective ways to depict something, even if these \textit{ad hoc} graphical conventions are less readily apprehended by others. 
+How can these two perspectives be reconciled? 
+Our approach is to consider the hypothesis that both visual information and social context may jointly explain how drawings derive meaning \cite{fan2018modeling}, and that a critical factor affecting the balance between the two may be the degree of shared knowledge between communicators. 
+In this paper, we explore the possibility that the accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic and effective ways of depicting a physical object, even if these even if these \textit{ad hoc} graphical conventions are less readily apprehended by others who lack this shared knowledge. 
+
+% simple, consistent, and effective ways to depict something, even if these \textit{ad hoc} graphical conventions are less readily apprehended by others. 
 
 To investigate this, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects. 
 On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
 The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
-
-Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. 
+Across repetitions, we find that pairs discover increasingly sparse, consistent, and effective ways of depicting them. 
 While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
-Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
-Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
+
+
+Critically, viewers who had to recognize sketches sampled from different interactions did not learn
+
+% different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
+
+Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their perceptual properties alone.
 
 % \red{What prior work has been done to understand them?}
 This notion is resonant with prior studies employing visual communication tasks that have found that pairs of interacting participants can rapidly learn to produce drawings that are referentially meaningful to their partner in context, even when these drawings do not strongly resemble any particular real-world referent out of context \cite{garrod_foundations_2007,fay2010interactive,Galantucci:2005uh,healey2007graphical}. 
@@ -182,7 +185,6 @@ Based on the results of this feature extraction and clustering procedure, we def
 \includegraphics[width=\linewidth]{figures/fig_b.png}
 \caption{Sketcher / Viewer interface} \label{fig:1b}
 \end{subfigure}
-\caption{} \label{fig:1b}
 \end{figure}
 
 \subsubsection{Procedure} 
@@ -297,8 +299,8 @@ In addition, features extracted from \emph{fc6} have been successful in predicti
 We therefore define the similarity between two sketches as the correlation between their feature vectors.
 
 \begin{figure}
-\includegraphics[width=\linewidth/2-1]{figures/within.pdf}
-\includegraphics[width=\linewidth/2-1]{figures/across.pdf}
+\includegraphics[width=\linewidth]{figures/within.pdf}
+\includegraphics[width=\linewidth]{figures/across.pdf}
 \caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} \label{within-across}
 \end{figure}
 
