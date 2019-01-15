@@ -89,7 +89,7 @@ Perhaps the most basic and versatile technique supporting visual communication i
 
 How does a medium spanning such a broad range of appearances reliably convey meaning? 
 On the one hand, prior work has found that semantic information in a figurative drawing, e.g., what it represents, can be derived from its perceptual properties alone \cite{FanCommon2018,sayim2011line}. 
-On the other hand, other work has emphasized the role of socially-mediated information and context for make appropriate inferences about even what a figurative drawing means \cite{goodman1976languages,gombrich1969art,garrod_foundations_2007}.
+On the other hand, other work has emphasized the role of socially-mediated information and context for make appropriate inferences about what even a figurative drawing means \cite{goodman1976languages,gombrich1969art,garrod_foundations_2007}.
 
 How can these two perspectives be reconciled? 
 Our approach is to investigate how visual information and social context jointly explains how drawings derive meaning \cite{fan2018modeling}, and that a critical factor affecting the balance between the two may be the degree of shared knowledge between communicators. 
@@ -103,17 +103,21 @@ The game included two sets of objects: objects in one set were drawn repeatedly,
 Across repetitions, we find that pairs discover increasingly sparse yet effective ways of depicting them. 
 While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
 Additional control experiments revealed that these gains could not be explained by task practice alone: viewers who cycled through drawings produced by different sketchers did not improve to the same degree as viewers who were paired with a single sketcher. 
-Furthermore, we found that drawings became increasingly consistent within an interaction, but that different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
+Furthermore, we found that drawings became increasingly consistent within an interaction, but that different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of viable graphical conventions. 
 Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their perceptual properties alone.
 
 % \red{What prior work has been done to understand them?}
-Our work was inspired by a large literature that has investigated the emergence of communicative conventions in the linguistic \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture (cite), and graphical modalities \cite{garrod_foundations_2007,fay2010interactive,Galantucci:2005uh,healey2007graphical,theisen2010systematicity}. 
-The current paper makes the following contributions that advance this prior work:
+This work was inspired by a classic literature that has investigated how extended interaction promotes the formation of communicative conventions in the linguistic \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture (cite), and graphical modalities \cite{garrod_foundations_2007,fay2010interactive,Galantucci:2005uh,healey2007graphical,theisen2010systematicity}. 
+The present study advances prior work in XX ways: first, we include a control set of objects, allowing us to measure how attributable any changes in performance were to repeated reference; 
+
+second, our control experiments measuring the recognizability of drawings by naive viewers carefully control for task practice, providing clearer evidence for the importance of continuity...
+
+third, we employ modern computer vision and machine learning techniques to quantitatively characterize high-level perceptual information in drawings. 
+
 % -- tighter control over stimulus set and communicative demands
 % -- deeper experimental exploration of the degree to which changes in communication performance reflect interaction history vs. either production task practice (sketcher getting better at producing sketches overall) or comprehension task practice (viewer getting better at matching sketches overall)
 % -- using task setup that is in principle image-computable
 % -- novel use of modern vision models to characterize high-level perceptual information in sketches
-
 
 \section{Part I: How does repeated reference support successful visual communication?}
 
@@ -276,8 +280,8 @@ In addition, features extracted from \emph{fc6} have been successful in predicti
 We therefore define the similarity between two sketches as the correlation between their feature vectors.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{figures/within.pdf}
-\includegraphics[width=\linewidth]{figures/across.pdf}
+\includegraphics[width=0.45\linewidth]{figures/within.pdf}
+\includegraphics[width=0.45\linewidth]{figures/across.pdf}
 \caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} \label{within-across}
 \end{figure}
 
