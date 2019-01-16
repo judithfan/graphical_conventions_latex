@@ -65,17 +65,20 @@
 \maketitle
 
 \begin{abstract}
-We rely upon widely shared graphical conventions to communicate complex information, ranging from maps to musical notation to modern data visualization. 
-How do these abstract graphical representations derive meaning? 
-A key hypothesis is that their capacity to be effective carriers of meaning is driven by local patterns of usage and the functional needs of the individuals who use them to communicate. 
-Here we investigated the formation of novel graphical conventions across extended visual communication between two people. 
+From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization).
+Perhaps the most basic and versatile visual communication technique is drawing, which ranges between photorealistic rendering from observation and schematic diagrams consisting entirely of symbols. 
+How does a medium spanning such a broad range of appearances reliably convey meaning?
+A natural possibility is that drawings derive meaning from both their visual properties as well as shared knowledge between people who use them to communicate. 
+Here we investigate how the accumulation of shared knowledge via extended visual communication between two people influences the visual properties of the drawings they produce, and how well they communicate. 
 We developed a drawing-based reference game in which two participants repeatedly communicate about visual objects. 
-On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
-The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
-Across repetitions, we find that pairs discover increasingly sparse, yet effective and internally consistent ways of depicting them. 
-While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
-Moreover, different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of graphical conventions. 
-Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by social context rather than their perceptual properties alone.
+Across repetitions, we find that pairs discover increasingly sparse, effective, and internally consistent ways of depicting them. 
+Furthermore, we found that different pairs discovered different solutions for efficient communication, suggesting the existence of multiple equilibria in the space of viable graphical conventions. 
+Taken together, our findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their perceptual properties alone.
+
+% On each trial, both players were shown an array of objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
+% The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
+% While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
+
 
 \textbf{Keywords:}
 sketch understanding; social coordination; drawing; iconicity; visual abstraction
@@ -93,7 +96,7 @@ On the other hand, other work has emphasized the role of socially-mediated infor
 
 How can these two perspectives be reconciled? 
 Our approach is to consider the interaction between visual information and social context in determining how drawings derive meaning \cite{fan2018modeling}, and to propose that a critical factor affecting the balance between the two may be the degree of shared knowledge between communicators. 
-Specifically, we explore the possibility that the accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic and effective ways of depicting a physical object, even if these even if these \textit{ad hoc} graphical conventions are less readily apprehended by others who lack this shared knowledge. 
+Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic and effective ways of depicting a physical object, even if these even if these \textit{ad hoc} graphical conventions are less readily apprehended by others who lack this shared knowledge. 
 
 % simple, consistent, and effective ways to depict something, even if these \textit{ad hoc} graphical conventions are less readily apprehended by others. 
 
@@ -268,8 +271,8 @@ We found a significant difference in recognizability: while there was some impro
 \section{Part III: How do visual features of sketches change across repetitions?}
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
-Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{Fan18}. 
-In addition, features extracted from \emph{fc6} have been successful in predicting neural responses in high-level visual cortex \cite{Yamins}.
+Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018}. 
+In addition, features extracted from \emph{fc6} have been successful in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
 We therefore define the similarity between two sketches as the correlation between their feature vectors.
 
 \begin{figure}
