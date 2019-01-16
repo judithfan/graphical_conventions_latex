@@ -131,7 +131,6 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 
 \subsubsection{Participants} A total of 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
 They were provided a base compensation of \$1.50 for participation and up to \%1.60 in bonus for high task performance.
-% and earned up to \$0.04 bonus for each correct trial, inversely proportional to the amount of time taken. 
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
 In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
 
@@ -139,19 +138,12 @@ In this and subsequent behavioral experiments, participants provided informed co
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-Our approach was to define sets of perceptually similar real-world objects belonging to the same basic-level category.
-To accomplish this, we selected objects from the ShapeNet database \cite{chang2015shapenet}.
-This collection contains objects that are geometrically complex, highly diverse, and abundant in the real world.
-To identify groups of perceptually similar chairs within the collection, we first extracted high-level visual features of each of the 3,096 object images using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}. 
-We then applied principal component analysis and $k$-means clustering to the model's top-layer feature representation of the images. 
-This yielded 70 clusters containing between 2 and 80 objects each (\red{verify}).
-Based on the results of this feature extraction and clustering procedure, we defined two categories of perceptually similar objects containing eight exemplars each (Fig.~\ref{fig:1a}). 
-
-% In order to identify groups of objects that are drawn similarly prior to training, we applied a clustering algorithm (affinity propagation with damping = 0.9; \cite{frey2007clustering}) to the model's top-layer feature representation of drawings from the same dataset analyzed above \cite{Eitz:2012dk}. This yielded 16 clusters containing between 3 and 20 objects each. Among clusters containing at least 8 objects, we defined 8 ``visual categories'' containing 8 objects each (Table \ref{cluster_obj_list}). Each participant was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
-
-%% Shapenet
-%% Describe goal (groups of highly similar objects that would be hard to distinguish)
-
+In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects that were both geometrically complex and perceptually similar. 
+To accomplish this, we considered objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
+We restricted our search to objects in the \texttt{chair} class, which is among the most diverse and abundant in Shapenet. 
+To identify groups of percpetually similar chairs, we first extracted high-level visual features from 2D renderings of 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
+We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on this feature representation, yielding 70 clusters containing between 2 and 80 objects each (\red{verify}).
+Based on these clusters, we defined two categories of perceptually similar objects containing eight exemplars each (Fig.~\ref{fig:1a}). 
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
@@ -166,21 +158,20 @@ Based on the results of this feature extraction and clustering procedure, we def
 \end{subfigure}
 \end{figure}
 
-\subsubsection{Procedure} 
+\subsubsection{Task} 
 
 %% Trial-level event structure
-
-Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. 
-The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. 
+% Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. 
+% The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. 
 On each trial, both participants were shown the same array of four objects; however, the positions of these objects were randomized for each participant. 
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
-
 %% Trial-level objective of sketcher and viewer
 Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window. 
-Participants drew using the mouse cursor, and were not able to delete previous strokes. Each stroke was rendered on the viewer's screen immediately upon the completion of each stroke. 
+Participants drew using the mouse cursor, and were not able to delete previous strokes. 
+Each stroke was rendered on the viewer's screen immediately upon the completion of each stroke.
 The sketcher was instructed to take no longer than 30 seconds to produce their drawings. 
-The viewer was allowed guess the identity of the drawn object by clicking one of the four objects in the array even when the sketcher had not completed the drawing. 
-Both participants received immediate task-related feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target. 
+The viewer was allowed guess the identity of the drawn object by clicking one of the four objects in the array as soon as they were confident. 
+Both participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target. 
 Otherwise, the viewer had no other means of communicating with the sketcher. 
 Both participants earned an accuracy bonus for each correct response. 
 If the correct response was made under the 30-second time limit, they also received a speed bonus inversely proportional to the time taken until the response.
@@ -189,11 +180,15 @@ If the correct response was made under the 30-second time limit, they also recei
 
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
+\subsubsection{Design} 
+
 Each pair of participants was randomly assigned two sets of four objects: one set was was assigned to the repeated condition; the other to the control condition.
-In order to explore the degree to which the effects of repeated communication were object-specific, we varied the perceptual similarity between the two sets across pairs. 
-Specifically, in half of the pairs (N=XX pairs), one set contained four randomly sampled objects from one category and the second set contained the remaining four objects from the same category. 
+In order to explore the degree to which the effects of repeated communication were object-specific, we varied the perceptual similarity between the two sets across pairs of participants. 
+In half of the pairs (N=XX pairs), one set contained four randomly sampled objects from one category and the second set contained the remaining four objects from the same category. 
 In the other half of pairs (N=XX pairs), one set contained four randomly sampled objects from one category and the second set contained four randomly sampled objects from the other category.
 The assignment of each set to the repeated and control conditions was randomized across pairs. 
+
+\subsubsection{Procedure}
 
 The communication task consisted of three phases. 
 During the \textit{repeated} phase, the sketcher drew the four repeated objects six times each, in an interleaved order.
@@ -208,6 +203,18 @@ Including the control condition in this pre-post design allowed us to assess the
 \caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
 \end{figure}
 
+% Formula: bis_score ~ phase * condition + (1 + phase * condition | target)
+%    Data: input
+% Fixed effects:
+%                   Estimate Std. Error      df t value Pr(>|t|)    
+% (Intercept)        -0.4176     0.1473 14.8671  -2.835  0.01262 *  
+% phase1             -1.4533     0.1136 24.0827 -12.796 3.11e-12 ***
+% condition1          0.2866     0.1092 18.8962   2.626  0.01669 *  
+% phase1:condition1  -0.6772     0.1990 81.6888  -3.403  0.00103 ** 
+% ---
+% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
 We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of correct viewer responses) and speed (time elapsed during each drawing).
 More specifically, we normalize both accuracy and drawing duration within each game and take the difference between these scores \cite<the \emph{balanced integration score,}>{Liesefeld2018}.
 To compare the effect of repetition across the control and repeated conditions, we conducted a mixed-effects regression including a maximum random effect structure with random intercepts, slopes, and interactions for each pair of participants and each target object. 
@@ -215,6 +222,8 @@ While pairs became increasingly efficient between the pre-test and post-test for
 
 We find a similar effect when we examine number of strokes per sketch instead of drawing duration. 
 Thus, participants converged on simpler, faster, and more communicatively successful graphical conventions for repeated objects, which only partially transferred to other objects.
+
+
 
 %We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
 
@@ -229,7 +238,7 @@ Thus, participants converged on simpler, faster, and more communicatively succes
 
 % \rdh{The other point of this experiment is to test the 'drift toward the arbitrary' (but not in those words...) i.e. we predict that  need to set that up a bit, too.}
 
-While our reference game experiment established that participants coordinate on increasingly efficient and item-specific conventions, we also hypothesized that these conventions would be \emph{interaction}-specific: that later sketches would be less recognizable without the (idiosyncratic) history of the interaction.
+While our reference game experiment established that participants coordinate on increasingly efficient and object-specific conventions, we also hypothesized that these conventions would be \emph{interaction}-specific: that later sketches would be less recognizable without the (idiosyncratic) history of the interaction.
 
 To rigorously distinguish this hypothesis from alternatives, we designed a recognition task where an independent group of participants were presented with the sketches from our interactive reference game and asked to pick the target out of a lineup.
 
@@ -240,7 +249,7 @@ This allows us to manipulate the sequence of trials.
 
 \subsubsection{Participants}
 
-\rdh{TODO}
+XXX participants completed the experiment. Data from XX participants were excluded due to inconsistent responding on catch trials.  
 
 \subsubsection{Design}
 
@@ -264,9 +273,37 @@ Thus, we preserved the temporal structure of sketches but disrupted the continui
 \subsection{Result: yoked similar to reference game}
 
 The only difference was the inability to give feedback to the Sketcher.
-%Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
+% Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
+
+
+% Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+% Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
+%    Data: d.recog %>% filter(version %in% c("communication", "yoked"))
+% Fixed effects:
+%                           Estimate Std. Error         df t value Pr(>|t|)    
+% (Intercept)                0.44820    0.07178  274.15995   6.244 1.62e-09 ***
+% versionyoked              -0.03155    0.07859 5456.46039  -0.401  0.68810    
+% repetition                 0.23067    0.01706  281.10825  13.524  < 2e-16 ***
+% versionyoked:repetition   -0.04999    0.01878 5457.35452  -2.661  0.00781 ** 
+% ---
+% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 
 \subsection{Result: conventions are interaction-specific}
+
+% Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+% Formula: bis_relative ~ version * repetition + (1 + repetition | gameID)
+%    Data: d.recog %>% filter(version %in% c("yoked", "shuffled"))
+
+% Fixed effects:
+%                             Estimate Std. Error        df t value Pr(>|t|)    
+% (Intercept)                  0.43214    0.06485 287.50472   6.663 1.36e-10 ***
+% versionshuffled             -0.13284    0.08954 287.50472  -1.484    0.139    
+% repetition                   0.18430    0.01440 326.27439  12.801  < 2e-16 ***
+% versionshuffled:repetition  -0.09715    0.01988 326.27439  -4.888 1.60e-06 ***
+% ---
+% Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 
 Next, we compared the yoked condition against the scrambled condition using a mixed-effects model.
 We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
@@ -290,12 +327,14 @@ We therefore define the similarity between two sketches as the correlation betwe
 \caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} \label{within-across}
 \end{figure}
 
-
-\subsubsection{Sketches become more consistent across repeated interaction}
+\subsubsection{Sketchers draw the same object more consistently across repetitions}
 
 First, we examine the 
 
-\subsubsection{Different pairs develop different graphical conventions} 
+
+\subsubsection{Sketchers prioritize strokes that enhance} 
+
+\subsubsection{Different sketchers draw the same object differently across repetitions} 
 % perhaps move this similarity explanation in the earlier subsubsection.
 
 
