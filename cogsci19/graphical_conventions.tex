@@ -115,7 +115,7 @@ There are three aspects of the current work that advances our prior understandin
 
 Our first goal was to understand how repeated visual communication about an object influences how they well  people communicate about that object.  
 To accomplish this, we developed a drawing-based reference game for two players. 
-On each trial, both players were shown an array of objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
+On each trial, both players were shown a set of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
 The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game.
 We hypothesized that repeated visual reference to a visual object would lead to more efficient communication about that object, relative to control objects. 
 
@@ -129,8 +129,8 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 %% methods
 \subsection{Methods: Visual Communication Experiment}
 
-\subsubsection{Participants} A total of 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into pairs, completed the experiment.
-They were provided a base compensation of \$1.50 for participation and up to \%1.60 in bonus for high task performance.
+\subsubsection{Participants} A total of 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into 69 pairs, completed the experiment.
+They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
 In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
 
@@ -138,11 +138,11 @@ In this and subsequent behavioral experiments, participants provided informed co
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects that were both geometrically complex and perceptually similar. 
-To accomplish this, we considered objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
-We restricted our search to objects in the \texttt{chair} class, which is among the most diverse and abundant in Shapenet. 
-To identify groups of percpetually similar chairs, we first extracted high-level visual features from 2D renderings of 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
-We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on this feature representation, yielding 70 clusters containing between 2 and 80 objects each (\red{verify}).
+In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects whose members were both geometrically complex and perceptually similar. 
+To accomplish this, we employed objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
+We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
+To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
+We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
 Based on these clusters, we defined two categories of perceptually similar objects containing eight exemplars each (Fig.~\ref{fig:1a}). 
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
