@@ -354,7 +354,14 @@ First we considered an even simpler feature , we observed that the number of str
 
 \subsubsection{Different sketchers draw the same object differently across repetitions} 
 
-
+The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific} and that there may be multiple equilibria of graphical representations in our dataset. 
+We made the further prediction that while early sketches may be more strongly constrained by the (shared) target images, later sketches may be more variable as pairs settle into these different equilibria.
+That is, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
+We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition. 
+In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
+We conducted a permutation test to nonparametrically test whether this observed decrease in correlation was statistically significant.
+For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values .
+The observed 
 
 \subsubsection{Sketchers draw the same object more consistently across repetitions}
 
