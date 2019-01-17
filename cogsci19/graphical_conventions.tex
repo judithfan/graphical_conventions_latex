@@ -52,10 +52,10 @@
 \title{Graphical convention formation during visual communication}
 
 % \author{\begin{tabular}[htbp]{c@{\extracolsep{1em}}c@{\extracolsep{1em}}c@{\extracolsep{1em}}c} \\
-% {\large \bf Megumi Sano} & {\large \bf Robert X. D. Hawkins} & {\large \bf Noah D. Goodman} & {\large \bf Judith E. Fan}\\
+% {\large \bf Robert X. D. Hawkins} & {\large \bf Megumi Sano} & {\large \bf Noah D. Goodman} & {\large \bf Judith E. Fan}\\
 % Department of Psychology & Department of Psychology & Department of Psychology & Department of Psychology \\
 % Stanford University & Stanford University & Stanford University & UC San Diego \\
-% \texttt{megsano@stanford.edu} & \texttt{rxdh@stanford.edu} & \texttt{ngoodman@stanford.edu} & \texttt{jefan@ucsd.edu} \\
+% \texttt{rxdh@stanford.edu} & \texttt{megsano@stanford.edu} & \texttt{ngoodman@stanford.edu} & \texttt{jefan@ucsd.edu} \\
 % \end{tabular}
 % }
 
@@ -76,7 +76,7 @@ We employed modern techniques from computer vision to characterize how the high-
 Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
 
 \textbf{Keywords:}
-sketch understanding; social coordination; drawing; iconicity; visual abstraction
+sketch understanding; alignment; drawing; iconicity; visual abstraction
 
 % On each trial, both players were shown an array of objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
 % The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
@@ -230,10 +230,10 @@ Because objects were randomly assigned to the repeated and control conditions, w
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 To evaluate changes in communicative efficiency across each interaction, we fit our data with a linear mixed-effects model with maximal random effect structure, including random intercepts, slopes, and interactions for each pair of participants. 
-We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), suggesting generalized improvements as a consequence of extended interaction.
+We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting generalized improvements as a consequence of extended interaction.
 Critically, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Figure \ref{refgame_bis}). 
-These findings show that the benefits of repeatedly communicating about an object are to some extent specific to that object, exceeding the generic benefits of extended interaction. 
-
+These results show that there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions. 
+ 
 % the benefits of repeatedly communicating about an object accrue more strongly to that object 
 % show gains in communicative efficiency are to some extent specific to the objects that were repeatedly referenced
 
@@ -252,14 +252,13 @@ These findings show that the benefits of repeatedly communicating about an objec
 
 \section{Part II: What explains gains in communication efficiency?}
 
-% \rdh{The other point of this experiment is to test the 'drift toward the arbitrary' (but not in those words...) i.e. we predict that  need to set that up a bit, too.}
+The visual communication experiment established that pairs of participants coordinate on object-specific ways of depicting objects more efficiently. 
+This raises the question: to what extent do these gains in communication efficiency reflect the accumulation of interaction-specific shared knowledge between a sketcher and viewer, versus the combination of task practice and inherent visual properties of the drawings? 
+To evaluate this question, we conducted two control experiments to measure the contribution of the latter. 
+In these experiments, naive participants performed a drawing recognition task in which they were presented with the final drawings from the communication experiment and guessed which of four objects it referenced. 
+Their task was thus the same as the viewer's in the communication experiment, except they knew their responses were not being provided as real-time feedback to the sketcher.
 
-While our reference game experiment established that participants coordinate on increasingly efficient and object-specific conventions, we also hypothesized that these conventions would be \emph{interaction}-specific: that later sketches would be less recognizable without the (idiosyncratic) history of the interaction.
-
-To rigorously distinguish this hypothesis from alternatives, we designed a recognition task where an independent group of participants were presented with the sketches from our interactive reference game and asked to pick the target out of a lineup.
-
-This allows us to manipulate the sequence of trials.
-\rdh{Say something briefly about the alternative hypotheses}
+% , and they made their decision based on the final drawing, rather than being able to interrupt await additional information.
 
 \subsection{Methods: Recognition Experiment}
 
@@ -331,6 +330,8 @@ We found a significant difference in recognizability: while there was some impro
 \end{figure}
 
 \section{Part III: How do visual features of sketches change across repetitions?}
+
+How do the sketches themselves change? First, we observed that the number of strokes constituting sketches decreased by repetition. 
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
 Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018}. 
