@@ -262,6 +262,12 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \subsection{Methods: Recognition Experiment}
 
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/recog_BIS_timeseries.pdf}
+\caption{Recognition performance in control conditions; ribbons are 95\% CIs} \label{recog_bis}
+\end{figure}
+
 \subsubsection{Participants}
 
 XXX participants completed the experiment. Data from XX participants were excluded due to inconsistent responding on catch trials.  
@@ -320,29 +326,25 @@ Next, we compared the yoked condition against the scrambled condition using a mi
 We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
 
 
-\begin{figure}
-\includegraphics[width=\linewidth]{figures/recog_BIS_timeseries.pdf}
-\caption{XX} \label{recog_bis}
-\end{figure}
-
 \section{Part III: How do visual features of sketches change across repetitions?}
 
 These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
 But what is happening over time to the visual features of the sketches themselves? 
 In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
 
-\subsection{Methods}
+\subsection{Analysis methods}
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
-Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018}. 
-In addition, features extracted from \emph{fc6} have been successful in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
-We therefore define the similarity between two sketches as the correlation between their feature vectors.
+Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
+
+Sketch features at this layer have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018} and have been successful more broadly in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
+In this space, we compute the similarity between any two sketches as the \emph{correlation} between their feature vectors.
 
 \subsection{Results}
 
 \subsubsection{Sketches simplify across repetitions}
 
-First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; p < .001).
+First we considered an even simpler feature , we observed that the number of strokes used in each sketch decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p < .001$). 
 
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
@@ -351,6 +353,8 @@ First, replicating prior findings, we observed that the number of strokes used i
 \end{figure}
 
 \subsubsection{Different sketchers draw the same object differently across repetitions} 
+
+
 
 \subsubsection{Sketchers draw the same object more consistently across repetitions}
 
