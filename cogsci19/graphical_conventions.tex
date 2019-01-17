@@ -143,7 +143,7 @@ To accomplish this, we employed objects from the ShapeNet database \cite{chang20
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
 To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
 We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
-Based on these clusters, we defined two categories of perceptually similar objects containing eight exemplars each (Fig.~\ref{fig:1a}). 
+Based on these clusters, we defined 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{fig:1a}). 
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
@@ -202,29 +202,42 @@ Before and after the \textit{repeated} phase, the sketcher drew all eight object
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/refgame_BIS_timeseries.pdf}
-\caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to performance on the first repetition.} \label{refgame_bis}
+\caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to the first repetition.} \label{refgame_bis}
 \end{figure}
 
-% Formula: bis_score ~ phase * condition + (1 + phase * condition | target)
+In order to measure how well pairs communicated throughout each interaction, we employed a measure of communicative efficiency \cite<the \emph{i.e., balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account. 
+This efficiency score is computed by first z-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy. 
+It is thus highest when pairs are both fast \textit{and} accurate, and lowest when they make many errors and take a long time, \textit{relative} to their own performance on other trials. 
+
+% Formula: bis_score ~ condition + (1 + condition | gameID)
+% Fixed effects:
+%              Estimate Std. Error        df t value Pr(>|t|)    
+% (Intercept)  -1.14631    0.08343 146.52921 -13.740   <2e-16 ***
+% condition1    0.03259    0.19709  71.10509   0.165    0.869    
+% ---
+
+Because objects were randomly assigned to the repeated and control conditions, we expected no differences in task performance in the pre phase. Indeed, a linear mixed-effects model with random slopes and intercepts for each pair of participants revealed no effect of condition ($b = 0.03, ~t = 0.165, ~p = 0.869$). Moreover, we found that pairs performed the task well above chance (75.9\% correct, 95\% CI: [0.725,0.793], chance = 25\%) in this phase, suggesting that they were suitably engaged with the task. 
+
+% Formula: bis_score ~ phase * condition + (1 + phase * condition | gameID)
 %    Data: input
 % Fixed effects:
-%                   Estimate Std. Error      df t value Pr(>|t|)    
-% (Intercept)        -0.4176     0.1473 14.8671  -2.835  0.01262 *  
-% phase1             -1.4533     0.1136 24.0827 -12.796 3.11e-12 ***
-% condition1          0.2866     0.1092 18.8962   2.626  0.01669 *  
-% phase1:condition1  -0.6772     0.1990 81.6888  -3.403  0.00103 ** 
+%                    Estimate Std. Error        df t value Pr(>|t|)    
+% (Intercept)        -0.42302    0.05473 125.82978  -7.730 2.97e-12 ***
+% phase1             -1.44656    0.10112 137.22562 -14.306  < 2e-16 ***
+% condition1          0.35670    0.14118  70.83601   2.527  0.01376 *  
+% phase1:condition1  -0.64821    0.20974  94.62722  -3.091  0.00262 ** 
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+To evaluate changes in communicative efficiency across each interaction, we fit our data with a linear mixed-effects model with maximal random effect structure, including random intercepts, slopes, and interactions for each pair of participants. 
+We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), suggesting generalized improvements as a consequence of extended interaction.
+Critically, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Figure \ref{refgame_bis}). 
+These findings show gains in communicative efficiency are to some extent specific to the objects that were repeatedly referenced, exceeding the generic benefits of extended interaction. 
+% the benefits of repeatedly communicating about an object accrue more strongly to that object 
 
-We operationalized communicative efficiency using a composite behavioral measure that accounts for both accuracy (proportion of correct viewer responses) and speed (time elapsed during each drawing).
-More specifically, we normalize both accuracy and drawing duration within each game and take the difference between these scores \cite<the \emph{balanced integration score,}>{Liesefeld2018}.
-To compare the effect of repetition across the control and repeated conditions, we conducted a mixed-effects regression including a maximum random effect structure with random intercepts, slopes, and interactions for each pair of participants and each target object. 
-While pairs became increasingly efficient between the pre-test and post-test for both control and repeated objects, we found a significant interaction: sketches of repeated targets showed a greater increase in efficiency than the control targets which were shown only at the beginning and end of the task ($b = 0.68, ~t = 3.4,~p = 0.001$; see Figure \ref{refgame_bis}). 
+We found a similar pattern of results when we used the number of strokes in each sketch instead of drawing time in our estimate of communicative efficiency. 
 
-We find a similar effect when we examine number of strokes per sketch instead of drawing duration. 
 Thus, participants converged on simpler, faster, and more communicatively successful graphical conventions for repeated objects, which only partially transferred to other objects.
-
 
 
 %We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
