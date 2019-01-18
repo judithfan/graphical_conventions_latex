@@ -349,21 +349,28 @@ First we considered an even simpler feature , we observed that the number of str
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
 \includegraphics[width=0.45\linewidth]{figures/across.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} \label{within-across}
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} 
+\label{within-across}
 \end{figure}
 
-\subsubsection{Different sketchers draw the same object differently across repetitions} 
+\subsubsection{Different sketchers draw the same object in increasingly different ways} 
 
-The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific} and that there may be multiple equilibria of graphical representations in our dataset. 
-We made the further prediction that while early sketches may be more strongly constrained by the (shared) target images, later sketches may be more variable as pairs settle into these different equilibria.
-That is, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
+The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early sketches may be more strongly constrained by a shared target image, later sketches may be more \emph{variable} as pairs settle into multiple equilibria.
+In other words, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
 We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition. 
 In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
-We conducted a permutation test to nonparametrically test whether this observed decrease in correlation was statistically significant.
-For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values .
-The observed 
+We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
+For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
-\subsubsection{Sketchers draw the same object more consistently across repetitions}
+\subsubsection{Sketchers draw the same object increasingly consistently}
+
+In addition to sketches drawn by different sketches growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
+In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
+We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
+We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 4.2$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts and slopes for both sketcher and target. 
+As a baseline, we considered the null distribution of slopes produced by first scrambling sketches across pair for each repetition and target.
+The true effect was significantly greater than this null distribution, which 
+
 
 \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
 
