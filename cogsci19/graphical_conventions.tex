@@ -207,7 +207,7 @@ Before and after the \textit{repeated} phase, the sketcher drew all eight object
 
 In order to measure how well pairs communicated throughout each interaction, we employed a measure of communicative efficiency \cite<the \emph{i.e., balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account. 
 This efficiency score is computed by first z-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy. 
-It is thus highest when pairs are both fast \textit{and} accurate, and lowest when they make many errors and take a long time, \textit{relative} to their own performance on other trials. 
+It is thus highest when pairs are both fast and accurate, and lowest when they make many errors and take a long time, relative to their own performance on other trials. 
 
 % Formula: bis_score ~ condition + (1 + condition | gameID)
 % Fixed effects:
@@ -272,20 +272,21 @@ XXX participants completed the experiment. Data from XX participants were exclud
 %Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity. 
 %Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
 
-On each trial, recognition participants were presented with the same set of four objects and drawing viewers had in the communication game. 
+On each trial, recognition participants were presented with the same set of four objects and drawing that viewers had in the communication game. 
 Just as the viewers had been, they received an accuracy bonus for every correct response, and speed bonus inversely proportional to their response time. 
-
 Participants were randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
-Participants in the yoked group were matched with a pair from the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
+Participants in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
 Participants in the shuffled group, on the other hand, were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared on the same trial number as they had appeared originally. 
 At the trial level, both groups thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately. 
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
+Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction --- supporting the accumulation of interaction-specific shared knowledge --- or several different interactions --- where such accumulation would be minimal.
 
-\subsection{Result: yoked similar to reference game}
+\subsection{Results}
 
-The only difference was the inability to give feedback to the Sketcher.
+\subsubsection{Yoked similar to reference game}
+
+% The only difference was the inability to give feedback to the Sketcher.
 % Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
-
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
@@ -299,6 +300,7 @@ The only difference was the inability to give feedback to the Sketcher.
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+\subsubsection{Viewers improve to greater degree when drawings }
 
 \subsection{Result: conventions are interaction-specific}
 
@@ -331,7 +333,7 @@ These control experiments establish that shared history with a particular sketch
 But what is happening over time to the visual features of the sketches themselves? 
 In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
 
-First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; p < .001).
+First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
 Sketch features taken from the \textit{fc6} layer of VGG have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018}. 
