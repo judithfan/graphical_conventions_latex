@@ -147,13 +147,13 @@ Based on these clusters, we defined 2 categories of perceptually similar objects
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
-\begin{subfigure}{0.23\textwidth}
+\begin{subfigure}{0.16\textwidth}
 \includegraphics[width=\linewidth]{figures/fig_a.png}
 \caption{Stimuli} \label{fig:1a}
 \end{subfigure}
-\hspace*{\fill}
-\begin{subfigure}{0.23\textwidth}
-\includegraphics[width=\linewidth]{figures/fig_b.png}
+
+\begin{subfigure}{0.46\textwidth}
+\includegraphics[width=\linewidth]{figures/task.pdf}
 \caption{Sketcher / Viewer interface} \label{fig:1b}
 \end{subfigure}
 \end{figure}
@@ -253,7 +253,7 @@ These results show that there are benefits of repeatedly communicating about an 
 \section{Part II: What explains gains in efficiency?}
 
 The visual communication experiment established that pairs of participants coordinate on object-specific ways of depicting objects more efficiently across repetitions.  
-This raises the question: to what extent do these gains in communication efficiency reflect the accumulation of interaction-specific shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and inherent visual properties of the drawings? 
+This raises the question: to what extent do these gains in communication efficiency reflect the accumulation of interaction-specific shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and the inherent visual properties of the drawings? 
 To evaluate this question, we conducted two control experiments to measure the contribution of the latter. 
 In these experiments, naive participants performed a drawing recognition task in which they were presented with the final drawings from the communication experiment and guessed which of four objects it referred to. 
 Their task was thus the same as the viewer's in the communication experiment, except they knew their responses were not being provided as real-time feedback to the sketcher.
@@ -270,7 +270,7 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \subsubsection{Participants}
 
-245 participants recruited via AMT completed the experiment. Data from 22 participants were excluded due to low accuracy on attention-check trials (3 or fewer correct out of 5).  
+245 participants recruited via AMT completed the experiment. Data from 22 participants were excluded due to low accuracy on attention-check trials (i.e., 3 or fewer correct out of 5).  
 
 \subsubsection{Task, Design, \& Procedure}
 
@@ -289,14 +289,17 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 
 \subsection{Results}
 
-\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show comparable gains in recognition performance}
+\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show comparable gains}
 
-We predicted that participants in the yoked group would e
+Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve substantially across repetitions. 
+However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about drawings object the viewer had selected and how quickly they were able to identify the target to modify their sketches on subsequent repetitions. 
+Instead, these participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
+
+As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these channels for social interaction. 
+
 
 These findings suggest that 
 
-% The only difference was the inability to give feedback to the Sketcher.
-% Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
@@ -310,11 +313,7 @@ These findings suggest that
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-
-
-\subsubsection{Third-party observers viewing sketches from different interactions }
-
-\subsection{Result: conventions are interaction-specific}
+\subsubsection{Third-party observers viewing sketches from different interactions also improve, but to lesser degree}
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | gameID)
