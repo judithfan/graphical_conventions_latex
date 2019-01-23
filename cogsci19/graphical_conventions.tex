@@ -138,25 +138,19 @@ In this and subsequent behavioral experiments, participants provided informed co
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
+%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/task_stimuli.pdf}
+\caption{Task and stimuli. } 
+\label{task_stimuli}
+\end{figure}
+
 In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects whose members were both geometrically complex and perceptually similar. 
 To accomplish this, we employed objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
 To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
 We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
-Based on these clusters, we defined 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{fig:1a}). 
-
-%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
-\begin{figure}
-\begin{subfigure}{0.25\textwidth}
-\includegraphics[width=\linewidth]{figures/stimuli.pdf}
-\caption{Stimuli} \label{fig:1a}
-\end{subfigure}
-
-\begin{subfigure}{0.46\textwidth}
-\includegraphics[width=\linewidth]{figures/task.pdf}
-\caption{Sketcher / Viewer interface} \label{fig:1b}
-\end{subfigure}
-\end{figure}
+Based on these clusters, we defined 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}). 
 
 \subsubsection{Task} 
 
@@ -306,13 +300,12 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 We compared the yoked and shuffled groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had previously. 
-We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and random intercepts and slopes for each viewer/recognition participant. 
+We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction as fixed effects, and random intercepts and slopes for each viewer/recognition participant. 
 
-This analysis revealed that recognition performance 
+This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.801, ~p < $)
 
 % We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting generalized improvements as a consequence of extended interaction.
 % Critically, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Figure \ref{refgame_bis}). 
-
 
 We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
 
