@@ -363,6 +363,12 @@ In this space, we compute the similarity between any two sketches as the \emph{c
 
 First we considered an even simpler feature , we observed that the number of strokes used in each sketch decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p < .001$). 
 
+The decrease in the number  over time motivates an investigation for analyzing which part of a sketch for a particular target stays consistent across successive repetitions. 
+Here, stroke lesions are used to provide a visualization of stroke importance of a sketch with respect to its successive sketch. 
+We measure the importance of a stroke by computing the similarity between a sketch with the stroke 
+The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
+In other words, for each stroke, we measured how similar the sketch without the stroke is to its successor. 
+
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
 \includegraphics[width=0.45\linewidth]{figures/across.pdf}
@@ -391,13 +397,13 @@ We found that the similarity of successive sketches \emph{increases} strongly ov
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
+% we could see that certain strokes are retained 
 
-\subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
 
-The increasing similarity of successive sketches over time motivates an investigation into which part of a sketch stays consistent across successive repetitions. 
-Here, we use stroke lesions to provide a visualization of stroke importance of a sketch with respect to its successive sketch. 
-The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
-In other words, for each stroke, we measured how similar the sketch without the stroke is to its successor. 
+% \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+
+
+% raises the possibility that 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/fig_a.png}
