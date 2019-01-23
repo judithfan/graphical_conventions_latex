@@ -147,8 +147,8 @@ Based on these clusters, we defined 2 categories of perceptually similar objects
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
-\begin{subfigure}{0.16\textwidth}
-\includegraphics[width=\linewidth]{figures/fig_a.png}
+\begin{subfigure}{0.25\textwidth}
+\includegraphics[width=\linewidth]{figures/stimuli.pdf}
 \caption{Stimuli} \label{fig:1a}
 \end{subfigure}
 
@@ -283,6 +283,7 @@ Just as the original viewers had been, they received an accuracy bonus for every
 Participants were randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
 Participants in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
 Participants in the shuffled group, on the other hand, were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared on the same trial number as they had appeared originally. 
+%I think this is same repetition number but not same trial number
 At the trial level, both groups thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately. 
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
 Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific shared knowledge, or from several different interactions, where such accumulation would be minimal.
@@ -377,7 +378,7 @@ For each pair and target object, we scrambled sketch identifiers across repetiti
 
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
-In addition to sketches drawn by different sketches growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
+In addition to sketches drawn by different sketchers growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
 
@@ -385,7 +386,20 @@ We found that the similarity of successive sketches \emph{increases} strongly ov
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
-% \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+
+\subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+
+The increasing similarity of successive sketches over time motivates an investigation into which part of a sketch stays consistent across successive repetitions. 
+Here, we use stroke lesions to provide a visualization of stroke importance of a sketch with respect to its successive sketch. 
+The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
+In other words, for each stroke, we measured how similar the sketch without the stroke is to its successor. 
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/fig_a.png}
+\caption{Stroke importance} \label{stroke}
+\end{figure}
+
+%should we still include the lesion-early lesion-late? 
 
 % \red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
 
