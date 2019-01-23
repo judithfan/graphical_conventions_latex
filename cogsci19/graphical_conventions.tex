@@ -91,7 +91,7 @@ From ancient etchings on cave walls to modern digital displays, visual communica
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u,Aubert:2014jy}, and which has since been adapted to a broad diversity of applications, ranging from photorealistic rendering from observation to schematic diagrams consisting entirely of symbols. 
 
 Even drawings of the same object can be highly variable \cite{quickdraw2017}.
-How does a medium spanning such a broad range of appearances reliably convey meaning? 
+How does a communication medium spanning such a broad range of appearances reliably convey meaning? 
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its perceptual properties \cite{FanCommon2018}. 
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages,gombrich1969art}.
 
@@ -147,12 +147,12 @@ Based on these clusters, we defined 2 categories of perceptually similar objects
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure}
-\begin{subfigure}{0.16\textwidth}
-\includegraphics[width=\linewidth]{figures/fig_a.png}
+\begin{subfigure}{0.25\textwidth}
+\includegraphics[width=\linewidth]{figures/stimuli.pdf}
 \caption{Stimuli} \label{fig:1a}
 \end{subfigure}
 
-\begin{subfigure}{0.30\textwidth}
+\begin{subfigure}{0.46\textwidth}
 \includegraphics[width=\linewidth]{figures/task.pdf}
 \caption{Sketcher / Viewer interface} \label{fig:1b}
 \end{subfigure}
@@ -250,7 +250,7 @@ These results show that there are benefits of repeatedly communicating about an 
 
 %This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game. 
 
-\section{Part II: What explains gains in communication efficiency?}
+\section{Part II: What explains gains in efficiency?}
 
 The visual communication experiment established that pairs of participants coordinate on object-specific ways of depicting objects more efficiently across repetitions.  
 This raises the question: to what extent do these gains in communication efficiency reflect the accumulation of interaction-specific shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and the inherent visual properties of the drawings? 
@@ -265,7 +265,8 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/recog_BIS_timeseries.pdf}
-\caption{Recognition performance in control conditions; ribbons are 95\% CIs} \label{recog_bis}
+\caption{Recognition performance in control conditions; ribbons are 95\% CIs} 
+\label{recog_bis}
 \end{figure}
 
 \subsubsection{Participants}
@@ -283,37 +284,42 @@ Just as the original viewers had been, they received an accuracy bonus for every
 Participants were randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
 Participants in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
 Participants in the shuffled group, on the other hand, were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared on the same trial number as they had appeared originally. 
+%I think this is same repetition number but not same trial number
 At the trial level, both groups thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately. 
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
 Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific shared knowledge, or from several different interactions, where such accumulation would be minimal.
 
 \subsection{Results}
 
-\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show comparable gains}
+\subsubsection{Third-party observers able to accumulate interaction-specific knowledge also show large gains}
 
 Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve substantially across repetitions. 
-However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about drawings object the viewer had selected and how quickly they were able to identify the target to modify their sketches on subsequent repetitions. 
+However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about which object the viewer had selected and how quickly they were able to select it, in order to modify their sketches on subsequent repetitions. 
 Instead, these participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
+As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these social feedback channels.
 
-As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these channels for social interaction. 
+We compared the communication and yoked groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had in the communication experiment.
+We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
 
+This analysis revealed a strong positive effect of repetition ($b = 0.231, ~t = 12.8,~p < 1x10^{-15}$; see Figure \ref{recog_bis}), and a weaker but reliable interaction with group membership ($b = -0.051, ~t = -2.178, ~p = 0.032$), showing that the yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of social feedback. 
 
-These findings suggest that 
-
+However, we also found that the yoked group was less accurate overall at identifying the target object (communication: 87.5\%, yoked: 0.688, $b = -0.156$)
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
-% Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
+% Formula: bis_relative ~ version * repetition + (1 + version * repetition |      orig_gameID)
 %    Data: d.recog %>% filter(version %in% c("communication", "yoked"))
+
 % Fixed effects:
-%                           Estimate Std. Error         df t value Pr(>|t|)    
-% (Intercept)                0.44820    0.07178  274.15995   6.244 1.62e-09 ***
-% versionyoked              -0.03155    0.07859 5456.46039  -0.401  0.68810    
-% repetition                 0.23067    0.01706  281.10825  13.524  < 2e-16 ***
-% versionyoked:repetition   -0.04999    0.01878 5457.35452  -2.661  0.00781 ** 
+%                         Estimate Std. Error       df t value Pr(>|t|)    
+% (Intercept)              0.44820    0.07742 91.32869   5.790 9.87e-08 ***
+% versionyoked            -0.03067    0.10700 78.98863  -0.287    0.775    
+% repetition               0.23067    0.01805 95.73466  12.777  < 2e-16 ***
+% versionyoked:repetition -0.05088    0.02336 90.13517  -2.178    0.032 *  
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-\subsubsection{Third-party observers viewing sketches from different interactions also improve, but to lesser degree}
+
+\subsubsection{Third-party observers viewing sketches from different interactions improve to lesser degree}
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | gameID)
@@ -360,7 +366,7 @@ First we considered an even simpler feature , we observed that the number of str
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
 \includegraphics[width=0.45\linewidth]{figures/across.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} 
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}}
 \label{within-across}
 \end{figure}
 
@@ -373,11 +379,11 @@ In a mixed-effects regression including linear and quadratic terms, we found a w
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
-\subsubsection{Sketches drift away from the initial round}
+\subsubsection{Sketches  away from the initial round}
 
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
-In addition to sketches drawn by different sketches growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
+In addition to sketches drawn by different sketchers growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
 
@@ -385,22 +391,49 @@ We found that the similarity of successive sketches \emph{increases} strongly ov
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
-% \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+
+\subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+
+The increasing similarity of successive sketches over time motivates an investigation into which part of a sketch stays consistent across successive repetitions. 
+Here, we use stroke lesions to provide a visualization of stroke importance of a sketch with respect to its successive sketch. 
+The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
+In other words, for each stroke, we measured how similar the sketch without the stroke is to its successor. 
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/fig_a.png}
+\caption{Stroke importance} \label{stroke}
+\end{figure}
+
+%should we still include the lesion-early lesion-late? 
 
 % \red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
 
 
 \subsection{Discussion}
 
-In this paper, we XXX.
-To investigate this, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time. 
-On each trial, both players were shown an array of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could identify the target as quickly as possible. 
-The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game. 
-Across repetitions, we find that pairs discover increasingly sparse yet effective ways of depicting them. 
-While we observe gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication. 
-Additional control experiments revealed that these gains could not be explained by task practice alone: viewers who cycled through drawings produced by different sketchers did not improve to the same degree as viewers who were paired with a single sketcher. 
-Furthermore, we found that drawings became increasingly consistent within an interaction, but that different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of viable graphical conventions. 
+% Summary paragraph
+In this paper, we investigated the joint contributions of visual information and social context in determining the meaning of drawings.
+We observed in an interactive Pictionary-style communication game that pairs discover increasingly sparse yet effective graphical representations as they repeatedly depict the same objects.
+Through a series of control experiments, we demonstrated that these simpler drawings were harder for independent viewers to recognize without sharing the history of interaction with the same sketcher.
+Furthermore, by analyzing the high-level visual features of drawings, we found that they became increasingly consistent within an interaction, but that different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of viable graphical conventions. 
 Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their perceptual properties alone.
+
+% Comparison to prior work ( Thus, the 
+While our results build on prior work in graphical convention formation \cite{garrod_foundations_2007,fay2010interactive}, we also highlight two key differences. 
+\begin{itemize}
+\item Specifically, our use of images as stimuli instead of verbal concepts ought to initially ground different pairs more strongly in the same visual features.
+\item xxx
+\end{itemize}
+
+\rdh{Address question of what people are actually doing}
+\begin{itemize}
+\item Open question about a model of how people are deciding what to reduce on each trial. several hypotheses: 
+\item according to one account, people might be have a primacy bias (e.g. put the most informative strokes first, and when they succeed, they keep those) 
+\item or a recency bias (e.g. when a particular set of strokes works, they keep the last strokes they put down). 
+\item Alternatively, they could just be dropping least informative 
+\item Important for future work to distinguish between these possibilities, possibly by using lesion analysis like above, or more fine-grained computational models of sketch generation.
+\end{itemize}
+
 
 %\vspace{-.30cm}
 \section{\bf Acknowledgments}
