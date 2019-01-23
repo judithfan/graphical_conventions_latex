@@ -126,6 +126,14 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 % In line with prior studies of repeated verbal communication \cite<e.g>{ClarkWilkesGibbs86_ReferringCollaborative} and visual communication about verbal stimuli \shortcite<e.g.>{garrod_foundations_2007}, we hypothesized that repeated visual reference to a visual object would lead to more efficient communication about that object.
 % Departing from prior studies, our experiment critically includes a control set of visual objects that are not repeatedly referenced, which allows us to measure the extent to which changes in efficiency are item-specific or attributable to task practice. 
 
+%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
+\begin{figure*}
+\includegraphics[width=\linewidth]{figures/task_stimuli.pdf}
+\caption{Task and stimuli. } 
+\label{task_stimuli}
+\end{figure*}
+
+
 %% methods
 \subsection{Methods: Visual Communication Experiment}
 
@@ -137,13 +145,6 @@ In this and subsequent behavioral experiments, participants provided informed co
 \subsubsection{Stimuli} 
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
-
-%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
-\begin{figure}
-\includegraphics[width=\linewidth]{figures/task_stimuli.pdf}
-\caption{Task and stimuli. } 
-\label{task_stimuli}
-\end{figure}
 
 In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects whose members were both geometrically complex and perceptually similar. 
 To accomplish this, we employed objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
@@ -302,7 +303,7 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 We compared the yoked and shuffled groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had previously. 
 We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction as fixed effects, and random intercepts and slopes for each viewer/recognition participant. 
 
-This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.801, ~p < $)
+This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.8, ~p < 1x10^{-15}$)
 
 % We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting generalized improvements as a consequence of extended interaction.
 % Critically, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Figure \ref{refgame_bis}). 
