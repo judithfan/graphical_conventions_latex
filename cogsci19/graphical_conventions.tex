@@ -290,16 +290,18 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 
 \subsection{Results}
 
-\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show comparable gains}
+\subsubsection{Third-party observers able to accumulate interaction-specific knowledge also show large gains}
 
 Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve substantially across repetitions. 
-However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about drawings object the viewer had selected and how quickly they were able to identify the target to modify their sketches on subsequent repetitions. 
+However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about which object the viewer had selected and how quickly they were able to select it, in order to modify their sketches on subsequent repetitions. 
 Instead, these participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
+As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these social feedback channels.
 
-As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these channels for social interaction. 
+We compared the communication and yoked groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had in the communication experiment.
+We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
 
+This analysis revealed a 
 
-These findings suggest that 
 
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
@@ -314,7 +316,7 @@ These findings suggest that
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-\subsubsection{Third-party observers viewing sketches from different interactions also improve, but to lesser degree}
+\subsubsection{Third-party observers viewing sketches from different interactions improve to lesser degree}
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | gameID)
@@ -361,7 +363,7 @@ First we considered an even simpler feature , we observed that the number of str
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
 \includegraphics[width=0.45\linewidth]{figures/across.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}} 
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}}
 \label{within-across}
 \end{figure}
 
