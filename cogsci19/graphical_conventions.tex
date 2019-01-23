@@ -370,15 +370,6 @@ First we considered an even simpler feature , we observed that the number of str
 \label{within-across}
 \end{figure}
 
-\subsubsection{Different sketchers draw the same object in increasingly different ways} 
-
-The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early sketches may be more strongly constrained by a shared target image, later sketches may be more \emph{variable} as pairs settle into multiple equilibria.
-In other words, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
-We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition. 
-In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
-We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
-For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
-
 \subsubsection{Sketches  away from the initial round}
 
 \subsubsection{Sketchers draw the same object increasingly consistently}
@@ -390,6 +381,15 @@ We examined this prediction by computing the pairwise similarity of sketches dra
 We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts for both sketcher and target. 
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
+
+\subsubsection{Different sketchers draw the same object in increasingly different ways} 
+
+The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early sketches may be more strongly constrained by a shared target image, later sketches may be more \emph{variable} as pairs settle into multiple equilibria.
+In other words, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
+We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition. 
+In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
+We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
+For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
 
 \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
@@ -418,22 +418,18 @@ Through a series of control experiments, we demonstrated that these simpler draw
 Furthermore, by analyzing the high-level visual features of drawings, we found that they became increasingly consistent within an interaction, but that different pairs discovered different solutions for efficient communication, revealing the existence of multiple equilibria in the space of viable graphical conventions. 
 Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their perceptual properties alone.
 
-% Comparison to prior work ( Thus, the 
-While our results build on prior work in graphical convention formation \cite{garrod_foundations_2007,fay2010interactive}, we also highlight two key differences. 
-\begin{itemize}
-\item Specifically, our use of images as stimuli instead of verbal concepts ought to initially ground different pairs more strongly in the same visual features.
-\item xxx
-\end{itemize}
+% highlighting generative innovations relative to previous work (i.e. we're not just doing reproducing the same thing but with better controls & analyses; we're exploring a different part of the space)
+While our results build on previous work in graphical convention formation \cite{garrod_foundations_2007,fay2010interactive}, there are two key innovations in our paradigm. 
+First, we used \emph{images} as the targets of reference instead of more verbal concepts like ``art gallery'' or ``Robert de Niro.''  
+We expected this choice to initially ground different pairs more strongly in the same visual features and reduce variance across pairs; that we still observed diverging representations across pairs is a stronger testament  to the role of social context.
+Furthermore, because both sketches and target objects share the same modality, future work should directly examine the similarity of sketches to the target images to measure the effect of iconicity.
+Second, we \dots
 
-\rdh{Address question of what people are actually doing}
-\begin{itemize}
-\item Open question about a model of how people are deciding what to reduce on each trial. several hypotheses: 
-\item according to one account, people might be have a primacy bias (e.g. put the most informative strokes first, and when they succeed, they keep those) 
-\item or a recency bias (e.g. when a particular set of strokes works, they keep the last strokes they put down). 
-\item Alternatively, they could just be dropping least informative 
-\item Important for future work to distinguish between these possibilities, possibly by using lesion analysis like above, or more fine-grained computational models of sketch generation.
-\end{itemize}
-
+Our work also leaves open several hypotheses about \emph{how} people are deciding which strokes to preserve or drop on each trial. 
+According to one account, sketchers may be guided a \emph{primacy} bias where they drop out later, detail-providing strokes to preserve their initial strokes.
+A second possibility is that they are guided by a \emph{recency} bias: when a particular sketch is successful, they keep the final strokes they put down and drop out earlier ones.
+Finally, the temporal structure of sketches may not matter and they could simply be dropping random strokes, or the least informative strokes. 
+An important task for future work is to distinguish between these possibilities using lesion analyses like those above, or more fine-grained computational models of sketch generation.
 
 %\vspace{-.30cm}
 \section{\bf Acknowledgments}
