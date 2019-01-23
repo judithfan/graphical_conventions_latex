@@ -306,8 +306,8 @@ We compared the yoked and shuffled groups by measuring changes in task performan
 We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction, as well as random intercepts and slopes for each viewer/recognition participant. 
 This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.8, ~p < 1x10^{-15}$), reflecting the general benefits of practice recognizing drawings and any inherent visual correspondences between between drawings and the target object. 
 Critically, we also found a large and reliable interaction between group and repetition number: yoked participants improved to a substantially greater degree than shuffled participants ($b = 0.0972, ~t = 4.89, ~p<1x10^{-5}$).
-In addition, the shuffled group was less accurate overall at identifying the target object (yoked: 74.9\%, shuffled: 68.8\%, $~t = 3.59, ~p = 0.0004$).
-Taken together, these results suggest that third-party observers who could remain a `fly on the wall' throughout an entire interaction were able to take advantage of this continuity to better understand which object each drawing represented, relative to third-party observers who cycled through discontinuous excerpts from several different interactions. 
+In addition, the yoked group was also more accurate overall at identifying the target object (yoked: 74.9\%, shuffled: 68.8\%, $~t = 3.59, ~p = 0.0004$).
+Taken together, these results suggest that third-party observers who could remain a `fly on the wall' throughout an entire interaction were able to take advantage of this continuity to quickly understand which object each drawing represented, relative to third-party observers who cycled through discontinuous excerpts from several different interactions. 
 
 %% ACCURACY LMER
 % Formula: accuracy ~ version + (1 | gameID)
@@ -330,14 +330,13 @@ Taken together, these results suggest that third-party observers who could remai
 
 \subsubsection{Viewer feedback also contributes to gains in performance}
 
-Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve substantially across repetitions. 
+Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve to a comparable degree across repetitions. 
 However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about which object the viewer had selected and how quickly they were able to select it, in order to modify their drawings on subsequent repetitions. 
-Instead, these participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
-As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these social feedback channels.
-We compared the communication and yoked groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had previously. 
-We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
-This analysis revealed a strong positive effect of repetition ($b = 0.231, ~t = 12.8,~p < 1x10^{-15}$; see Figure \ref{recog_bis}), and a weaker but reliable interaction with group membership ($b = -0.051, ~t = -2.178, ~p = 0.032$), showing that the yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of social feedback. 
-However, we also found that the yoked group was less accurate overall at identifying the target object than viewers in the communication experiment had been (communication: 87.5\%, yoked: 74.9\%, $t = 6.18, ~p < 1x10^{-8}$).
+Instead, yoked participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
+As such, comparing the yoked and communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance. 
+We again measured changes in task performance on repeated objects using the same efficiency metric as we had previously, and estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
+This analysis revealed a strong overall effect of repetition ($b = 0.231, ~t = 12.8,~p < 1x10^{-15}$; see Figure \ref{recog_bis}) and a weaker but reliable interaction with group membership ($b = -0.051, ~t = -2.178, ~p = 0.032$), showing that the yoked group yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of viewer feedback. 
+However, viewers in the communication experiment were substantially more accurate overall at identifying the target object than yoked participants (communication: 87.5\%, yoked: 74.9\%, $t = 6.18, ~p < 1x10^{-8}$), suggesting that these viewer feedback channels may help to boost performance in absolute terms. 
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
