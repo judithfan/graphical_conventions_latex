@@ -376,14 +376,17 @@ In a mixed-effects regression including linear and quadratic terms, we found a w
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
+\subsubsection{Sketches drift away from the initial round}
+
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
 In addition to sketches drawn by different sketches growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
-We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 4.2$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts and slopes for both sketcher and target. 
-As a baseline, we considered the null distribution of slopes produced by first scrambling sketches across pair for each repetition and target.
-The true effect was significantly greater than this null distribution, which 
+
+We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts for both sketcher and target. 
+As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
+The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
 % \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
 
