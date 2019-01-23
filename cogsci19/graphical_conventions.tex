@@ -129,7 +129,7 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 %% methods
 \subsection{Methods: Visual Communication Experiment}
 
-\subsubsection{Participants} A total of 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into 69 pairs, completed the experiment.
+\subsubsection{Participants} 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into 69 pairs, completed the experiment.
 They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
 In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
@@ -207,7 +207,7 @@ Before and after the \textit{repeated} phase, the sketcher drew all eight object
 
 In order to measure how well pairs communicated throughout each interaction, we employed a measure of communicative efficiency \cite<the \emph{i.e., balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account. 
 This efficiency score is computed by first z-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy. 
-It is thus highest when pairs are both fast \textit{and} accurate, and lowest when they make many errors and take a long time, \textit{relative} to their own performance on other trials. 
+It is thus highest when pairs are both fast and accurate, and lowest when they make many errors and take a long time, relative to their own performance on other trials. 
 
 % Formula: bis_score ~ condition + (1 + condition | gameID)
 % Fixed effects:
@@ -270,7 +270,7 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \subsubsection{Participants}
 
-XXX participants completed the experiment. Data from XX participants were excluded due to inconsistent responding on catch trials.  
+245 participants recruited via AMT completed the experiment. Data from 22 participants were excluded due to low accuracy on attention-check trials (3 or fewer correct out of 5).  
 
 \subsubsection{Task, Design, \& Procedure}
 
@@ -278,20 +278,25 @@ XXX participants completed the experiment. Data from XX participants were exclud
 %Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity. 
 %Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
 
-On each trial, recognition participants were presented with the same set of four objects and drawing viewers had in the communication game. 
-Just as the viewers had been, they received an accuracy bonus for every correct response, and speed bonus inversely proportional to their response time. 
-
+On each trial, recognition participants were presented with a drawing paired with the same set of four objects that viewers had seen in the communication game. 
+Just as the original viewers had been, they received an accuracy bonus for every correct response, and speed bonus inversely proportional to their response time. 
 Participants were randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
-Participants in the yoked group were matched with a pair from the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
+Participants in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
 Participants in the shuffled group, on the other hand, were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared on the same trial number as they had appeared originally. 
 At the trial level, both groups thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately. 
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
+Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific shared knowledge, or from several different interactions, where such accumulation would be minimal.
 
-\subsection{Result: yoked similar to reference game}
+\subsection{Results}
 
-The only difference was the inability to give feedback to the Sketcher.
+\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show comparable gains in recognition performance}
+
+We predicted that participants in the yoked group would e
+
+These findings suggest that 
+
+% The only difference was the inability to give feedback to the Sketcher.
 % Thus, if the Sketcher does not know which object the third-party viewer had guessed on each trial. 
-
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
@@ -305,6 +310,9 @@ The only difference was the inability to give feedback to the Sketcher.
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+
+
+\subsubsection{Third-party observers viewing sketches from different interactions }
 
 \subsection{Result: conventions are interaction-specific}
 
@@ -326,13 +334,17 @@ Next, we compared the yoked condition against the scrambled condition using a mi
 We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
 
 
-\section{Part III: How do visual features of sketches change across repetitions?}
+\section{Part III: How do visual features of sketches change over the course of an interaction?}
 
 These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
 But what is happening over time to the visual features of the sketches themselves? 
 In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
 
+
+% First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
+
 \subsection{Analysis methods}
+
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
 Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
@@ -362,20 +374,21 @@ In a mixed-effects regression including linear and quadratic terms, we found a w
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
+\subsubsection{Sketches drift away from the initial round}
+
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
 In addition to sketches drawn by different sketches growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
+
 We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts for both sketcher and target. 
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
-\subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
+% \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
 
-\red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
-
-% perhaps move this similarity explanation in the earlier subsubsection.
+% \red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
 
 
 \subsection{Discussion}
