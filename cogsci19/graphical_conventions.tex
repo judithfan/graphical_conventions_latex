@@ -265,7 +265,7 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \subsubsection{Participants}
 
-245 participants recruited via AMT completed the experiment. Data from 22 participants were excluded who did not meet our criterion for accurate and consistent responding on attention-check trials.
+245 participants recruited via AMT completed the experiment. Data from 22 participants were excluded who did not meet the criterion for accurate and consistent responding on attention-check trials.
 
 \subsubsection{Task, Design, \& Procedure}
 %How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction specificity? 
@@ -273,20 +273,21 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 %Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers. 
 
 On each trial, recognition participants were presented with a drawing paired with the same set of four objects that viewers had seen in the communication game, and guessed which object was the target. 
-Just as the original viewers had been, they received an accuracy bonus for every correct response, and speed bonus inversely proportional to their response time. 
+Just as original viewers had been, they received an accuracy bonus for every correct response, and speed bonus inversely proportional to their response time. 
 To ensure task engagement, we included five identical attention-check trials that appeared once every eight trials. 
-Each attention-check trial presented the same sketch and objects, which was produced in the highest-performing communication experiment and was identified based on initial piloting to be the most consistently and accurately recognized by naive participants. 
-Participants who did not respond correctly on at least 4 out of 5 of attention-check were excluded from subsequent analyses (N=22).
-Participants were randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
-Participants in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
-Participants in the shuffled group, on the other hand, were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared within the same repetition cycle as they had appeared originally. 
+Each attention-check trial presented the same set of objects and drawing, identified based on initial piloting to be the most consistently and accurately recognized by naive participants. 
+Participants who did not respond correctly on at least 4 out of 5 of these trials were excluded from subsequent analyses (N=22).
+
+Each participant was randomly assigned to two groups: a \textit{yoked} group and a \textit{shuffled} group. 
+Those in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had. 
+Participants in the shuffled group were matched with 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared within the same repetition cycle as they had appeared originally. 
 At the trial level, both groups thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately. 
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
-Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific shared knowledge, or from several different interactions, where such accumulation would be minimal.
+Thus any differences between the yoked and shuffled groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal.
 
 \subsection{Results}
 
-\subsubsection{Third-party observers able to accumulate interaction-specific knowledge show larger performance gains}
+\subsubsection{Accumulation of interaction-specific experience enhances recognition by third-party observers}
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + repetition | gameID)
@@ -302,30 +303,43 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 We compared the yoked and shuffled groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had previously. 
-We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction as fixed effects, and random intercepts and slopes for each viewer/recognition participant. 
+We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction, as well as random intercepts and slopes for each viewer/recognition participant. 
+This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.8, ~p < 1x10^{-15}$), reflecting the general benefits of practice recognizing drawings and any inherent visual correspondences between between drawings and the target object. 
+Critically, we also found a large and reliable interaction between group and repetition number: yoked participants improved to a substantially greater degree than shuffled participants ($b = 0.0972, ~t = 4.89, ~p<1x10^{-5}$).
+In addition, the shuffled group was less accurate overall at identifying the target object (yoked: 74.9\%, shuffled: 68.8\%, $~t = 3.59, ~p = 0.0004$).
+Taken together, these results suggest that third-party observers who could remain a `fly on the wall' throughout an entire interaction were able to take advantage of this continuity to better understand which object each drawing represented, relative to third-party observers who cycled through discontinuous excerpts from several different interactions. 
 
-This analysis revealed that recognition performance increased overall as a function of repetition number ($b = 0.184, ~t = 12.8, ~p < 1x10^{-15}$)
+%% ACCURACY LMER
+% Formula: accuracy ~ version + (1 | gameID)
+% Fixed effects:
+% Fixed effects:
+%                  Estimate Std. Error        df t value Pr(>|t|)    
+% (Intercept)       0.74912    0.01228 221.00001  60.982  < 2e-16 ***
+% versionshuffled  -0.06081    0.01696 221.00001  -3.586 0.000413 ***
+% ---
+
+%% ACCURACY MEANS
+% communication	0.8745336			
+% yoked	0.7491156			
+% shuffled	0.6883013
 
 % We found that communicative efficiency increased overall between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting generalized improvements as a consequence of extended interaction.
 % Critically, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Figure \ref{refgame_bis}). 
 
-We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same sketches in their original context. 
-
+% We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same drawings in their original context. 
 
 \subsubsection{Viewer feedback also contributes to gains in performance}
 
 Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve substantially across repetitions. 
-However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about which object the viewer had selected and how quickly they were able to select it, in order to modify their sketches on subsequent repetitions. 
+However, unlike viewers in the communication game, these participants were unable to provide feedback to the sketcher, who could have used information about which object the viewer had selected and how quickly they were able to select it, in order to modify their drawings on subsequent repetitions. 
 Instead, these participants made their decision based only on the final drawing, and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
 As such, this control experiment provided an estimate of how much of the performance gains observed in the communication experiment could be attributable to the availability of these social feedback channels.
-
 We compared the communication and yoked groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had previously. 
 We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
-
 This analysis revealed a strong positive effect of repetition ($b = 0.231, ~t = 12.8,~p < 1x10^{-15}$; see Figure \ref{recog_bis}), and a weaker but reliable interaction with group membership ($b = -0.051, ~t = -2.178, ~p = 0.032$), showing that the yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of social feedback. 
+However, we also found that the yoked group was less accurate overall at identifying the target object than viewers in the communication experiment had been (communication: 87.5\%, yoked: 74.9\%, $t = 6.18, ~p < 1x10^{-8}$).
 
-However, we also found that the yoked group was less accurate overall at identifying the target object (communication: 87.5\%, yoked: 0.688, $b = -0.156$)
-
+%%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: bis_relative ~ version * repetition + (1 + version * repetition |      orig_gameID)
 %    Data: d.recog %>% filter(version %in% c("communication", "yoked"))
@@ -339,10 +353,25 @@ However, we also found that the yoked group was less accurate overall at identif
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
+%% ACCURACY MEANS
+% communication	0.8745336			
+% yoked	0.7491156			
+% shuffled	0.6883013
 
 
+%%% ACCURACY LMER
+% Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+% Formula: accuracy ~ version + (1 | gameID)
+%    Data: d.acc
 
-\section{Part III: How do visual features of sketches change over the course of an interaction?}
+% Fixed effects:
+%               Estimate Std. Error        df t value Pr(>|t|)    
+% (Intercept)    0.87453    0.01588 171.00000  55.086  < 2e-16 ***
+% versionyoked  -0.12542    0.02028 171.00000  -6.184 4.46e-09 ***
+% ---
+
+
+\section{Part III: How do visual features of drawings change over the course of an interaction?}
 
 These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
 But what is happening over time to the visual features of the sketches themselves? 
