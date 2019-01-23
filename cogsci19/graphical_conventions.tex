@@ -265,7 +265,8 @@ Their task was thus the same as the viewer's in the communication experiment, ex
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/recog_BIS_timeseries.pdf}
-\caption{Recognition performance in control conditions; ribbons are 95\% CIs} \label{recog_bis}
+\caption{Recognition performance in control conditions; ribbons are 95\% CIs} 
+\label{recog_bis}
 \end{figure}
 
 \subsubsection{Participants}
@@ -300,21 +301,23 @@ As such, this control experiment provided an estimate of how much of the perform
 We compared the communication and yoked groups by measuring changes in task performance on repeated objects using the same efficiency metric as we had in the communication experiment.
 We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. shuffled), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence. 
 
-This analysis revealed a 
+This analysis revealed a strong positive effect of repetition ($b = 0.231, ~t = 12.8,~p < 1x10^{-15}$; see Figure \ref{recog_bis}), and a weaker but reliable interaction with group membership ($b = -0.051, ~t = -2.178, ~p = 0.032$), showing that the yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of social feedback. 
 
-
+However, we also found that the yoked group was less accurate overall at identifying the target object (communication: 87.5\%, yoked: 0.688, $b = -0.156$)
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
-% Formula: bis_relative ~ version * repetition + (1 + repetition | orig_gameID)
+% Formula: bis_relative ~ version * repetition + (1 + version * repetition |      orig_gameID)
 %    Data: d.recog %>% filter(version %in% c("communication", "yoked"))
+
 % Fixed effects:
-%                           Estimate Std. Error         df t value Pr(>|t|)    
-% (Intercept)                0.44820    0.07178  274.15995   6.244 1.62e-09 ***
-% versionyoked              -0.03155    0.07859 5456.46039  -0.401  0.68810    
-% repetition                 0.23067    0.01706  281.10825  13.524  < 2e-16 ***
-% versionyoked:repetition   -0.04999    0.01878 5457.35452  -2.661  0.00781 ** 
+%                         Estimate Std. Error       df t value Pr(>|t|)    
+% (Intercept)              0.44820    0.07742 91.32869   5.790 9.87e-08 ***
+% versionyoked            -0.03067    0.10700 78.98863  -0.287    0.775    
+% repetition               0.23067    0.01805 95.73466  12.777  < 2e-16 ***
+% versionyoked:repetition -0.05088    0.02336 90.13517  -2.178    0.032 *  
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
 
 \subsubsection{Third-party observers viewing sketches from different interactions improve to lesser degree}
 
