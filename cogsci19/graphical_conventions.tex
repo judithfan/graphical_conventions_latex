@@ -412,30 +412,26 @@ We observed that when strokes were preserved in the later sketch, the `correspon
 
 Given the observed reduction in strokes, we predicted that the graphical representations used \emph{within} each would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
 We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair. 
-We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62, t = -5.59$
+We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; see Fig. \ref{within-across}.
 Since the entire distribution of sketches may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling sketches across \emph{pairs} for each repetition and target.
-The true effect $(t = -5.59$) was significantly greater than this null distribution $95\% CI = [-3.45 -1.88],  p < .001$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games. \rdh{TODO: update these vals}
+The true effect $(t = -5.59$) was significantly greater than this null distribution $(95\%~CI= [-3.45 -1.88], ~p < .001)$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games. \rdh{TODO: update these vals}
 
 At the same time as we noticed sketches growing steadily different from the initial sketch, this displacement also seemed to \emph{slow down} considerably.
 This observation raised the hypothesis that sketches would become increasingly \emph{internally consistent} within games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may eventually settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
-We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target. 
+We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53,~t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target. 
 As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across \emph{pairs} for each repetition and target in order to disrupt the consistency within games.
-The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
+The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45, -1.88]$.  \rdh{TODO: update these vals}
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways} 
 
 The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early sketches may be more strongly constrained by a shared target image, later sketches may be more \emph{variable} as pairs settle into multiple equilibria.
 In other words, the \emph{visual features} of different pairs may diverge from one another over the course of the game.
 We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition. 
-In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
+In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, ~t = -2.5$; see Fig. \ref{within-across})  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
-For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
-
-\begin{figure}
-\caption{Stroke importance} \label{stroke}
-\end{figure}
+For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
 
 %should we still include the lesion-early lesion-late? 
 
