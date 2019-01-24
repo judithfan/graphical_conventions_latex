@@ -371,6 +371,15 @@ However, viewers in the communication experiment were substantially more accurat
 
 \section{Part III: How do visual features of drawings change over the course of an interaction?}
 
+\begin{figure*}
+\includegraphics[width=0.2\linewidth]{figures/drift.pdf}
+\includegraphics[width=0.2\linewidth]{figures/within.pdf}
+\includegraphics[width=0.2\linewidth]{figures/across.pdf}
+\includegraphics[scale = .5]{figures/fig_a.png}
+\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline}
+\label{within-across}
+\end{figure*}
+
 These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
 But what is happening over time to the visual features of the sketches themselves? 
 In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
@@ -399,20 +408,14 @@ As a qualitative first step toward answering this question, we conducted a strok
 Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}).
 We observed that when strokes were preserved in the later sketch, the `corresponding' strokes on the earlier were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
 
-\begin{figure}
-\includegraphics[width=0.45\linewidth]{figures/within.pdf}
-\includegraphics[width=0.45\linewidth]{figures/across.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline \rdh{TODO: include insert on between-pair fig showing distribution of slopes t-scores for lmer on permuted}}
-\label{within-across}
-\end{figure}
-
 \subsubsection{Sketches become more dissimilar from initial round}
 
 $b = -0.62, t = -5.59$
 
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
-In addition to sketches drawn by different sketchers growing increasingly dissimilar, we predicted that sketches would become increasingly internally consistent \emph{within} games. 
+While we noticed that sketches grew steadily different from the initial sketch, we noticed that this displacement \emph{slowed down} considerably.
+This observation raised the hypothesis that sketches would become increasingly \emph{internally consistent} within games. 
 In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
 
@@ -430,7 +433,6 @@ We conducted a permutation test to non-parametrically compare this observed decr
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
 
 \begin{figure}
-\includegraphics[width=\linewidth]{figures/fig_a.png}
 \caption{Stroke importance} \label{stroke}
 \end{figure}
 
