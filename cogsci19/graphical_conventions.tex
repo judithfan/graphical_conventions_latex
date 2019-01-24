@@ -38,8 +38,14 @@
 
 \definecolor{Red}{RGB}{178,34,34}
 \definecolor{Green}{RGB}{10,200,100}
+\definecolor{Blue}{RGB}{10,50,150}
+
+\pretolerance=10000
+\tolerance=2000 
+\emergencystretch=10pt
 
 \newcommand{\red}[1]{\textcolor{Red}{#1}}
+\newcommand{\jefan}[1]{\textcolor{Blue}{jefan: #1}}
 \newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
 \newcommand{\denote}[1]{\mbox{ $[\![ #1 ]\!]$}}
 \newcommand{\subsubsubsection}[1]{{\em #1}}
@@ -85,6 +91,8 @@ sketch understanding; alignment; drawing; iconicity; visual abstraction
 
 \end{abstract}
 
+
+
 \section{Introduction}
 
 From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization), and forms the foundation for the cultural transmission of knowledge and higher-level reasoning. 
@@ -94,6 +102,12 @@ Even drawings of the same object can be highly variable \cite{quickdraw2017}.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning? 
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its perceptual properties \cite{FanCommon2018}. 
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages,gombrich1969art}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{figures/sketch_gallery.pdf}
+\caption{Repeated visual communication about the same object. \rdh{should add more rows}}
+\label{sketch_gallery}
+\end{figure}
 
 How can these two perspectives be reconciled? 
 Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{fan2018modeling,abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators. 
@@ -107,6 +121,13 @@ Our approach was inspired by a large literature that has documented the benefits
 %% jefan: I want another sentence here, if possible, stating the limitations of this prior work that sets up the contributions of the current paper better.
 
 There are three aspects of the current work that advances our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history, while equating other task variables; and \emph{third}, we employ recent advances in computational vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions. 
+
+%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
+\begin{figure*}
+\includegraphics[width=\linewidth]{figures/task_stimuli.pdf}
+\caption{(A) Stimuli were two categories containing eight objects each, identified by applying clustering to visual features of instances in the Shapenet chair collection. (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of these categories. (C) Repeated objects were drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.} 
+\label{task_stimuli}
+\end{figure*}
 
 \section{Part I: How does repeated reference support successful visual communication?}
 
@@ -126,12 +147,6 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 % In line with prior studies of repeated verbal communication \cite<e.g>{ClarkWilkesGibbs86_ReferringCollaborative} and visual communication about verbal stimuli \shortcite<e.g.>{garrod_foundations_2007}, we hypothesized that repeated visual reference to a visual object would lead to more efficient communication about that object.
 % Departing from prior studies, our experiment critically includes a control set of visual objects that are not repeatedly referenced, which allows us to measure the extent to which changes in efficiency are item-specific or attributable to task practice. 
 
-%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
-\begin{figure*}
-\includegraphics[width=\linewidth]{figures/task_stimuli.pdf}
-\caption{Task and stimuli. } 
-\label{task_stimuli}
-\end{figure*}
 
 %% methods
 \subsection{Methods: Visual Communication Experiment}
@@ -372,10 +387,7 @@ However, viewers in the communication experiment were substantially more accurat
 \section{Part III: How do visual features of drawings change over the course of an interaction?}
 
 \begin{figure*}
-\includegraphics[width=0.2\linewidth]{figures/drift.pdf}
-\includegraphics[width=0.2\linewidth]{figures/within.pdf}
-\includegraphics[width=0.2\linewidth]{figures/across.pdf}
-\includegraphics[scale = .5]{figures/fig_a.png}
+\includegraphics[width=0.98\linewidth]{figures/drawing_changes.pdf}
 \caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline}
 \label{within-across}
 \end{figure*}
@@ -408,21 +420,20 @@ As a qualitative first step toward answering this question, we conducted a strok
 Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}).
 We observed that when strokes were preserved in the later sketch, the `corresponding' strokes on the earlier were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
 
-\subsubsection{Sketches become more dissimilar from initial round and more consistent}
+\subsubsection{Sketches become both more dissimilar from initial round and more internally consistent}
 
 Given the observed reduction in strokes, we predicted that the graphical representations used \emph{within} each would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
 We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair. 
 We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; see Fig. \ref{within-across}.
 Since the entire distribution of sketches may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling sketches across \emph{pairs} for each repetition and target.
-The true effect $(t = -5.59$) was significantly greater than this null distribution $(95\%~CI= [-3.45 -1.88], ~p < .001)$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games. \rdh{TODO: update these vals}
+The true effect $(t = -5.59$) was significantly greater than this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games. 
 
 At the same time as we noticed sketches growing steadily different from the initial sketch, this displacement also seemed to \emph{slow down} considerably.
-This observation raised the hypothesis that sketches would become increasingly \emph{internally consistent} within games. 
-In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may eventually settle into stable conventions.
-We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
+In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may eventually settle into  increasingly \emph{internally consistent} or stable conventions.
+We examined this prediction by computing the pairwise similarity of sketches drawn on \emph{successive rounds} of the same target object by the same sketcher. 
 We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53,~t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target. 
-As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across \emph{pairs} for each repetition and target in order to disrupt the consistency within games.
-The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45, -1.88]$.  \rdh{TODO: update these vals}
+Again, as a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pairs in order to disrupt the consistency within games.
+The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-3.21, -0.60]$. 
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways} 
 
@@ -433,10 +444,9 @@ In a mixed-effects regression including linear and quadratic terms, we found a w
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
 
-%should we still include the lesion-early lesion-late? 
+% should we still include the lesion-early lesion-late? 
 
 % \red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
-
 
 \subsection{Discussion}
 
@@ -465,9 +475,9 @@ An important task for future work is to distinguish between these possibilities 
 \rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
 
 %\vspace{-.30cm}
-\section{\bf Acknowledgments}
-\small
-RXDH was supported by the Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747). NDG was supported by ONR grant N000141310341 and a Sloan Foundation fellowship.
+%\section{\bf Acknowledgments}
+%\small
+%RXDH was supported by the Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747). NDG was supported by ONR grant N000141310341 and a Sloan Foundation fellowship.
 %\vspace{-.20cm}
 \bibliographystyle{apacite}
 
