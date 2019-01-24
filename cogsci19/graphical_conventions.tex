@@ -381,7 +381,6 @@ In this final section, we conduct finer-grained analyses of the dynamics of grap
 
 \subsection{Analysis methods}
 
-
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
 Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
 
@@ -390,15 +389,16 @@ In this space, we compute the similarity between any two sketches as the \emph{c
 
 \subsection{Results}
 
-\subsubsection{Sketches simplify across repetitions}
+\subsubsection{Sketches use fewer strokes across repetitions}
 
-First we considered an even simpler feature , we observed that the number of strokes used in each sketch decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p < .001$). 
+A straightforward explanation for the increases in efficiency we observed in Part I is that sketchers are able to achieve the same level of communicative accuracy using fewer strokes used.
+To test the hypothesis that later sketches were systematically sparser than earlier ones, we conducted a mixed-effects regression with random intercepts for target and sketcher.
+We found that sketches got significantly simpler over repetitions (XXX; $p < .001$). 
 
-The decrease in the number  over time motivates an investigation for analyzing which part of a sketch for a particular target stays consistent across successive repetitions. 
-Here, stroke lesions are used to provide a visualization of stroke importance of a sketch with respect to its successive sketch. 
-We measure the importance of a stroke by computing the similarity between a sketch with the stroke 
-The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
-In other words, for each stroke, we measured how similar the sketch without the stroke is to its successor. 
+This simplifications raises a finer-grained question about the extent to which strokes are preserved or drop out across successive repetitions.
+As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the importance of each stroke in determining similarity to the next round's sketch.
+Specifically, we measured the importance of each stroke by re-rendering the sketch without that stroke and computing the CNN-based similarity (see Fig. \ref{within-across}).
+We observed that %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
 
 \begin{figure}
 \includegraphics[width=0.45\linewidth]{figures/within.pdf}
@@ -407,7 +407,9 @@ In other words, for each stroke, we measured how similar the sketch without the 
 \label{within-across}
 \end{figure}
 
-\subsubsection{Sketches  away from the initial round}
+\subsubsection{Sketches become more dissimilar from initial round}
+
+$b = -0.62, t = -5.59$
 
 \subsubsection{Sketchers draw the same object increasingly consistently}
 
@@ -427,12 +429,6 @@ We tested this prediction by computing the mean pairwise similarity of sketches 
 In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, t = -2.5$)  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely, $p < 0.001$.
-
-
-% \subsubsection{Sketchers prioritize strokes that enhance consistency between successive sketches} 
-
-
-% raises the possibility that 
 
 \begin{figure}
 \includegraphics[width=\linewidth]{figures/fig_a.png}
