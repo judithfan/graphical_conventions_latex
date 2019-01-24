@@ -393,7 +393,7 @@ To analyze how the content of the sketches change over time, we extracted the hi
 Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
 
 Sketch features at this layer have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018} and have been successful more broadly in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
-In this space, we compute the similarity between any two sketches as the \emph{correlation} between their feature vectors.
+In this space, we compute the similarity between any two sketches as the Pearson correlation between their feature vectors.
 
 \subsection{Results}
 
@@ -408,19 +408,20 @@ As a qualitative first step toward answering this question, we conducted a strok
 Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}).
 We observed that when strokes were preserved in the later sketch, the `corresponding' strokes on the earlier were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch. 
 
-\subsubsection{Sketches become more dissimilar from initial round}
+\subsubsection{Sketches become more dissimilar from initial round and more consistent}
 
-$b = -0.62, t = -5.59$
+Given the observed reduction in strokes, we predicted that the graphical representations used \emph{within} each would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
+We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair. 
+We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62, t = -5.59$
+Since the entire distribution of sketches may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling sketches across \emph{pairs} for each repetition and target.
+The true effect $(t = -5.59$) was significantly greater than this null distribution $95\% CI = [-3.45 -1.88],  p < .001$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games. \rdh{TODO: update these vals}
 
-\subsubsection{Sketchers draw the same object increasingly consistently}
-
-While we noticed that sketches grew steadily different from the initial sketch, we noticed that this displacement \emph{slowed down} considerably.
+At the same time as we noticed sketches growing steadily different from the initial sketch, this displacement also seemed to \emph{slow down} considerably.
 This observation raised the hypothesis that sketches would become increasingly \emph{internally consistent} within games. 
-In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may then settle into stable conventions.
+In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may eventually settle into stable conventions.
 We examined this prediction by computing the pairwise similarity of sketches drawn on successive rounds of the same target object by the same sketcher. 
-
-We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression including linear and quadratic terms as well as random intercepts for both sketcher and target. 
-As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pair for each repetition and target.
+We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53, t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target. 
+As a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across \emph{pairs} for each repetition and target in order to disrupt the consistency within games.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-2.45 -1.88]$.  \rdh{TODO: update these vals}
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways} 
