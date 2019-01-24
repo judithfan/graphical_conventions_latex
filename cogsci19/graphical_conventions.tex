@@ -95,12 +95,13 @@ sketch understanding; alignment; drawing; iconicity; visual abstraction
 
 \section{Introduction}
 
-From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization), and forms the foundation for the cultural transmission of knowledge and higher-level reasoning. 
-Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u,Aubert:2014jy}, and which has since been adapted to a broad diversity of applications, ranging from photorealistic rendering from observation to schematic diagrams consisting entirely of symbols. 
+From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization) and forms a durable foundation for the cultural transmission of knowledge and higher-level reasoning. 
+Perhaps the most basic and versatile technique supporting visual communication is drawing.
+The earliest examples of drawings date to at least 40,000-60,000 years ago \cite{hoffmann2018u,Aubert:2014jy}, and it has since been adapted to a broad diversity of applications, ranging between photorealistic rendering from observation to schematic diagrams consisting entirely of symbols. 
 
-Even drawings of the same object can be highly variable \cite{quickdraw2017}.
+Even drawings of the same object can be highly variable \shortcite{quickdraw2017}.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning? 
-On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its perceptual properties \cite{FanCommon2018}. 
+On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}. 
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages,gombrich1969art}.
 
 \begin{figure}
@@ -113,8 +114,8 @@ How can these two perspectives be reconciled?
 Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{fan2018modeling,abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators. 
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting a physical object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge. 
 
-To investigate this, we used an online drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time. 
-Our approach was inspired by a large literature that has documented the benefits of extended interaction for facilitating communication in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,fay2010interactive}.
+To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig. \ref{sketch_gallery}). 
+Our approach was inspired by a large literature that has documented the dynamics of communication across extended interaction in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,fay2010interactive}.
 
 % extra: Galantucci:2005uh,healey2007graphical,theisen2010systematicity 
 
@@ -132,13 +133,12 @@ There are three aspects of the current work that advances our prior understandin
 \section{Part I: How does repeated reference support successful visual communication?}
 
 %% intro to this section
-% \rdh{eventually need to compress these methods quite a bit (participants can be 1 sentence, much less detail about stim selection and procedure, etc.)} 
-
-Our first goal was to understand how repeated visual communication about an object influences how they well  people communicate about that object.  
+Our first goal was to understand how people learn to communicate about visual objects across repeated visual communication. 
 To accomplish this, we developed a drawing-based reference game for two players. 
-On each trial, both players were shown a set of four objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible. 
+On each trial, both players were shown a set of four objects, one of which was privately highlighted as the target to the sketcher. 
+The sketcher's goal was to draw the target so that the viewer could select it from the context as quickly as possible. 
 The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game.
-We hypothesized that repeated visual reference to a visual object would lead to more efficient communication about that object, relative to control objects. 
+We hypothesized that learning was to some extent \emph{object-specific}: that across repeated visual reference to a particular object, participants would learn to refer to that object more effectively relative to non-repeated control objects. 
 
 % gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication.
 
@@ -149,30 +149,30 @@ We hypothesized that repeated visual reference to a visual object would lead to 
 
 
 %% methods
-\subsection{Methods: Visual Communication Experiment}
+\subsection{Methods: Visual communication experiment}
 
-\subsubsection{Participants} 138 unique participants, who were recruited via Amazon Mechanical Turk (AMT) and grouped into 69 pairs, completed the experiment.
-They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
+\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk and automatically paired them into 69 pairs.
+%They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
-In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at \url{https://github.com/cogtoolslab/graphical_conventions}.}
+In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}
 
 \subsubsection{Stimuli} 
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-In order to make the visual communication task sufficiently challenging, we sought to construct sets of objects whose members were both geometrically complex and perceptually similar. 
-To accomplish this, we employed objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects belonging to 55 different object classes.
+In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and perceptually similar. 
+To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
-To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these 3096 instances using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
-We then applied dimensionality reduction (i.e., PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
-Based on these clusters, we defined 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}). 
+To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
+We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
+Based on these clusters, we selected 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}A). 
 
 \subsubsection{Task} 
 
 %% Trial-level event structure
 % Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}. 
 % The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch. 
-On each trial, both participants were shown the same set of four objects; however, the positions of these objects were randomized for each participant. 
+On each trial, both participants were shown the same set of four objects in randomized locations.
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 %% Trial-level objective of sketcher and viewer
 Sketchers drew using black ink on digital canvas (pen width = 5 pixels; 300 $\times$ 300 pixels) embedded in a web browser window. 
@@ -399,7 +399,7 @@ In this final section, we conduct finer-grained analyses of the dynamics of grap
 
 % First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
 
-\subsection{Analysis methods}
+\subsection{Methods: quantifying visual similarity}
 
 To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
 Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
