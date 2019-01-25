@@ -417,10 +417,10 @@ A straightforward explanation for the increases in efficiency we observed in Par
 To test the hypothesis that later sketches were systematically sparser than earlier ones, we conducted a mixed-effects regression with random intercepts for target and sketcher.
 We found that sketches got significantly simpler over repetitions (XXX; $p < .001$).
 
-This simplifications raises a finer-grained question about the extent to which strokes are preserved or drop out across successive repetitions.
-As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining similarity to the next round's sketch.
-Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}).
-We observed that when strokes were preserved in the later sketch, the `corresponding' strokes on the earlier were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch.
+This simplification raises a finer-grained question about the extent to which strokes are preserved or dropped out across successive repetitions.
+As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining its similarity to the next repetition's sketch.
+Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}D).
+We observed that in the earlier sketch, strokes that seemed to refer to similar object parts as the remaining strokes in the later sketch were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch.
 
 \subsubsection{Sketches become both more dissimilar from initial round and more internally consistent}
 
