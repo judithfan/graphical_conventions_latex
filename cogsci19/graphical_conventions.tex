@@ -136,8 +136,8 @@ There are three aspects of the current work that advances our prior understandin
 Our first goal was to understand how people learn to communicate about visual objects across repeated visual communication. 
 To accomplish this, we developed a drawing-based reference game for two players. 
 On each trial, both players were shown several images of objects, one of which was privately designated as the `target' to the sketcher. 
-The sketcher's goal was to draw the target so that the viewer could select it from the context as quickly as possible. 
-We hypothesized that learning would be to some extent \emph{object-specific}: that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively relative to non-repeated control objects. 
+The sketcher's goal was to draw the target so that the viewer could select it from the context as quickly and accurately as possible. 
+We hypothesized that learning would be \emph{object-specific}: that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively relative to non-repeated control objects. 
 
 % gains in communication efficiency for all objects, they were greater for the repeated objects, suggesting both task-level and object-level benefits of repeated communication.
 
@@ -150,10 +150,10 @@ We hypothesized that learning would be to some extent \emph{object-specific}: th
 %% methods
 \subsection{Methods: Visual communication experiment}
 
-\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk and automatically paired them into 69 pairs.
+\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk and automatically matched them into 69 pairs.
 %They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
-In this and subsequent behavioral experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}
+In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}
 
 \subsubsection{Stimuli}
 %% provide justification for why we're using sets of similar objects
@@ -164,7 +164,7 @@ To accomplish this, we sampled objects from the ShapeNet database \cite{chang201
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
 To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
 Each of these 4096-dimensional feature vectors reflected VGG-19 activations to each object rendering in the second fully-connected layer (i.e., \texttt{fc6}).
-We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
+We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Based on these clusters, we selected 2 categories of visually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}A). 
 
 \subsubsection{Task Procedure} 
@@ -175,7 +175,7 @@ Based on these clusters, we selected 2 categories of visually similar objects co
 On each trial, both participants were shown the same set of four objects in randomized locations.
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 %% Trial-level objective of sketcher and viewer
-Sketchers drew using their mouse cursor in black ink on a digital canvas (300 $\times$ 300 pixels; pen width = 5 pixels) embedded in a web browser window. 
+Sketchers drew using their mouse cursor in black ink on a digital canvas (300 $\times$ 300 pixels; pen width = 5 pixels) embedded in their web browser. 
 Each stroke was transmitted to the viewer's screen in real-time and sketchers were not able to delete previous strokes.
 The viewer was allowed guess the identity of the drawn object by clicking one of the four objects as soon as they were confident, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target. 
 Finally, participants were incentivized to perform both quickly and accurately. 
@@ -189,16 +189,15 @@ If the viewer responded under this time limit, participants also received a spee
 
 \subsubsection{Design} 
 
-The communication task consisted of three phases. 
+For each game, we randomly sampled two sets of four objects: one was the \emph{repeated} set and the other was the \emph{control} set (see Fig. \ref{task_stimuli}B).
+In half of the pairs (N= pairs), the repeated set contained four randomly sampled objects from one category and the control set contained the remaining four objects from the same category. 
+% These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects. 
+In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
+The communication task consisted of three phases (Fig. \ref{task_stimuli}C). 
 During the \textit{repeated} phase, the sketcher drew the four repeated objects six times each, in an interleaved order.
 Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles. 
 Before and after the \textit{repeated} phase, the sketcher drew all eight objects one time each, again in randomly interleaved order. 
 
-We manipulated Each pair of participants was randomly assigned two sets of four objects: one set was was assigned to the repeated condition; the other to the control condition.
-To explore how specific the effects of repeated communication were to the repeated objects, we varied the visual similarity between the two sets across pairs of participants. 
-In half of the pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained the remaining four objects from the same category. 
-% These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects. 
-In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
 % These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
 \subsection{Results}
