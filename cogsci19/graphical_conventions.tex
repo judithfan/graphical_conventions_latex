@@ -380,15 +380,15 @@ However, viewers in the communication experiment were substantially more accurat
 
 \begin{figure*}
 \includegraphics[width=0.98\linewidth]{figures/drawing_changes.pdf}
-\caption{drawings become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline}
+\caption{drawings become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline. \jefan{we should include a num strokes x repetition plot here well.}}
 \label{within-across}
 \end{figure*}
 
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
-An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant to include in a drawing to support rapid identification of the target object. 
+An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant and sufficient to include in a drawing to support rapid identification of the target object. 
 Here we explore this possibility by examining how the drawings themselves changed throughout an interaction.
 
-Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
+Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
 
 % These control experiments establish that shared history with a particular sketcher is critical for the drawings to remain meaningful late in the game. 
 % But what is happening over time to the visual features of the drawings themselves? 
@@ -398,13 +398,12 @@ Concretely, we investigated four aspects of how drawings may have changed that w
 
 %% To analyze how the content of the sketches change over time, we extracted the high-level visual features of the drawings using a pre-trained convolutional neural network. 
 %% Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
-% =======
-\subsection{Measuring visual similarity between drawings}
-% >>>>>>> 1010c89d6b7eb239567468304547608d397da0c8
 
-Investigation of the visual similarity between drawings relies upon having a principled approach to encoding their abstract visual properties.
-Here we capitalize on recent work validating the use of deep convolutional neural network models, pre-trained on challenging visual tasks, to encode high-level perceptual content in drawings \cite{FanCommon2018}.
-As we had when selecting object stimuli from Shapenet, we again used VGG-19 to extract 4096-dimensional feature vector representations of drawings of every object, in every repetition, from every interaction. 
+\subsection{Measuring visual similarity between drawings}
+
+Measuring visual similarity between drawings relies upon having a principled approach to encoding their high-level visual properties.
+Here we capitalize on recent work validating the use of deep convolutional neural network models, pre-trained on challenging visual tasks, to encode such perceptual content in drawings \cite{FanCommon2018}.
+As we had when identifying clusters of similar object stimuli, we again used VGG-19 to extract 4096-dimensional feature vector representations for drawings of every object, in every repetition, from every interaction. 
 Using this feature basis, we compute the similarity between any two drawings as the Pearson correlation between their feature vectors (i.e., $r_{ij} =  \nicefrac{cov(\vec{r}_{i}, \vec{r}_{j})}{\sqrt{var(\vec{r}_{i}) \cdot var(\vec{r}_{j})}}$).
 
 \subsection{Results}
@@ -412,8 +411,9 @@ Using this feature basis, we compute the similarity between any two drawings as 
 \subsubsection{Fewer strokes across repetitions} 
 
 A straightforward explanation for the gains in communication efficiency we observed in Part I is that sketchers were able to achieve the same level of communicative accuracy using fewer strokes in each drawing.
-A linear mixed-effects model with random slopes and intercepts for each sketcher revealed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$). 
-\jefan{we should include a num strokes x repetition plot in Fig. 5 as well.}
+A linear mixed-effects model with random slopes and intercepts for each sketcher revealed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$), showing that pairs were increasingly able to rely upon shared knowledge to communicate effectively without expending as many strokes. 
+This result raises a question about which strokes are preserved across successive repetitions during the formation of graphical conventions. 
+In ongoing work, we are investigating the ``importance'' of each stroke in each drawing for explaining similarity to the next repetition's drawing of that object, by re-rendering the drawing without each stroke and computing the feature-based similarity to the next drawing (see Fig. \ref{within-across}D). 
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: numStrokes ~ repetition + (1 + repetition | gameID)
@@ -423,13 +423,12 @@ A linear mixed-effects model with random slopes and intercepts for each sketcher
 %             Estimate Std. Error       df t value Pr(>|t|)    
 % (Intercept)  6.04384    0.30301 66.00001  19.946  < 2e-16 ***
 % repetition  -0.21562    0.03595 66.00001  -5.998 9.32e-08 ***
-% ---
 
-\jefan{This paragraph is nice but needs to be heavily streamlined.}
-Observing such simplification in drawings raised the question about the extent to which strokes are preserved or dropped out across successive repetitions.
-As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining its similarity to the next repetition's sketch.
-Specifically, we operationalized importance by re-rendering the drawing without each stroke and computing the feature-based similarity to the next drawing (see Fig. \ref{within-across}D).
-We observed that in the earlier drawing, strokes that seemed to refer to similar object parts as the remaining strokes in the later drawing were most important: lesioning them was the biggest blow to the drawing similarity.  
+
+% \jefan{Original version of this paragraph is nice but needs to be heavily streamlined.}
+% As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining its similarity to the next repetition's sketch.
+% Specifically, we operationalized importance by re-rendering the drawing without each stroke and computing the feature-based similarity to the next drawing (see Fig. \ref{within-across}D).
+% We observed that in the earlier drawing, strokes that seemed to refer to similar object parts as the remaining strokes in the later drawing were most important: lesioning them was the biggest blow to the drawing similarity.  
 
 %The color of a stroke in a drawing corresponds to the similarity of the drawing to its successor when removing that stroke from the sketch.
 
