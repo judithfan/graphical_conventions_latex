@@ -34,6 +34,8 @@
 \usepackage{stmaryrd}
 \usepackage{booktabs}
 \usepackage{array}
+\usepackage{nicefrac}
+
 \graphicspath{{./figures/}}
 
 %\newcommand{\url}[1]{$#1$}
@@ -404,20 +406,12 @@ Concretely, we investigated four aspects of how drawings may have changed that w
 
 % First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
 
-\subsection{Measuring visual similarity}
+\subsection{Measuring visual similarity between drawings}
 
-We again used VGG-19 to encode 
-
-To encode the high-level visual features of each drawing, we again used the VGG-19 architecture We used model activations in the second-to-last layer of this network
-
-
-To analyze how the high-level visual properties of drawings changed across repetitions, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
-
-Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
-
-
-Sketch features at this layer have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018} and have been successful more broadly in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
-In this space, we compute the similarity between any two sketches as the Pearson correlation between their feature vectors.
+Investigation of the visual similarity between drawings relies upon having a principled approach to encoding their abstract visual properties.
+Here we capitalize on recent work validating the use of deep convolutional neural network models, pre-trained on challenging visual tasks, to encode high-level perceptual content in drawings \cite{FanCommon2018}.
+As we had when selecting object stimuli from Shapenet, we again used VGG-19 to extract 4096-dimensional feature vector representations of drawings of every object, in every repetition, from every interaction. 
+Using this feature basis, we compute the similarity between any two drawings as the Pearson correlation between their feature vectors (i.e., $r_{ij} =  \nicefrac{cov(\vec{r}_{i}, \vec{r}_{j})}{\sqrt{var(\vec{r}_{i}) \cdot var(\vec{r}_{j})}}$).
 
 \subsection{Results}
 
