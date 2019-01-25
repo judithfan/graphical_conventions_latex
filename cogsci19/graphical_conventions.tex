@@ -162,7 +162,8 @@ In order to make our task sufficiently challenging, we sought to construct conte
 To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+To identify groups of perceptually similar chairs, we first extracted high-level visual feature vectors from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+Each of these 4096-dimensional feature vectors reflected VGG-19 activations to each object rendering in the second fully-connected layer (i.e., \texttt{fc6}).
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\jefan{@megsano, please verify}).
 Based on these clusters, we selected 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}A).
 
@@ -393,9 +394,9 @@ However, viewers in the communication experiment were substantially more accurat
 
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
 An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant to include in a drawing to support rapid identification of the target object. 
-Here we explore this possibility by examining how drawings changed throughout an interaction in such a way that may reflect the increasing contribution of such interaction-specific shared knowledge.
+Here we explore this possibility by examining how the drawings themselves changed throughout an interaction.
 
-Concretely, we investigated four aspects of how drawings may have changed: \textit{first}, decreasing number of strokes used (i.e., motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
+Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
 
 % These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
 % But what is happening over time to the visual features of the sketches themselves? 
@@ -405,6 +406,9 @@ Concretely, we investigated four aspects of how drawings may have changed: \text
 
 \subsection{Measuring visual similarity}
 
+We again used VGG-19 to encode 
+
+To encode the high-level visual features of each drawing, we again used the VGG-19 architecture We used model activations in the second-to-last layer of this network
 
 
 To analyze how the high-level visual properties of drawings changed across repetitions, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
