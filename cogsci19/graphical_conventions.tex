@@ -83,7 +83,7 @@ We employed modern techniques from computer vision to characterize how the high-
 Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
 
 \textbf{Keywords:}
-sketch understanding; alignment; drawing; iconicity; visual abstraction
+drawing understanding; alignment; drawing; iconicity; visual abstraction
 
 % On each trial, both players were shown an array of objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible.
 % The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game.
@@ -248,16 +248,16 @@ These results show that there are benefits of repeatedly communicating about an 
 % the benefits of repeatedly communicating about an object accrue more strongly to that object
 % show gains in communicative efficiency are to some extent specific to the objects that were repeatedly referenced
 
-% Optional: We found a similar pattern of results when we used the number of strokes in each sketch instead of drawing time in our estimate of communicative efficiency.
+% Optional: We found a similar pattern of results when we used the number of strokes in each drawing instead of drawing time in our estimate of communicative efficiency.
 
 % Thus, participants converged on simpler, faster, and more communicatively successful graphical conventions for repeated objects, which only partially transferred to other objects.
 
-%We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the sketch is referring to increases, suggesting that this reduction is meaningful.
+%We clearly see that while the cost of sketching decreases, the accuracy of the viewer's guess of which object the drawing is referring to increases, suggesting that this reduction is meaningful.
 
 %% task-level and object-level benefits of extended communication.
 
 %Successful communication was primarily quantified as the viewer's accuracy in identifying the target.
-%The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each sketch and the proportion of the drawing canvas filled by ink.
+%The investment of time was measured as the length of time between the beginning of the first stroke to the completion of the final stroke in each sketch, and the investment of ink was measured in two ways: as the number of strokes used for each drawing and the proportion of the drawing canvas filled by ink.
 
 %This ensures that the reduction in the drawing duration and number of strokes over time is not due to the players losing interest or becoming less motivated during the game.
 
@@ -390,7 +390,7 @@ However, viewers in the communication experiment were substantially more accurat
 
 \begin{figure*}
 \includegraphics[width=0.98\linewidth]{figures/drawing_changes.pdf}
-\caption{Sketches become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline}
+\caption{drawings become increasingly similar within pairs and different between pairs; error ribbons represent 95\% CI, dotted line represents permuted baseline}
 \label{within-across}
 \end{figure*}
 
@@ -400,11 +400,11 @@ Here we explore this possibility by examining how the drawings themselves change
 
 Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
 
-% These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
-% But what is happening over time to the visual features of the sketches themselves? 
+% These control experiments establish that shared history with a particular sketcher is critical for the drawings to remain meaningful late in the game. 
+% But what is happening over time to the visual features of the drawings themselves? 
 % In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
 
-% First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
+% First, replicating prior findings, we observed that the number of strokes used in each drawings decreased across repetitions, such that later drawings were systematically sparser than earlier ones (XXX; $p<.001$).
 
 \subsection{Measuring visual similarity between drawings}
 
@@ -415,40 +415,42 @@ Using this feature basis, we compute the similarity between any two drawings as 
 
 \subsection{Results}
 
-\subsubsection{Fewer strokes across repetitions} A straightforward explanation for the increases in efficiency we observed in Part I is that sketchers are able to achieve the same level of communicative accuracy using fewer strokes.
-To test the hypothesis that later sketches were systematically sparser than earlier ones, we conducted a mixed-effects regression with random intercepts for target and sketcher.
-We found that sketches got significantly simpler over repetitions (XXX; $p < .001$).
+\subsubsection{Fewer strokes across repetitions} 
+
+A straightforward explanation for the increases in efficiency we observed in Part I is that sketchers are able to achieve the same level of communicative accuracy using fewer strokes.
+To test the hypothesis that later drawings were systematically sparser than earlier ones, we conducted a mixed-effects regression with random intercepts for target and sketcher.
+We found that drawings got significantly simpler over repetitions (XXX; $p < .001$).
 
 This simplification raises a finer-grained question about the extent to which strokes are preserved or dropped out across successive repetitions.
 As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining its similarity to the next repetition's sketch.
-Specifically, we operationalized importance by re-rendering the sketch without each stroke and computing the CNN-based similarity to the successive sketch (see Fig. \ref{within-across}D).
-We observed that in the earlier sketch, strokes that seemed to refer to similar object parts as the remaining strokes in the later sketch were most important: lesioning them was the biggest blow to the sketch similarity.  %The color of a stroke in a sketch corresponds to the similarity of the sketch to its successor when removing that stroke from the sketch.
+Specifically, we operationalized importance by re-rendering the drawing without each stroke and computing the CNN-based similarity to the successive drawing (see Fig. \ref{within-across}D).
+We observed that in the earlier sketch, strokes that seemed to refer to similar object parts as the remaining strokes in the later drawing were most important: lesioning them was the biggest blow to the drawing similarity.  %The color of a stroke in a drawing corresponds to the similarity of the drawing to its successor when removing that stroke from the sketch.
 
 \subsubsection{Increasing dissimilarity from initial drawing}
 
 Given the observed reduction in strokes, we predicted that the graphical representations used \emph{within} each would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
 We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair.
 We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; see Fig. \ref{within-across}.
-Since the entire distribution of sketches may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling sketches across \emph{pairs} for each repetition and target.
+Since the entire distribution of drawings may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling drawings across \emph{pairs} for each repetition and target.
 The true effect $(t = -5.59$) was significantly greater than this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, suggesting that sketchers are systematically deviating from their own initial representation more than expected given other games.
 
 \subsubsection{Increasing internal consistency within interaction}
 
-At the same time as we noticed sketches growing steadily different from the initial sketch, this displacement also seemed to \emph{slow down} considerably.
-In other words, while there may be major revisions or simplifications of sketches in early rounds, sketchers may eventually settle into  increasingly \emph{internally consistent} or stable conventions.
-We examined this prediction by computing the pairwise similarity of sketches drawn on \emph{successive rounds} of the same target object by the same sketcher.
-We found that the similarity of successive sketches \emph{increases} strongly over time ($b = 0.53,~t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target.
-Again, as a baseline, we considered the null distribution of slope $t$ values produced by first scrambling sketches across pairs in order to disrupt the consistency within games.
+At the same time as we noticed drawings growing steadily different from the initial sketch, this displacement also seemed to \emph{slow down} considerably.
+In other words, while there may be major revisions or simplifications of drawings in early rounds, sketchers may eventually settle into  increasingly \emph{internally consistent} or stable conventions.
+We examined this prediction by computing the pairwise similarity of drawings drawn on \emph{successive rounds} of the same target object by the same sketcher.
+We found that the similarity of successive drawings \emph{increases} strongly over time ($b = 0.53,~t = 5.03$; see Figure \ref{within-across}) in a mixed effects regression with random intercepts for both sketcher and target.
+Again, as a baseline, we considered the null distribution of slope $t$ values produced by first scrambling drawings across pairs in order to disrupt the consistency within games.
 The true effect was significantly greater than this null distribution, $p < .001$, which actually tended in the opposite direction $CI = [-3.21, -0.60]$.
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways}
 
-The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early sketches may be more strongly constrained by a shared target image, later sketches may be more \emph{variable} as pairs settle into multiple equilibria.
-In other words, the \emph{visual features} of sketches from different pairs for the same target may diverge from one another over the course of the game.
-We tested this prediction by computing the mean pairwise similarity of sketches of each target \emph{across games} on each repetition.
-In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise sketch similarity ($b = -1.4, ~t = -2.5$; see Fig. \ref{within-across})  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
+The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early drawings may be more strongly constrained by a shared target image, later drawings may be more \emph{variable} as pairs settle into multiple equilibria.
+In other words, the \emph{visual features} of drawings from different pairs for the same target may diverge from one another over the course of the game.
+We tested this prediction by computing the mean pairwise similarity of drawings of each target \emph{across games} on each repetition.
+In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise drawing similarity ($b = -1.4, ~t = -2.5$; see Fig. \ref{within-across})  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
 We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
-For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
+For each pair and target object, we scrambled drawing identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
 
 % should we still include the lesion-early lesion-late?
 
@@ -465,17 +467,17 @@ Taken together, our findings suggest that repeated visual communication promotes
 % (i.e. we're not just doing reproducing the same thing but with better controls & analyses; we're exploring a different part of the space)
 While our results build on previous work in graphical convention formation \cite{garrod_foundations_2007,fay2010interactive}, there were two key differences in our paradigm.
 First, we used \emph{images} as the targets of reference instead of more verbal concepts like ``art gallery'' or ``Robert de Niro.''
-We expected this choice to initially ground different pairs more strongly in the same visual features and reduce variance across pairs; that we still observed modestly diverging representations across pairs is an even stronger testament  to the role of social context in sketch production.
-Furthermore, because both sketches and target objects share the same modality, future work should directly examine the similarity of sketches to the target images to measure the effect of iconicity.
+We expected this choice to initially ground different pairs more strongly in the same visual features and reduce variance across pairs; that we still observed modestly diverging representations across pairs is an even stronger testament to the role of social context in drawing production.
+Furthermore, because both drawings and target objects share the same modality, future work should directly examine the similarity of drawings to the target images to measure the effect of iconicity.
 Second, our \emph{feedback mechanism} differed from those that were the focus of prior work.
-Viewers saw the sketch being produced in real-time and interrupted sketching as soon as they made their selection, then both players saw the selection and correct target.
-This interruption mechanism provides \emph{more} information than synchronously making a selection after the sketcher decided to stop drawing, but \emph{less} information than allowing viewers to jointly sketch on the same canvas; future work should directly compare these intermediate gradations of feedback.
+Viewers saw the drawing being produced in real-time and interrupted sketching as soon as they made their selection, then both players saw the selection and correct target.
+This interruption mechanism provides \emph{more} information than synchronously making a selection after the sketcher decided to stop drawing, but \emph{less} information than allowing viewers to jointly drawing on the same canvas; future work should directly compare these intermediate gradations of feedback.
 
 Our work also leaves open several hypotheses about \emph{how} people are deciding which strokes to preserve or drop on each trial.
 According to one account, sketchers may be guided a \emph{primacy} bias where they drop out later, detail-providing strokes to preserve their initial strokes.
-A second possibility is that they are guided by a \emph{recency} bias: when a particular sketch is successful, they keep the final strokes they put down and drop out earlier ones.
-Finally, the temporal structure of sketches may not matter and they could simply be dropping random strokes, or the least informative strokes.
-An important task for future work is to distinguish between these possibilities using lesion analyses like those above, or more fine-grained computational models of sketch generation.
+A second possibility is that they are guided by a \emph{recency} bias: when a particular drawing is successful, they keep the final strokes they put down and drop out earlier ones.
+Finally, the temporal structure of drawings may not matter and they could simply be dropping random strokes, or the least informative strokes.
+An important task for future work is to distinguish between these possibilities using lesion analyses like those above, or more fine-grained computational models of drawing generation.
 \rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
 
 %\vspace{-.30cm}
