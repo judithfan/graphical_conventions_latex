@@ -417,18 +417,31 @@ Using this feature basis, we compute the similarity between any two drawings as 
 
 \subsubsection{Fewer strokes across repetitions} 
 
-A straightforward explanation for the increases in efficiency we observed in Part I is that sketchers are able to achieve the same level of communicative accuracy using fewer strokes.
-To test the hypothesis that later drawings were systematically sparser than earlier ones, we conducted a mixed-effects regression with random intercepts for target and sketcher.
-We found that drawings got significantly simpler over repetitions (XXX; $p < .001$).
+A straightforward explanation for the gains in communication efficiency we observed in Part I is that sketchers were able to achieve the same level of communicative accuracy using fewer strokes in each drawing.
+A linear mixed-effects model with random slopes and intercepts for each sketcher revealed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$). 
+\jefan{we should include a num strokes x repetition plot in Fig. 5 as well.}
 
-This simplification raises a finer-grained question about the extent to which strokes are preserved or dropped out across successive repetitions.
+% Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+% Formula: numStrokes ~ repetition + (1 + repetition | gameID)
+%    Data: d %>% filter(condition == "repeated")
+
+% Fixed effects:
+%             Estimate Std. Error       df t value Pr(>|t|)    
+% (Intercept)  6.04384    0.30301 66.00001  19.946  < 2e-16 ***
+% repetition  -0.21562    0.03595 66.00001  -5.998 9.32e-08 ***
+% ---
+
+\jefan{This paragraph is nice but needs to be heavily streamlined.}
+Observing such simplification in drawings raised the question about the extent to which strokes are preserved or dropped out across successive repetitions.
 As a qualitative first step toward answering this question, we conducted a stroke lesion analysis to visualize the ``importance'' of each stroke in determining its similarity to the next repetition's sketch.
-Specifically, we operationalized importance by re-rendering the drawing without each stroke and computing the CNN-based similarity to the successive drawing (see Fig. \ref{within-across}D).
-We observed that in the earlier sketch, strokes that seemed to refer to similar object parts as the remaining strokes in the later drawing were most important: lesioning them was the biggest blow to the drawing similarity.  %The color of a stroke in a drawing corresponds to the similarity of the drawing to its successor when removing that stroke from the sketch.
+Specifically, we operationalized importance by re-rendering the drawing without each stroke and computing the feature-based similarity to the next drawing (see Fig. \ref{within-across}D).
+We observed that in the earlier drawing, strokes that seemed to refer to similar object parts as the remaining strokes in the later drawing were most important: lesioning them was the biggest blow to the drawing similarity.  
+
+%The color of a stroke in a drawing corresponds to the similarity of the drawing to its successor when removing that stroke from the sketch.
 
 \subsubsection{Increasing dissimilarity from initial drawing}
 
-Given the observed reduction in strokes, we predicted that the graphical representations used \emph{within} each would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
+Given the observed reduction in strokes, we predicted that the drawings produced \emph{within} each interaction would steadily become more dissimilar from the initial sketch; in other words, that there is a drift away from the initial depiction.
 We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair.
 We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; see Fig. \ref{within-across}.
 Since the entire distribution of drawings may generically drift to a different region of the visual feature space across the game, we conducted a more rigorous permutation test by first scrambling drawings across \emph{pairs} for each repetition and target.
