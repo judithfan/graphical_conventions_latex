@@ -46,7 +46,6 @@
 \tolerance=2000 
 \emergencystretch=10pt
 
-\newcommand{\red}[1]{\textcolor{Red}{#1}}
 \newcommand{\jefan}[1]{\textcolor{Blue}{jefan: #1}}
 \newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
 \newcommand{\denote}[1]{\mbox{ $[\![ #1 ]\!]$}}
@@ -117,7 +116,7 @@ Our approach is to consider the joint contributions of visual information and so
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting a physical object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge. 
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig. \ref{sketch_gallery}). 
-Our approach was inspired by a large literature that has documented the dynamics of communication across extended interaction in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,fay2010interactive}.
+Our approach was inspired by a large literature that has documented communication dynamics during extended interaction in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,fay2010interactive}.
 
 % extra: Galantucci:2005uh,healey2007graphical,theisen2010systematicity 
 
@@ -166,7 +165,7 @@ In order to make our task sufficiently challenging, we sought to construct conte
 To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet. 
 To identify groups of perceptually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.   
-We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\red{@megsano, please verify}).
+We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each (\jefan{@megsano, please verify}).
 Based on these clusters, we selected 2 categories of perceptually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}A). 
 
 \subsubsection{Task} 
@@ -394,16 +393,30 @@ However, viewers in the communication experiment were substantially more accurat
 \label{within-across}
 \end{figure*}
 
-These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
-But what is happening over time to the visual features of the sketches themselves? 
-In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
+The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
+An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant to include in a drawing to support rapid identification of the target object. 
+Here we explore this possibility by examining how the visual properties of drawings changed throughout an interaction. 
 
+
+Specifically, we investigated three axes along which we hypothesized that drawings
+
+simpler
+internally consistent
+different between pairs
+
+
+
+% These control experiments establish that shared history with a particular sketcher is critical for the sketches to remain meaningful late in the game. 
+% But what is happening over time to the visual features of the sketches themselves? 
+% In this final section, we conduct finer-grained analyses of the dynamics of graphical representations across communication.
 
 % First, replicating prior findings, we observed that the number of strokes used in each sketches decreased across repetitions, such that later sketches were systematically sparser than earlier ones (XXX; $p<.001$).
 
 \subsection{Methods: quantifying visual similarity}
 
-To analyze how the content of the sketches change over time, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
+To analyze how drawings changed across repetitions, we extracted the high-level perceptual features of the drawings using a pre-trained convolutional neural network. 
+
+
 Each sketch produced in our reference game data set was thus projected to a common 4,096-dimensional feature space given by the \texttt{fc6} layer of VGG. 
 
 Sketch features at this layer have been shown in prior work to match the representational space of images better than at lower layers of the network \cite{FanCommon2018} and have been successful more broadly in predicting neural responses in high-level visual cortex \cite{yamins2014performance}.
@@ -447,8 +460,6 @@ We conducted a permutation test to non-parametrically compare this observed decr
 For each pair and target object, we scrambled sketch identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
 
 % should we still include the lesion-early lesion-late? 
-
-% \red{@megsano: This is the place where within-sketch lesion results can go... should be motivated by the above within-pair analysis. Stats can be on the interaction between lesion-early v. lesion-late. Exact phrasing of subheading can be further refined.}
 
 \subsection{Discussion}
 
