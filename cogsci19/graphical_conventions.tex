@@ -95,23 +95,23 @@ drawing understanding; alignment; drawing; iconicity; visual abstraction
 
 \section{Introduction}
 
-From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., mapmaking, data visualization) and forms a durable foundation for the cultural transmission of knowledge and higher-level reasoning.
-Perhaps the most basic and versatile technique supporting visual communication is drawing.
-The earliest examples of drawings date to at least 40,000-60,000 years ago \cite{hoffmann2018u,Aubert:2014jy}, and it has since been adapted to a broad diversity of applications, ranging between photorealistic rendering from observation to schematic diagrams consisting entirely of symbols.
+From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., cartography, data visualization) and forms a durable foundation for the cultural transmission of knowledge and higher-level reasoning.
+Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u}. 
+What began as simple mark making since been adapted to a wide array of applications, ranging between photorealistic rendering from observation to schematic diagrams consisting entirely of symbols.
 
-Even drawings of the same object can be highly variable \shortcite{quickdraw2017}.
+Even drawings of the same object can be highly variable.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
-On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages,gombrich1969art}.
+On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
 
 \begin{figure}
-\includegraphics[width=0.95\linewidth]{figures/sketch_gallery.pdf}
+\includegraphics[width=0.99\linewidth]{figures/sketch_gallery.pdf}
 \caption{Repeated visual communication about the same object.}
 \label{sketch_gallery}
 \end{figure}
 
 How can these two perspectives be reconciled?
-Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{fan2018modeling,abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
+Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting a physical object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig. \ref{sketch_gallery}). 
@@ -410,8 +410,7 @@ Using this feature basis, we compute the similarity between any two drawings as 
 \subsubsection{Fewer strokes across repetitions} 
 
 A straightforward explanation for the gains in communication efficiency we observed in Part I is that sketchers were able to use fewer strokes per drawing to achieve the same level of communicative efficacy.
-In 
-A linear mixed-effects model with random slopes and intercepts for each sketcher revealed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$), showing that pairs were increasingly able to rely upon shared knowledge to communicate effectively without expending as many strokes. 
+A linear mixed-effects model with random slopes and intercepts for each sketcher showed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$), suggesting that pairs were increasingly able to rely upon shared knowledge to communicate efficiently. 
 This result raises a question about which strokes are preserved across successive repetitions during the formation of graphical conventions. 
 In ongoing work, we are investigating the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object, by re-rendering the drawing without each stroke and computing its feature-based similarity to the next drawing (see Fig. \ref{within-across}D). 
 
