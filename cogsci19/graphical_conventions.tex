@@ -44,7 +44,7 @@
 \definecolor{Green}{RGB}{10,200,100}
 \definecolor{Blue}{RGB}{10,50,150}
 
-\hyphenpenalty=1000
+\hyphenpenalty=10000
 
 \newcommand{\jefan}[1]{\textcolor{Blue}{jefan: #1}}
 \newcommand{\rdh}[1]{\textcolor{Red}{rdh: #1}}
@@ -331,8 +331,10 @@ Observers in the shuffled condition who were deprived of this interaction contin
 
 % We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same drawings in their original context.
 
+\vspace{2mm}
+
 \subsubsection{Viewer feedback also contributes to gains in performance}
-\todo[inline]{I think the `takeaway' here is still not 100\% clear; it's not clear whether we want to claim that there's a big difference between yoked \& orig. or want to minimize it?}
+% \todo[inline]{I think the `takeaway' here is still not 100\% clear; it's not clear whether we want to claim that there's a big difference between yoked \& orig. or want to minimize it?}
 
 %Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve to a comparable degree across repetitions.
 Unlike viewers in the interactive visual communication game, participants in the yoked condition made their decision based only on the final drawing and were unable to interrupt or await additional information if they were still uncertain.
@@ -395,7 +397,6 @@ Viewers in the original experiment had an overall success rate of 88\% compared 
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
 An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant and sufficient to include in a drawing to support rapid identification of the target object. 
 Here we explore this possibility by examining how the drawings themselves changed throughout an interaction.
-
 Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem). 
 
 % These control experiments establish that shared history with a particular sketcher is critical for the drawings to remain meaningful late in the game. 
@@ -447,7 +448,7 @@ We tested this prediction in a mixed-effect regression model including linear an
 We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; Fig.~\ref{within-across}C, suggesting that later drawings had moved to a different region of visual feature space. 
 However, since the entire distribution of drawings may have drifted to a different region of the visual feature space for generic reasons (i.e., because they were sparser overall), we conducted a stricter permutation test.  
 We scrambled drawings across pairs but within each repetition and target.
-The empirical effect $(t = -5.59$) fell outside this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, showing that successive drawings by the same sketcher deviated from their own initial drawing to a greater degree than would be expected due to generic differences between drawings made at different timepoints in an interaction. 
+The observed decrease $(t = -5.59$) fell outside this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, showing that successive drawings by the same sketcher deviated from their own initial drawing to a greater degree than would be expected due to generic differences between drawings made at different timepoints in an interaction. 
 
 \subsubsection{Increasing internal consistency within interaction}
 
@@ -460,7 +461,7 @@ As sketchers modified their drawings across successive repetitions, we additiona
 To test this prediction, we computed how similar successive drawings of the same object by the same sketcher were, and evaluated how this similarity changed across repetitions. 
 A mixed-effects regression model with random intercepts for both sketcher and object revealed that similarity between successive drawings increased substantially throughout an interaction ($b = 0.53,~t = 5.03$; Fig.~\ref{within-across}). 
 Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated under scrambling of drawings across pairs that disrupted the consistency within interactions.
-The empirical effect fell far outside than this null distribution, $p < .001, CI = [-3.21, -0.60]$, providing strong evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction. 
+The observed increase fell far outside than this null distribution, $p < .001, CI = [-3.21, -0.60]$, providing strong evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction. 
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways}
 
@@ -470,7 +471,8 @@ Under this account, drawings of the same object from different pairs would becom
 We tested this prediction by computing the mean similarity between drawings of the same object from each repetition, but from different games.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}). %and quadratic ($b= 0.42, t = 3.9$)
 We conducted a permutation test to compare this observed decrease in similarity with what would be expected from disrupting the temporal structure in our data.
-For each pair and target object, we scrambled drawing identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
+For each pair and target object, we scrambled drawing identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$. 
+The observed decrease was highly unlikely,~$p~<~0.001$. 
 
 % should we still include the lesion-early lesion-late?
 
@@ -499,7 +501,7 @@ According to one account, sketchers may be guided a \emph{primacy} bias where th
 A second possibility is that they are guided by a \emph{recency} bias: when a particular drawing is successful, they keep the final strokes they put down and drop out earlier ones.
 Finally, the temporal structure of drawings may not matter and they could simply be dropping random strokes, or the least informative strokes.
 An important task for future work is to distinguish between these possibilities using lesion analyses like those above, or more fine-grained computational models of drawing generation.
-\rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
+% \rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
 
 %\vspace{-.30cm}
 %\section{\bf Acknowledgments}
