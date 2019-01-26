@@ -307,7 +307,7 @@ Thus any differences between the yoked and shuffled groups are attributable to w
 We compared the yoked and shuffled groups by measuring changes in recognition performance using the same efficiency metric we previously used.
 We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction, as well as random intercepts and slopes for each participant.
 We found a significant increase in recognition performance across both groups ($b = 0.18, ~t = 12.8, ~p < 0.001$), reflecting the general benefits of practice recognizing drawings and any inherent visual correspondences between between drawings and the target object.  %10^{-15}$
-Critically, however, we also found a large and reliable interaction: yoked participants improved to a substantially greater degree than shuffled participants ($b = 0.10, ~t = 4.9, ~p<0.001$).
+Critically, however, we also found a large and reliable interaction: yoked participants improved to a substantially greater degree than shuffled participants ($b = 0.10, ~t = 4.9, ~p<0.001$; Fig.~4).
 In addition, the yoked group was more accurate overall at identifying the target object (yoked: 75\%, shuffled: 69\%, $~t = 3.6, ~p < 0.001$). %$0.0004
 Taken together, these results suggest that third-party observers who could observe an entire interaction were able to take advantage of this continuity to more accurately understand which object each drawing represented. 
 Observers in the shuffled condition who were deprived of this interaction continuity were significantly hindered in their ability to understand drawings even as the temporal order of the drawing was preserved.
@@ -333,15 +333,17 @@ Observers in the shuffled condition who were deprived of this interaction contin
 
 \subsubsection{Viewer feedback also contributes to gains in performance}
 
+\rdh{I think the `takeaway' here is still not 100\% clear; it's not clear whether we want to claim that there's a big difference between yoked \& orig. or want to minimize it?}
 %Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve to a comparable degree across repetitions.
 Unlike viewers in the interactive visual communication game, participants in the yoked condition made their decision based only on the final drawing and were unable to interrupt or await additional information if they were still uncertain.
 %Instead, yoked participants , and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
 Sketchers could have used this feedback to modify their drawings on subsequent repetitions.
 %  about which object the viewer had selected and how quickly they were able to select it, 
 As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance  \cite{schober_understanding_1989}.
-We again measured changes in task performance on repeated objects using the same efficiency metric as we had previously, and estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
-This analysis revealed a strong overall effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$; see Figure \ref{recog_bis}) and a weaker but reliable interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$), showing that the yoked group improved nearly at the same rate as viewers in the communication experiment had, even in the absence of viewer feedback. %1x10^{-15}
-However, viewers in the communication experiment were substantially more accurate overall at identifying the target object than yoked participants (communication: 88\%, yoked: 75\%, $t = 6.2, ~p < 0.001$), suggesting that these viewer feedback channels may help to boost performance in absolute terms. %1x10^{-8}$
+In a mixed effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
+strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$) and a weaker but significant interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at an only slightly dampened rate as viewers in the original communication experiment, even in the absence of viewer feedback. %1x10^{-15}
+When considering pure recognition accuracy, however, the feedback gap was more substantial.
+Viewers in the original experiment had an overall success rate of 88\% compared to 75\% in the yoked condition, $t = 6.2, ~p < 0.001$. %1x10^{-8}$
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
