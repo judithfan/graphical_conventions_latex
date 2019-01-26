@@ -440,7 +440,7 @@ In ongoing work, we are investigating the ``importance'' of each stroke within a
 Mirroring the observed reduction in the number of strokes across repetitions, we hypothesized that there was also cumulative change in the perceptual content of drawings across repetitions. 
 Concretely, we predicted that drawings would become increasingly dissimilar from the initial depiction. 
 We tested this prediction in a mixed-effect regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair.
-We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59, ~p < 0.001$; Fig.~\ref{within-across}C, suggesting that later drawings had moved to a different region of visual feature space. 
+We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; Fig.~\ref{within-across}C, suggesting that later drawings had moved to a different region of visual feature space. 
 However, since the entire distribution of drawings may have drifted to a different region of the visual feature space for generic reasons (i.e., because they were sparser overall), we conducted a stricter permutation test.  
 We scrambled drawings across pairs but within each repetition and target.
 The empirical effect $(t = -5.59$) fell outside this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, showing that successive drawings by the same sketcher deviated from their own initial drawing to a greater degree than would be expected due to generic differences between drawings made at different timepoints in an interaction. 
@@ -454,17 +454,18 @@ The empirical effect $(t = -5.59$) fell outside this null distribution $(95\%~CI
 
 As sketchers modified their drawings across successive repetitions, we additionally hypothesized that they would gradually converge on increasingly consistent ways of depicting each object. 
 To test this prediction, we computed how similar successive drawings of the same object by the same sketcher were, and evaluated how this similarity changed across repetitions. 
-A linear mixed-effects model with random intercepts for both sketcher and object revealed that similarity between successive drawings increased substantially throughout an interaction ($b = 0.53,~t = 5.03,~p<0.001$; Fig.~\ref{within-across}). 
+A mixed-effects regression model with random intercepts for both sketcher and object revealed that similarity between successive drawings increased substantially throughout an interaction ($b = 0.53,~t = 5.03$; Fig.~\ref{within-across}). 
 Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated under scrambling of drawings across pairs that disrupted the consistency within interactions.
-The empirical effect fell far outside than this null distribution, $p < .001, CI = [-3.21, -0.60]$, providing strong evidence that increasingly consistent ways of drawing each object emerged only for series of drawings produced within the same interaction. 
+The empirical effect fell far outside than this null distribution, $p < .001, CI = [-3.21, -0.60]$, providing strong evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction. 
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways}
 
-The shuffled condition of our control experiments suggested that conventions were \emph{interaction-specific}; we made the further prediction that while early drawings may be more strongly constrained by a shared target image, later drawings may be more \emph{variable} as pairs settle into multiple equilibria.
-In other words, the \emph{visual features} of drawings from different pairs for the same target may diverge from one another over the course of the game.
-We tested this prediction by computing the mean pairwise similarity of drawings of each target \emph{across games} on each repetition.
-In a mixed-effects regression including linear and quadratic terms, we found a weak effect of repetition on pairwise drawing similarity ($b = -1.4, ~t = -2.5$; see Fig. \ref{within-across})  after including random slopes and intercepts for targets and game pairs. %and quadratic ($b= 0.42, t = 3.9$)
-We conducted a permutation test to non-parametrically compare this observed decrease in similarity with what would be expected from disrupting the temporal structure of our data.
+Our control experiments suggested that the graphical conventions discovered by different pairs were specific to each interaction. 
+This could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
+Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions. 
+We tested this prediction by computing the mean similarity between drawings of the same object from each repetition, but from different games.
+In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}). %and quadratic ($b= 0.42, t = 3.9$)
+We conducted a permutation test to compare this observed decrease in similarity with what would be expected from disrupting the temporal structure in our data.
 For each pair and target object, we scrambled drawing identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$, under which the observed decrease was highly unlikely,~$p~<~0.001$.
 
 % should we still include the lesion-early lesion-late?
