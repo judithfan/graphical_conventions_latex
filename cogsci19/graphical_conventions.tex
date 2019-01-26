@@ -208,18 +208,16 @@ In a pre-test at the beginning of the experiment, and a post-test at the end, bo
 \caption{Communication efficiency for repeated and control objects across repetitions. Efficiency was computed using a metric that combines both speed and accuracy, and is plotted relative to the first repetition.} \label{refgame_bis}
 \end{figure}
 
-In order to measure how well pairs communicated throughout each interaction, we used a measure of communicative efficiency \cite<the \emph{i.e., balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account.
+Because objects were randomly assigned to the repeated and control conditions, we expected no differences in task performance in the pre-test phase. 
+Pairs identified the target at rates well above chance in this phase (75.7\% repeated, 76.1\% control, chance = 25\%), suggesting that they were engaged with the task but not at ceiling performance.
+% n  empirical_stat      ci_lower            mean               ci_upper
+%67	-0.003731343	-0.07089552	-0.001317164	0.07089552
+However, we found no difference in response accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
+
+In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account.
 This efficiency score is computed by first z-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
-It is thus highest when pairs are both fast and accurate, and lowest when they make many errors and take a long time, relative to their own performance on other trials.
+It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials.
 
-% Formula: bis_score ~ condition + (1 + condition | gameID)
-% Fixed effects:
-%              Estimate Std. Error        df t value Pr(>|t|)
-% (Intercept)  -1.14631    0.08343 146.52921 -13.740   <2e-16 ***
-% condition1    0.03259    0.19709  71.10509   0.165    0.869
-% ---
-
-Because objects were randomly assigned to the repeated and control conditions, we expected no differences in task performance in the pre phase. Indeed, a linear mixed-effects model with random slopes and intercepts for each pair of participants revealed no effect of condition ($b = 0.03, ~t = 0.165, ~p = 0.869$). Moreover, we found that pairs identified the target at rates well above chance in this phase (75.7\% repeated, 76.1\% control, chance = 25\%), suggesting that they were both engaged with the task but not at ceiling performance.
 
 % Formula: bis_score ~ phase * condition + (1 + phase * condition | gameID)
 %    Data: input
