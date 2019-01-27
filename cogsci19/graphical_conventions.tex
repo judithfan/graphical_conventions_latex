@@ -127,7 +127,7 @@ There are three aspects of the current work that advances our prior understandin
 \begin{figure*}
 \begin{center}
 \includegraphics[width=0.95\linewidth]{figures/task_stimuli.pdf}
-\caption{(A) Object stimuli from ShapeNet database. (B) Each pair of participants was randomly assigned to two sets of four objects, each set from one of these categories. (C) Repeated objects were drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.}
+\caption{(A) Stimuli from ShapeNet. (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of these categories. (C) Repeated objects were drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.}
 \label{task_stimuli}
 \vspace{-1em}
 \end{center}
@@ -468,11 +468,11 @@ The observed increase fell far outside than this null distribution, $p < .001, C
 Our recognition control experiments suggested that the graphical conventions discovered by different pairs were specific to each interaction.
 This could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
-We tested this prediction by computing the mean similarity between drawings of the same object from each repetition, but from different pairs of participants.
-In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}). %and quadratic ($b= 0.42, t = 3.9$)
+We tested this prediction by computing the mean similarity between drawings of the same object from each repetition, but from different games.
+In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We conducted a permutation test to compare this observed decrease in similarity with what would be expected from disrupting the temporal structure in our data.
-For each pair and target object, we scrambled drawing identifiers across repetitions 1000 times to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$.
-The observed decrease was highly unlikely,~$p~<~0.001$.
+For each pair and target object, we scrambled sketches across repetitions and re-ran our mixed-effects model to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$.
+The observed effect was highly unlikely under this distribution,~$p~<~0.001$.
 
 \subsection{Discussion}
 
@@ -504,7 +504,7 @@ Finally, the temporal structure of drawings may not matter and they could simply
 A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others. We may predict that graphical conventions are formed from the removal of entire undiagnostic parts that relate to the semantic structure of the object.
 An important task for future work is to distinguish between these possibilities using lesion analyses like those above and more fine-grained computational models of drawing generation that allow part-level analyses.
 
-Our work suggests that the meaning of abstract visual depictions are increasingly determined by shared knowledge rather than their visual properties alone. Understanding the fine-grained factors that drive the formation of graphical conventions is foundational for understanding \emph{how} abstract visual depictions derive their meaning. 
+Our work suggests that the meaning of abstract visual depictions are increasingly determined by shared knowledge rather than their visual properties alone. Understanding the fine-grained factors that drive the formation of graphical conventions is foundational for understanding \emph{how} abstract visual depictions derive their meaning.
 % \rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
 
 %\vspace{-.30cm}
