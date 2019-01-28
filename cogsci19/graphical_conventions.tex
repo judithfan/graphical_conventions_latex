@@ -390,14 +390,20 @@ Viewers in the original experiment had an overall success rate of 88\% compared 
 
 \begin{figure*}
 \includegraphics[width=0.96\linewidth]{figures/drawing_changes.pdf}
-\caption{(A) Number of strokes in a drawing as function of repetition. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings change across repetitions, becoming increasingly dissimilar from initial drawing. (D) Drawings change more slowly later in interaction, becoming more internally consistent. (E) The same object is drawn increasingly dissimilarly in different interactions, suggesting multiple viable graphical conventions. Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
+\caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent. 
+(E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions. 
+Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
 \label{within-across}
 \end{figure*}
 
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
 An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant and sufficient to include in a drawing to support rapid identification of the target object.
 Here we explore this possibility by examining how the drawings themselves changed throughout an interaction.
-Concretely, we investigated four aspects of how drawings may have changed that would reflect the increasing contribution of interaction-specific shared knowledge: \textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing); \textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); \textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects within an interaction); \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem).
+Concretely, we investigated four aspects that would reflect the increasing contribution of interaction-specific shared knowledge: 
+\textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing); 
+\textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); 
+\textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects within an interaction); 
+\textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem).
 
 % These control experiments establish that shared history with a particular sketcher is critical for the drawings to remain meaningful late in the game.
 % But what is happening over time to the visual features of the drawings themselves?
@@ -410,18 +416,20 @@ Concretely, we investigated four aspects of how drawings may have changed that w
 
 \subsection{Measuring visual similarity between drawings}
 
-Measuring visual similarity between drawings relies upon having a principled approach to encoding their high-level visual properties.
+Measuring visual similarity between drawings depends upon a principled approach for encoding their high-level visual properties.
 Here we capitalize on recent work validating the use of deep convolutional neural network models, pre-trained on challenging visual tasks, to encode such perceptual content in drawings \cite{FanCommon2018}.
-As we had when identifying clusters of similar object stimuli, we again used VGG-19 to extract 4096-dimensional feature vector representations for drawings of every object, in every repetition, from every interaction.
-Using this feature basis, we compute the similarity between any two drawings as the Pearson correlation between their feature vectors (i.e., $r_{ij} =  \nicefrac{cov(\vec{r}_{i}, \vec{r}_{j})}{\sqrt{var(\vec{r}_{i}) \cdot var(\vec{r}_{j})}}$).
+As when identifying clusters of similar object stimuli, we again used VGG-19 to extract 4096-dimensional feature vector representations for drawings of every object, in every repetition, from every interaction.
+Using this feature basis, we compute the similarity between any two drawings as the Pearson correlation between their feature vectors (i.e., $s_{ij} =  \nicefrac{cov(\vec{r}_{i}, \vec{r}_{j})}{\sqrt{var(\vec{r}_{i}) \cdot var(\vec{r}_{j})}}$).
 
 \subsection{Results}
 \subsubsection{Fewer strokes across repetitions}
 
 A straightforward explanation for the gains in communication efficiency observed in Part I is that sketchers were able to use fewer strokes per drawing to achieve the same level of recognition accuracy by the viewer.
-In support of this account, a linear mixed-effects model with random slopes and intercepts for each pair of participants showed that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition ($b = -0.216, ~t = -6.00, ~p < .001$; Fig. \ref{within-across}A), suggesting that pairs were increasingly able to rely upon shared knowledge to communicate efficiently.
+Indeed, we found that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition in a mixed-effects model ($b = -0.216, ~t = -6.00, ~p < .001$; Fig. \ref{within-across}A), %, a linear mixed-effects model with random slopes and intercepts for each pair of participants showed that  
+suggesting that pairs were increasingly able to rely upon shared knowledge to communicate efficiently.
 This result raises a question about which strokes are preserved across successive repetitions during the formation of graphical conventions.
-In ongoing work, we are investigating the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object, by re-rendering the drawing without each stroke and computing its feature-based similarity to the next drawing (Fig. \ref{within-across}B).
+In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
+We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig. \ref{within-across}B for a preliminary visualization).
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: numStrokes ~ repetition + (1 + repetition | gameID)
@@ -442,13 +450,13 @@ In ongoing work, we are investigating the ``importance'' of each stroke within a
 
 \subsubsection{Increasing dissimilarity from initial drawing}
 
-Mirroring the observed reduction in the number of strokes across repetitions, we hypothesized that there was also cumulative change in the perceptual content of drawings across repetitions.
+Mirroring the observed reduction in the number of strokes across repetitions, we hypothesized that there was also cumulative change in the visual content of drawings across repetitions.
 Concretely, we predicted that drawings would become increasingly dissimilar from the initial depiction.
 We tested this prediction in a mixed-effects regression model including linear and quadratic terms for repetition as well as intercepts for each target and pair.
-We found a significant decrease in similarity to the initial round across successive repetitions, $b = -0.62,~t = -5.59$; Fig.~\ref{within-across}C, suggesting that later drawings had moved to a different region of visual feature space.
+We found a significant decrease in similarity to the initial round across successive repetitions, $(b = -0.62,~t = -5.59$; Fig.~\ref{within-across}C), suggesting that later drawings had moved to a different region of visual feature space.
 However, since the entire distribution of drawings may have drifted to a different region of the visual feature space for generic reasons (i.e., because they were sparser overall), we conducted a stricter permutation test.
-We scrambled drawings across pairs but within each repetition and target.
-The observed decrease $(t = -5.59$) fell outside this null distribution $(95\%~CI= [-3.53 -0.88], ~p < .001)$, showing that successive drawings by the same sketcher deviated from their own initial drawing to a greater degree than would be expected due to generic differences between drawings made at different timepoints in an interaction.
+We scrambled drawings across pairs but within each repetition and target and re-ran our mixed-effects model.
+The observed effect fell outside this null distribution $(CI= [-3.53 -0.88], ~p < .001)$, showing that successive drawings by the same sketcher deviated from their own initial drawing to a greater degree than would be expected due to generic differences between drawings made at different timepoints in an interaction.
 
 \subsubsection{Increasing internal consistency within interaction}
 
@@ -458,21 +466,19 @@ The observed decrease $(t = -5.59$) fell outside this null distribution $(95\%~C
 % In other words, while there may be major revisions or simplifications of drawings in early rounds, sketchers may eventually settle into increasingly \emph{internally consistent} or stable conventions.
 
 As sketchers modified their drawings across successive repetitions, we additionally hypothesized that they would gradually converge on increasingly consistent ways of depicting each object.
-To test this prediction, we computed how similar successive drawings of the same object by the same sketcher were, and evaluated how this similarity changed across repetitions.
+To test this prediction, we computed the similarity of successive drawings of the same object by the same sketcher (i.e. repetition $k$ to $k+1$). %.^, and evaluated how this similarity changed across repetitions.
 A mixed-effects regression model with random intercepts for both object and pair of participants revealed that similarity between successive drawings increased substantially throughout an interaction ($b = 0.53,~t = 5.03$; Fig.~\ref{within-across}).
-Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated under scrambling of drawings across pairs that disrupted the consistency within interactions.
-The observed increase fell far outside than this null distribution, $p < .001, CI = [-3.21, -0.60]$, providing strong evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction.
+Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated by scrambling drawings across pairs to disrupt the consistency of interactions.
+The observed increase fell far outside than this null distribution, $CI = [-3.21, -0.60], p < .001$, providing evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction.
 
 \subsubsection{Different sketchers draw the same object in increasingly different ways}
 
-Our recognition control experiments suggested that the graphical conventions discovered by different pairs were specific to each interaction.
-This could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
+Our recognition control experiments suggested that the graphical conventions discovered by different pairs were increasingly opaque to outside observers.
+This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
-We tested this prediction by computing the mean similarity between drawings of the same object from each repetition, but from different games.
+We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different games.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
-We conducted a permutation test to compare this observed decrease in similarity with what would be expected from disrupting the temporal structure in our data.
-For each pair and target object, we scrambled sketches across repetitions and re-ran our mixed-effects model to generate a null distribution of $t$ values $(CI = [-0.57, 0.60])$.
-The observed effect was highly unlikely under this distribution,~$p~<~0.001$.
+We again conducted a permutation test to compare this observed decrease in similarity with what would be expected from scrambling sketches across repetitions for each sketcher and target object. The observed effect was unlikely under this distribution $(CI = [-0.57, 0.60]),~p~<~0.001$.
 
 \subsection{Discussion}
 
@@ -480,7 +486,6 @@ The observed effect was highly unlikely under this distribution,~$p~<~0.001$.
 In this paper, we investigated the joint contributions of visual information and social context in determining the meaning of drawings.
 We observed in an interactive Pictionary-style communication game that pairs discover increasingly sparse yet effective graphical representations as they repeatedly visually communicate about the same objects.
 Through a series of recognition control experiments, we demonstrated that these simpler drawings were harder for independent viewers to recognize without sharing the history of interaction with the same sketcher.
-
 Furthermore, by analyzing the high-level visual features of drawings, we found that they became increasingly consistent within an interaction, but that different pairs discovered different equilibria in the space of viable graphical conventions.
 Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
 
