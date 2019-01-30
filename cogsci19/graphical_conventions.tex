@@ -47,6 +47,8 @@
 \definecolor{Green}{RGB}{10,200,100}
 \definecolor{Blue}{RGB}{10,50,150}
 
+\newcommand{\ndg}[1]{{\textcolor{Green}{[ndg: #1]}}}
+
 \hyphenpenalty=1000
 
 \newcommand{\jefan}[1]{\textcolor{Blue}{jefan: #1}}
@@ -124,7 +126,7 @@ Our approach was inspired by a large literature that has explored how extended i
 
 %% jefan: I want another sentence here, if possible, stating the limitations of this prior work that sets up the contributions of the current paper better.
 
-There are three aspects of the current work that advances our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
+There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure*}
@@ -216,11 +218,12 @@ Because objects were randomly assigned to repeated and control conditions, we ex
 We found that pairs identified the target at rates well above chance in this phase (75.7\% repeated, 76.1\% control, chance = 25\%), suggesting that they were engaged with the task but not at ceiling performance.
 % n  empirical_stat      ci_lower            mean               ci_upper
 %67	-0.003731343	-0.07089552	-0.001317164	0.07089552
-However, we found no difference in accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
+We found no difference in accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
 
 In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account.
 This efficiency score is computed by first $z$-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
 It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials.
+\ndg{results are same when using just accuracy? maybe say so and indicate why this fancy measure is a better choice? could be in footnote..}
 
 
 % Formula: bis_score ~ phase * condition + (1 + phase * condition | gameID)
@@ -238,6 +241,7 @@ To evaluate changes in communicative efficiency, we fit a linear mixed-effects m
 We found that communicative efficiency increased for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting generalized improvements as a consequence of extended interaction.
 Critically, however, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Fig.~\ref{refgame_bis}).
 These results show that there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
+\ndg{optionally: add the observation that the object-general boost seems to be achieved after the first trial, and is likely very general orientation to the task?}
 
 % the benefits of repeatedly communicating about an object accrue more strongly to that object
 % show gains in communicative efficiency are to some extent specific to the objects that were repeatedly referenced
