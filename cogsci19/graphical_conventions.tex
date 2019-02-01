@@ -102,9 +102,9 @@ drawing understanding; alignment; drawing; iconicity; visual abstraction
 
 From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., cartography, data visualization) and forms a durable foundation for the cultural transmission of knowledge and higher-level reasoning.
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u}.
-What began as simple mark making has since been adapted to a wide array of applications, ranging between photorealistic rendering from observation to schematic diagrams consisting entirely of symbols.
+What began as simple mark making has since been adapted to a wide array of applications, ranging from photorealistic rendering to schematic diagrams consisting entirely of symbols.
 
-Even drawings of the same object can be highly variable.
+Even in the straightforward case of drawing from observation, there are countless ways of depicting the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
@@ -126,7 +126,7 @@ Our approach was inspired by a large literature that has explored how extended i
 
 %% jefan: I want another sentence here, if possible, stating the limitations of this prior work that sets up the contributions of the current paper better.
 
-There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
+There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure*}
@@ -160,8 +160,8 @@ We hypothesized that learning would be \emph{object-specific}: that over repeate
 
 \subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were automatically matched to form 69 pairs.
 %They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
-Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the IRB. % Stanford
-\footnote{ All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}
+Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the IRB% Stanford
+\footnote{ All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}.
 
 \subsubsection{Stimuli}
 %% provide justification for why we're using sets of similar objects
@@ -170,8 +170,8 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and visually similar.
 To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
-Each of these 4096-dimensional feature vectors reflected VGG-19 activations to each object rendering in the second fully-connected layer (i.e., \texttt{fc6}).
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+These 4096-dimensional feature vectors reflected VGG-19 activations to object renderings in the second fully-connected layer (i.e., \texttt{fc6}).
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Based on these clusters, we selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
 
@@ -183,7 +183,7 @@ Based on these clusters, we selected two categories of visually similar objects 
 On each trial, both participants were shown the same set of four objects in randomized locations.
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 %% Trial-level objective of sketcher and viewer
-Sketchers drew using their mouse cursor in black ink on a digital canvas (300 $\times$ 300 pixels; pen width = 5 pixels) embedded in their web browser.
+Sketchers drew using their mouse cursor in black ink on a digital canvas embedded in their web browser ($300 \times 300$ pixels; pen width of 5 pixels).
 Each stroke was transmitted to the viewer's screen in real-time and sketchers were not able to delete previous strokes.
 The viewer was allowed to guess the identity of the drawn object by clicking one of the four objects as soon as they were confident, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
 Finally, participants were incentivized to perform both quickly and accurately.
@@ -239,7 +239,7 @@ It is highest when pairs are both fast and accurate, and lowest when they make m
 To evaluate changes in communicative efficiency, we fit a linear mixed-effects model with maximal random effect structure, including random intercepts, slopes, and interactions for each pair of participants.
 We found a main effect of increasing communicative efficiency for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting general improvements due to task practice.
 Critically, however, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Fig.~\ref{refgame_bis}).
-These results show that there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
+Thus, there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
 %\ndg{optionally: add the observation that the object-general boost seems to be achieved after the first trial, and is likely very general orientation to the task?}
 
 % the benefits of repeatedly communicating about an object accrue more strongly to that object
@@ -260,7 +260,7 @@ These results show that there are benefits of repeatedly communicating about an 
 
 \section{Part II: What explains gains in efficiency?}
 
-Our visual communication experiment established that pairs of participants coordinate on more efficient and \emph{object-specific} ways of depicting targets.% more efficiently across repetitions.
+Our visual communication experiment established that pairs of participants coordinate on more efficient and \emph{object-specific} ways of depicting targets. % more efficiently across repetitions.
 This raises the question: to what extent do these gains in efficiency reflect the accumulation of \emph{interaction-specific} shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and the inherent visual properties of their drawings?
 
 To measure the contribution of the latter, we conducted two control experiments that tested the recognizability of these drawings both inside and outside the social context in which they were drawn.
