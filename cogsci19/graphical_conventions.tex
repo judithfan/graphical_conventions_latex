@@ -39,7 +39,7 @@
 
 \graphicspath{{./figures/}}
 
-%\cogscifinalcopy % Uncomment this line for the final submission 
+%\cogscifinalcopy % Uncomment this line for the final submission
 
 %\newcommand{\url}[1]{$#1$}
 
@@ -173,7 +173,7 @@ We restricted our search to 3096 objects belonging to the \texttt{chair} class, 
 To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of these objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
 Each of these 4096-dimensional feature vectors reflected VGG-19 activations to each object rendering in the second fully-connected layer (i.e., \texttt{fc6}).
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
-Based on these clusters, we selected 2 categories of visually similar objects containing 8 exemplars each (Fig.~\ref{task_stimuli}A).
+Based on these clusters, we selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
 
 \subsubsection{Task Procedure}
 
@@ -237,7 +237,7 @@ It is highest when pairs are both fast and accurate, and lowest when they make m
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 To evaluate changes in communicative efficiency, we fit a linear mixed-effects model with maximal random effect structure, including random intercepts, slopes, and interactions for each pair of participants.
-We found a main effect of increasing communicative efficiency for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting general improvements due to task practice. 
+We found a main effect of increasing communicative efficiency for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting general improvements due to task practice.
 Critically, however, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Fig.~\ref{refgame_bis}).
 These results show that there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
 %\ndg{optionally: add the observation that the object-general boost seems to be achieved after the first trial, and is likely very general orientation to the task?}
@@ -264,13 +264,13 @@ Our visual communication experiment established that pairs of participants coord
 This raises the question: to what extent do these gains in efficiency reflect the accumulation of \emph{interaction-specific} shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and the inherent visual properties of their drawings?
 
 To measure the contribution of the latter, we conducted two control experiments that tested the recognizability of these drawings both inside and outside the social context in which they were drawn.
-%Naive participants performed a drawing recognition task that closely matched the task of the viewer in 
-%In these experiments, we manipulated the sequence of drawings shown to naive participants in a recognition task. 
-One group of naive participants were shown a sequence of drawings constructed exclusively from a single interaction, thus closely matching the experience of a particular viewer in the visual communication experiment. 
+%Naive participants performed a drawing recognition task that closely matched the task of the viewer in
+%In these experiments, we manipulated the sequence of drawings shown to naive participants in a recognition task.
+One group of naive participants were shown a sequence of drawings constructed exclusively from a single interaction, thus closely matching the experience of a particular viewer in the visual communication experiment.
 For a second group, however, the sequence of drawings was pieced together from many different interactions.
 Under our \emph{interaction-specificity} hypothesis, we predicted that the latter group would be impaired in their recognition performance compared to the former.
 
-%We manipulated the sequence of drawings participants saw such that 
+%We manipulated the sequence of drawings participants saw such that
 % with drawings produced in the earlier experiment.% and asked them to that closely matched the viewer's task in the earlier experiment, except here they knew their responses were not being provided as real-time feedback to the sketcher. %they were presented with drawings and guessed which of the four objects it referred to.
 %\ndg{there's something missing on this motivation... maybe a hypothesis like "we expect viewer who see the same sequence of referential drawings to do as well, but viewers who see different ones not to? err...}
 % , and they made their decision based on the final drawing, rather than being able to interrupt await additional information.
@@ -292,16 +292,16 @@ They also received the same accuracy and speed bonuses as viewers in the communi
 %Their task was thus the same as the viewer's in the communication experiment, except they knew their responses were not being provided as real-time feedback to the sketcher.
 To ensure task engagement, we included five identical attention-check trials that appeared once every eight trials.
 Each attention-check trial presented the same set of objects and drawing, which we identified during piloting as the most consistently and accurately recognized by naive participants.
-Participants who responded incorrectly on at least 4 out of 5 of these trials were excluded from subsequent analyses.
+Participants who responded incorrectly on at least four out of five of these trials were excluded from subsequent analyses.
 
 Each participant was randomly assigned to one of two conditions: a \textit{yoked} group and a \textit{shuffled} group.
 Those in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had.
-Those in the shuffled group were matched with a random sample of 10 distinct pairs from the communication experiment and viewed 4 drawings from each in turn, which appeared within the same repetition cycle as they had appeared originally. 
+Those in the shuffled group were matched with a random sample of 10 distinct pairs from the communication experiment and viewed four drawings from each in turn, which appeared within the same repetition cycle as they had appeared originally.
 For example, if a drawing was produced in the fifth block of repetitions in the original experiment, then it also appeared in the fifth block here.
 
 At the trial level, groups in both conditions thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately.
 At the session level, both groups received exactly the same amount of practice recognizing drawings.
-Thus any differences between these groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal. 
+Thus any differences between these groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal.
 
 \subsection{Results}
 
@@ -321,7 +321,7 @@ Thus any differences between these groups are attributable to whether drawings c
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
 We compared the yoked and shuffled groups by measuring changes in recognition performance across successive repetitions using the same efficiency metric we previously used.
-We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (yoked vs. shuffled), repetition number (i.e., 1st through 8th), and their interaction, as well as random intercepts and slopes for each participant.
+We estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (yoked vs. shuffled), repetition number (i.e., first through eighth), and their interaction, as well as random intercepts and slopes for each participant.
 While we found a significant increase in recognition performance across both groups ($b = 0.18, ~t = 12.8, ~p < 0.001$), %possibly reflecting general practice effects or inherent visual correspondences between drawings and the target object,  %10^{-15}$
 %\ndg{the regression reported doesn't show the latter ("inherent...") since it's about difference over trials?}
 we also found a large and reliable interaction:
@@ -409,8 +409,8 @@ Viewers in the original experiment had an overall success rate of 88\% compared 
 
 \begin{figure*}
 \includegraphics[width=0.94\linewidth]{figures/drawing_changes.pdf}
-\caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent. 
-(E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions. 
+\caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent.
+(E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions.
 Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
 \label{within-across}
 \end{figure*}
@@ -418,10 +418,10 @@ Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
 An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant and sufficient to include in a drawing to support rapid identification of the target object.
 Here we explore this possibility by examining how the drawings themselves changed throughout an interaction.
-Concretely, we investigated four aspects that would reflect the increasing contribution of interaction-specific shared knowledge: 
-\textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing); 
-\textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point); 
-\textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects within an interaction); 
+Concretely, we investigated four aspects that would reflect the increasing contribution of interaction-specific shared knowledge:
+\textit{first}, decreasing number of strokes used (i.e., reducing motor cost of each drawing);
+\textit{second}, increasing dissimilarity from the initial drawing produced (i.e., cumulative drift from the starting point);
+\textit{third}, increasing similarity between successive drawings (i.e., convergence on internally consistent ways of depicting objects within an interaction);
 \textit{fourth}, increasing dissimilarity between drawings of the same object produced in different interactions (i.e., discovery of multiple viable solutions to coordination problem).
 
 % These control experiments establish that shared history with a particular sketcher is critical for the drawings to remain meaningful late in the game.
@@ -444,7 +444,7 @@ Using this feature basis, we compute the similarity between any two drawings as 
 \subsubsection{Fewer strokes across repetitions}
 
 A straightforward explanation for the gains in communication efficiency observed in Part I is that sketchers were able to use fewer strokes per drawing to achieve the same level of recognition accuracy by the viewer.
-Indeed, we found that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition in a mixed-effects model ($b = -0.216, ~t = -6.00, ~p < .001$; Fig. \ref{within-across}A), %, a linear mixed-effects model with random slopes and intercepts for each pair of participants showed that  
+Indeed, we found that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition in a mixed-effects model ($b = -0.216, ~t = -6.00, ~p < .001$; Fig. \ref{within-across}A), %, a linear mixed-effects model with random slopes and intercepts for each pair of participants showed that
 suggesting that pairs were increasingly able to rely upon shared knowledge to communicate efficiently.
 This result raises a question about which strokes are preserved across successive repetitions during the formation of graphical conventions.
 In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
@@ -497,14 +497,14 @@ This effect could arise if early drawings were more strongly constrained by the 
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
 We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different games.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
-We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object. 
+We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
 We found that the observed \emph{slope} was highly unlikely under this distribution $(CI = [-0.57, 0.60],~p~<~0.001)$, even if the similarity at each round was not so unlikely.
 
 \section{Discussion}
 
 % Summary paragraph
 In this paper, we investigated the joint contributions of visual information and social context for determining the meaning of drawings.
-We observed in an interactive Pictionary-style communication game that pairs discover increasingly sparse yet effective ways of depicting objects they repeatedly refer to. 
+We observed in an interactive Pictionary-style communication game that pairs discover increasingly sparse yet effective ways of depicting objects they repeatedly refer to.
 Through a series of control experiments, we demonstrated that these conventionalized representations were both object-specific and interaction-specific: drawings were harder for independent viewers to recognize without sharing the same history of interaction.
 Furthermore, by analyzing the high-level visual features of drawings, we found that they became increasingly consistent within an interaction, but that different pairs discovered different equilibria in the space of viable graphical conventions.
 Taken together, our findings suggest that repeated visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
@@ -513,10 +513,10 @@ Taken together, our findings suggest that repeated visual communication promotes
 % (i.e. we're not just doing reproducing the same thing but with better controls & analyses; we're exploring a different part of the space)
 A key design choice in our visual communication paradigm was to use visual objects as the targets of reference, by contrast with the verbal cues (e.g. ``art gallery'') or audio clips used in prior work \cite{GalantucciGarrod11_ExperimentalSemiotics}. % both builds on and offers several innovative findings.
 %First, it enabled greater exploration of iconicity and abstraction.
-% By using visual referents that belonged to the same modality as drawings, 
-As such, pairs were presented with the same visual information about the shape and appearance of targets, encouraging the production of more `iconic' initial drawings that more strongly resembled the target object. 
-As their communication became increasingly efficient across repetitions, their drawings also became simpler and apparently more `abstract'. 
-An exciting direction for future work is to develop robust and principled measures of the degree of visual correspondence between any drawing and any target object, thereby shedding light on the nature of visual abstraction and iconicity. 
+% By using visual referents that belonged to the same modality as drawings,
+As such, pairs were presented with the same visual information about the shape and appearance of targets, encouraging the production of more `iconic' initial drawings that more strongly resembled the target object.
+As their communication became increasingly efficient across repetitions, their drawings also became simpler and apparently more `abstract'.
+An exciting direction for future work is to develop robust and principled measures of the degree of visual correspondence between any drawing and any target object, thereby shedding light on the nature of visual abstraction and iconicity.
 
 %Although we measured patterns in recognizability and visual similarity between sketches that are consistent with a trajectory of increasing `abstraction' from these initial visual features, future work should directly examine the visual similarity between drawings and their corresponding target images for a more operational measure of changes in iconicity.
 %we are able to better control for individual differences in the visualization of an abstract concept, a process that was necessary in prior designs.
@@ -530,15 +530,15 @@ A major open question raised by our work concerns how people use feedback and co
 According to one account, sketchers may be guided a \emph{primacy} bias where they drop out later, detail-providing strokes to preserve their initial strokes.
 A second possibility is that they are guided by a \emph{recency} bias: when a particular drawing is successful, they keep the final strokes they put down and drop out earlier ones.
 Finally, these decisions may be more strongly guided by the communicative informativity or diagnosticity of each stroke than by their temporal sequence.
-%A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others. 
+%A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others.
 For example, sketchers may remove an entire semantically meaningful part (e.g.~the backrest) if it does not help distinguish the target from distractors in context. % that relate to the semantic structure of the object, while keeping diagnostic parts intact.
 Computational models, or lesion analyses like those preliminarily reported above, are promising approaches toward distinguishing among these possibilities in future work.%, in combination with the development of computational models of drawing production that account for part-level semantic structure.
 %\ndg{this last part is a little too technical and in the weeds for this point in the paper? at any rate its not clear why you need those particular ingredients... perhaps instead say that the importance / lesion analysis is a future direction with applications such as determining which strokes are dropped?}
 
 Visual communication is a powerful vehicle for the cultural transmission of knowledge.
 Over time, advancing our knowledge of the cognitive mechanisms underlying the formation of graphical conventions
-% —-- specifically, how visually and socially mediated information are combined to determine what a picture means —-- 
-may lead to a deeper understanding of the origins of modern symbolic systems for communication and the design of better visual communication tools. 
+% —-- specifically, how visually and socially mediated information are combined to determine what a picture means —--
+may lead to a deeper understanding of the origins of modern symbolic systems for communication and the design of better visual communication tools.
 % form a foundation for understanding visual abstraction and how abstract symbols may emerge from human interaction.
 % Our work suggests that over repeated visual communication, the meanings of abstract visual depictions are increasingly determined by shared knowledge between the communicators rather than their visual properties alone. We propose that a deeper understanding of the fine-grained factors that drive graphical convention formation will further help our understanding of \emph{how} these depictions derive their meaning.
 % \rdh{Need a final sentence, maybe along the lines of: ``understanding the fine-grained factors that drive graphical convention formation is foundational for understanding how non-photorealistic abstractions derive their meaning.''}
