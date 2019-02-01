@@ -104,7 +104,7 @@ From ancient etchings on cave walls to modern digital displays, visual communica
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u}.
 What began as simple mark making has since been adapted to a wide array of applications, ranging from photorealistic rendering to schematic diagrams consisting entirely of symbols.
 
-Even in the straightforward case of drawing from observation, there are countless ways of depicting the same object.
+Even in the relatively straightforward case of drawing from observation, there are countless ways of depicting the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
@@ -359,12 +359,12 @@ Unlike viewers in the interactive visual communication game, participants in the
 %Instead, yoked participants , and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
 Sketchers could have used this feedback to modify their drawings on subsequent repetitions.
 %  about which object the viewer had selected and how quickly they were able to select it,
-As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance\footnote{Note that response times in the yoked condition were purely a function of viewer performance whereas in the original experiment they were a joint function of sketcher \emph{and} listener behavior.} \cite{schober_understanding_1989}.
+As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance \cite{schober_understanding_1989}.
 In a mixed effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
 strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$) and a weaker but significant interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a dampened rate as viewers in the original communication experiment.
  %1x10^{-15}
 When considering pure recognition accuracy, however, the feedback gap was more substantial.
-Viewers in the original experiment had an overall success rate of 88\% compared to 75\% in the yoked condition, $t = 6.2, ~p < 0.001$. %1x10^{-8}$
+Viewers in the original experiment had an overall success rate of 88\% compared to 75\% in the yoked condition, $t = 6.2, ~p < 0.001$\footnote{Note that response times in the yoked condition were purely a function of viewer performance whereas in the original experiment they were a joint function of sketcher \emph{and} listener behavior, so accuracy may be a purer measure for comparison.}.
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
@@ -399,9 +399,10 @@ Viewers in the original experiment had an overall success rate of 88\% compared 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.95 \linewidth]{figures/recog_BIS_timeseries.pdf}
+\includegraphics[width=0.92 \linewidth]{figures/recog_BIS_timeseries.pdf}
 \caption{Comparing drawing recognition timecourse between viewers in communication experiment with those of yoked and shuffled control groups. Error ribbons represent 95\% CI.}
 \label{recog_bis}
+\vspace{-1em}
 \end{center}
 \end{figure}
 
@@ -446,9 +447,9 @@ Using this feature basis, we compute the similarity between any two drawings as 
 A straightforward explanation for the gains in communication efficiency observed in Part I is that sketchers were able to use fewer strokes per drawing to achieve the same level of recognition accuracy by the viewer.
 Indeed, we found that the number of strokes in drawings of repeated objects decreased steadily as a function of repetition in a mixed-effects model ($b = -0.216, ~t = -6.00, ~p < .001$; Fig. \ref{within-across}A), %, a linear mixed-effects model with random slopes and intercepts for each pair of participants showed that
 suggesting that pairs were increasingly able to rely upon shared knowledge to communicate efficiently.
-This result raises a question about which strokes are preserved across successive repetitions during the formation of graphical conventions.
+This result raises a question about \emph{which} strokes are preserved across successive repetitions during the formation of graphical conventions.
 In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
-We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig. \ref{within-across}B for a preliminary visualization).
+We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for a preliminary visualization).
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: numStrokes ~ repetition + (1 + repetition | gameID)
