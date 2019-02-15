@@ -39,7 +39,7 @@
 
 \graphicspath{{./figures/}}
 
-%\cogscifinalcopy % Uncomment this line for the final submission
+\cogscifinalcopy % Uncomment this line for the final submission
 
 %\newcommand{\url}[1]{$#1$}
 
@@ -61,7 +61,7 @@
 \newcommand{\appref}[1]{Appendix \ref{#1}}
 \newcommand{\sectionref}[1]{Section \ref{#1}}
 
-\setlength\titlebox{2.5cm}
+\setlength\titlebox{4cm}
 
 \title{Graphical convention formation during visual communication}
 
@@ -110,9 +110,12 @@ On the one hand, prior work has found that semantic information in a figurative 
 On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
 
 \begin{figure}
-\includegraphics[width=0.99\linewidth]{figures/sketch_gallery.pdf}
+\begin{center}
+\includegraphics[width=0.75\linewidth]{figures/sketch_gallery.pdf}
 \caption{Repeated visual communication about the same object.}
 \label{sketch_gallery}
+\end{center}
+\vspace{-1em}
 \end{figure}
 
 How can these two perspectives be reconciled?
@@ -122,21 +125,23 @@ Specifically, we explore the hypothesis that accumulation of shared knowledge vi
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
 Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{krauss1964changes,ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007}. %fay2010interactive
 
+%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
+\begin{figure*}
+\begin{center}
+\includegraphics[width=0.86\linewidth]{figures/task_stimuli.pdf}
+\caption{(A) Stimuli from ShapeNet. (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of these categories. (C) Repeated objects were drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.}
+\label{task_stimuli}
+\vspace{-1em}
+\end{center}
+\end{figure*}
+
 % extra: Galantucci:2005uh,healey2007graphical,theisen2010systematicity
 
 %% jefan: I want another sentence here, if possible, stating the limitations of this prior work that sets up the contributions of the current paper better.
 
 There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
 
-%% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
-\begin{figure*}
-\begin{center}
-\includegraphics[width=0.95\linewidth]{figures/task_stimuli.pdf}
-\caption{(A) Stimuli from ShapeNet. (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of these categories. (C) Repeated objects were drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.}
-\label{task_stimuli}
-\vspace{-1em}
-\end{center}
-\end{figure*}
+
 
 \section{Part I: How does repeated reference support successful visual communication?}
 
@@ -175,6 +180,7 @@ These 4096-dimensional feature vectors reflected VGG-19 activations to object re
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Based on these clusters, we selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
 
+
 \subsubsection{Task Procedure}
 
 %% Trial-level event structure
@@ -205,8 +211,6 @@ In a pre-test at the beginning of the experiment, and a post-test at the end, bo
 %Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
 % These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
-\subsection{Results}
-
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.84\linewidth]{figures/refgame_BIS_timeseries.pdf}
@@ -214,6 +218,8 @@ In a pre-test at the beginning of the experiment, and a post-test at the end, bo
 \label{refgame_bis}
 \end{center}
 \end{figure}
+
+\subsection{Results}
 
 Because objects were randomly assigned to repeated and control conditions, we expected no differences in task performance in the pre-test phase.
 We found that pairs identified the target at rates well above chance in this phase (75.7\% repeated, 76.1\% control, chance = 25\%), suggesting that they were engaged with the task but not at ceiling performance.
