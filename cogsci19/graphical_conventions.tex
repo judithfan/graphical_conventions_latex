@@ -179,7 +179,7 @@ We restricted our search to 3096 objects belonging to the \texttt{chair} class, 
 To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
 These 4096-dimensional feature vectors reflected VGG-19 activations to object renderings in the second fully-connected layer (i.e., \texttt{fc6}).
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
-Based on these clusters, we selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
+Based on these clusters, we \meg{manually} selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
 
 
 \subsubsection{Task Procedure}
