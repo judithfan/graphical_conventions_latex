@@ -85,7 +85,7 @@ Here we evaluate this possibility in a drawing-based reference game in which two
 % by investigating how the accumulation of shared knowledge influences the drawings they produce and how well they communicate
 Across a series of controlled experiments, we found that pairs of participants discover increasingly sparse yet effective ways of depicting objects.
 These gains were specific to those objects that were repeatedly referenced, and went beyond what could be explained by task practice or the visual properties of the drawings alone.
-We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different pairs.
+We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different interactions.
 Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
 
 \textbf{Keywords:}
@@ -176,7 +176,19 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and visually similar.
 To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a pre-trained deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+This network had been previously optimized to categorize objects in a large subset of the Imagenet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes. 
+This and other models from this architecture class have been shown to learn internal representations that that 
+
+predict perceptual judgments about object shape similarity
+
+
+In addition to achieving human-level performance on these tasks, the higher layers of the resulting model are also quantitatively predictive of neural population responses in high-level visual cortex (e.g., V4 and IT). As such, it was an attractive candidate for investigating the visual invariants that support recognition across image domains. 
+
+Each image elicits a pattern of unit activations at every layer in the model, which may be expressed as a vector in this high-dimensional feature space.
+
+VGG-19 uses a fixed, but large number of feature dimensions to represent all images. 
+
 These 4096-dimensional feature vectors reflected VGG-19 activations to object renderings in the second fully-connected layer (i.e., \texttt{fc6}). \meg{reviewers commented that it's unclear how the images were derived to 4096 features, but I think it's pretty clear in this sentence}
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Based on these clusters, we \meg{manually} selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
@@ -503,7 +515,7 @@ The observed increase fell outside this null distribution, $CI = [-3.21, -0.60],
 Our recognition control experiments suggested that the graphical conventions discovered by different pairs were increasingly opaque to outside observers.
 This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
-We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different games.
+We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different interactions.
 \meg{I tried to rewrite this part as clearly as possible, but it's hard without sounding super systematic. Could we insert an equation here to explain how we computed ``mean pairwise similarity''? It could look something like this: for a given object $o$ and repetition $r$, we compute: $\frac{1}{\binom{N}{2}} \sum_{i = 1}^N \sum_{j = i+1}^N sim(S_{i, o, r}, S_{j, o, r})$. It just seems like a more compact way of effectively communicating the computation.}
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
