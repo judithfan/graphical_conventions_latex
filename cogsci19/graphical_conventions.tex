@@ -174,25 +174,17 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 %% provide justification for why we're using images of real-world objects
 
 In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and visually similar.
-To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
+To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
-This network had been previously optimized to categorize objects in a large subset of the Imagenet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes. 
-This and other models from this architecture class have been shown to learn internal representations that that 
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN), VGG-19 \cite{simonyan2014very}.
+This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes. 
+Trained models from the DCNN architecture class have been shown to predict judgments about perceptual similarity between objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
+As such, they provide a principled choice of encoding model for extracting high-level visual information from images. 
 
-predict perceptual judgments about object shape similarity
-
-
-In addition to achieving human-level performance on these tasks, the higher layers of the resulting model are also quantitatively predictive of neural population responses in high-level visual cortex (e.g., V4 and IT). As such, it was an attractive candidate for investigating the visual invariants that support recognition across image domains. 
-
-Each image elicits a pattern of unit activations at every layer in the model, which may be expressed as a vector in this high-dimensional feature space.
-
-VGG-19 uses a fixed, but large number of feature dimensions to represent all images. 
-
-These 4096-dimensional feature vectors reflected VGG-19 activations to object renderings in the second fully-connected layer (i.e., \texttt{fc6}). \meg{reviewers commented that it's unclear how the images were derived to 4096 features, but I think it's pretty clear in this sentence}
+Following previous work that has employed DCNN models to investigate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, we extract feature activations from a higher layer of the network, which may be expressed as a vector in a high-dimensional feature space.
+Specifically, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}).  
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
-Based on these clusters, we \meg{manually} selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
-
+Among clusters that contained at least 8 objects, we manually identified two visual categories containing 8 objects each (Fig.~\ref{task_stimuli}A).
 
 \subsubsection{Task Procedure}
 
