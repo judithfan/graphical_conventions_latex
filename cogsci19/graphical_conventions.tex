@@ -124,7 +124,7 @@ Our approach is to consider the joint contributions of visual information and so
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting a physical object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
-Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{krauss1964changes,ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental,fay2010interactive}. 
+Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{krauss1964changes,ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007}. %fay2010interactive
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure*}
@@ -164,7 +164,7 @@ We hypothesized that learning would be \emph{object-specific}: that over repeate
 %% methods
 \subsection{Methods: Visual communication experiment}
 
-\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were automatically matched to form 69 pairs. Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
+\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were automatically matched to form 69 pairs. \meg{Within each pair, one participant was assigned the sketcher role and the other the viewer role. Role assignments remained the same throughout the experiment.}
 %They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the IRB% Stanford
 \footnote{ All materials and data will be made available upon un-blinding at \url{https://github.com/XXX}.}.
@@ -174,17 +174,25 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 %% provide justification for why we're using images of real-world objects
 
 In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and visually similar.
-To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
+To accomplish this, we sampled objects from the ShapeNet database \cite{chang2015shapenet}, which contains more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN), VGG-19 \cite{simonyan2014very}.
-This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes. 
-Trained models from the DCNN architecture class have been shown to predict judgments about perceptual similarity between objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
-As such, they provide a principled choice of encoding model for extracting high-level visual information from images. 
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each objects using a deep convolutional neural network, VGG-19 \cite{simonyan2014very}.
+This network had been previously optimized to categorize objects in a large subset of the Imagenet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
+This and other models from this architecture class have been shown to learn internal representations that that
 
-Following previous work that has employed DCNN models to investigate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, we extract feature activations from a higher layer of the network, which may be expressed as a vector in a high-dimensional feature space.
-Specifically, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}).  
+predict perceptual judgments about object shape similarity
+
+
+In addition to achieving human-level performance on these tasks, the higher layers of the resulting model are also quantitatively predictive of neural population responses in high-level visual cortex (e.g., V4 and IT). As such, it was an attractive candidate for investigating the visual invariants that support recognition across image domains.
+
+Each image elicits a pattern of unit activations at every layer in the model, which may be expressed as a vector in this high-dimensional feature space.
+
+VGG-19 uses a fixed, but large number of feature dimensions to represent all images.
+
+These 4096-dimensional feature vectors reflected VGG-19 activations to object renderings in the second fully-connected layer (i.e., \texttt{fc6}). \meg{reviewers commented that it's unclear how the images were derived to 4096 features, but I think it's pretty clear in this sentence}
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
-Among clusters that contained at least 8 objects, we manually identified two visual categories containing 8 objects each (Fig.~\ref{task_stimuli}A).
+Based on these clusters, we \meg{manually} selected two categories of visually similar objects containing eight exemplars each (Fig.~\ref{task_stimuli}A).
+
 
 \subsubsection{Task Procedure}
 
@@ -207,12 +215,12 @@ If the viewer responded under this time limit, participants also received a spee
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
 \subsubsection{Design}
-For each pair of participants, we randomly sampled two sets of four objects that served as contexts in the reference game: one was designated as a \emph{repeated} set while the other was a \emph{control} set (Fig.~\ref{task_stimuli}B)\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.}.% (N=34 for same; N=33 for different)
+For each pair of participants, we randomly sampled two sets of four objects that served as contexts in the reference game: one was designated as a \emph{repeated} set while the other was a \emph{control} set (Fig.~\ref{task_stimuli}B)\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. \meg{This design choice was made so that generalization between different clusters could be examined in future analyses.} We collapse across these groups in our current analyses.}.% (N=34 for same; N=33 for different)
 % These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects.
 %In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
 The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
-During the central \textit{repeated reference} phase, there were six blocks of four trials, and each of the four \emph{repeated} objects appeared as the target once in each block.
-In a pre-test phase at the beginning of the experiment, and a post-test phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in randomly interleaved order.
+During the central \textit{repeated reference} phase, there were six blocks of \meg{four} trials, and each of the four \emph{repeated} objects appeared as the target once in each block.
+In a pre-test \meg{phase} at the beginning of the experiment, and a post-test \meg{phase} at the end, both repeated and control objects appeared once as targets (in their respective contexts) in randomly interleaved order.
 %Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
 % These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
@@ -508,7 +516,7 @@ Our recognition control experiments suggested that the graphical conventions dis
 This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
 We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different interactions.
-\meg{I tried to rewrite this part as clearly as possible, but it's hard without sounding super systematic. Could we insert an equation here to explain how we computed ``mean pairwise similarity''? It could look something like this: for a given object $o$ and repetition $r$, we compute: $\frac{1}{\binom{N}{2}} \sum_{i = 1}^N \sum_{j = i+1}^N sim(S_{i, o, r}, S_{j, o, r})$. It just seems like a more compact way of effectively communicating the computation.}
+\meg{For each object, we consider all interactions in which the object appeared as a repeated object. Now, we choose two of these interactions and for each repetition, compute the similarity between two drawings, both referring to the same given object and drawn in the same given repetition, but from the two different interactions. Averaging this similarity value over all pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.}
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-game drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
 We found that the observed \emph{slope} was highly unlikely under this distribution $(CI = [-0.57, 0.60],~p~<~0.001)$, even if the similarity at each round was not so unlikely.
@@ -545,7 +553,7 @@ A second possibility is that they are guided by a \emph{recency} bias: when a pa
 Finally, these decisions may be more strongly guided by the communicative informativity or diagnosticity of each stroke than by their temporal sequence.
 %A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others.
 For example, sketchers may remove an entire semantically meaningful part (e.g.~the backrest) if it does not help distinguish the target from distractors in context. % that relate to the semantic structure of the object, while keeping diagnostic parts intact.
-Computational models of sketch production, or lesion analyses like those preliminarily reported above, are promising approaches toward distinguishing among these possibilities in future work. %, in combination with the development of computational models of drawing production that account for part-level semantic structure.
+Computational models of sketch production, or lesion analyses like those preliminarily reported above, are promising approaches toward distinguishing among these possibilities in future work.%, in combination with the development of computational models of drawing production that account for part-level semantic structure.
 %\ndg{this last part is a little too technical and in the weeds for this point in the paper? at any rate its not clear why you need those particular ingredients... perhaps instead say that the importance / lesion analysis is a future direction with applications such as determining which strokes are dropped?}
 
 Visual communication is a powerful vehicle for the cultural transmission of knowledge.
