@@ -121,7 +121,7 @@ On the other hand, other work has emphasized the role of socially-mediated infor
 
 How can these two perspectives be reconciled?
 Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
-Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting a physical object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
+Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
 Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{krauss1964changes,ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental,fay2010interactive}.
@@ -140,7 +140,7 @@ Our approach was inspired by a large literature that has explored how extended i
 
 %% jefan: I want another sentence here, if possible, stating the limitations of this prior work that sets up the contributions of the current paper better.
 
-There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
+There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn but only shown at the beginning and end of the interaction, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
 
 
 
@@ -149,7 +149,7 @@ There are three aspects of the current work that advance our prior understanding
 %% intro to this section
 Our first goal was to understand how people learn to communicate about visual objects across repeated visual communication.
 To accomplish this, we developed a drawing-based reference game for two players.
-On each trial, both players were shown several images of objects, one of which was privately designated as the `target' to the sketcher.
+On each trial, both players were shown four images of objects, one of which was privately designated as the `target' to the sketcher.
 The sketcher's goal was to draw the target so that the viewer could select it from the context as quickly and accurately as possible.
 We hypothesized that learning would be \emph{object-specific}: that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively relative to non-repeated control objects.
 
@@ -199,7 +199,7 @@ Each stroke was transmitted to the viewer's screen in real-time and sketchers we
 The viewer was allowed to guess the identity of the drawn object by clicking one of the four objects as soon as they were confident, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
 Finally, participants were incentivized to perform both quickly and accurately.
 Both participants earned an accuracy bonus for each correct response, and the sketcher was instructed to take no longer than 30 seconds to produce their drawings.
-If the viewer responded under this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
+If the viewer responded correctly under this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
 %Otherwise, the viewer had no other means of communicating with the sketcher.
 
 %% Two conditions: repeated and control
@@ -232,7 +232,7 @@ We found that pairs identified the target at rates well above chance in this pha
 %67	-0.003731343	-0.07089552	-0.001317164	0.07089552
 We found no difference in accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
 
-In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account.
+In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account. \meg{would it make sense to change this to time taken for viewer to respond? I get that the way we measured this was drawDuration, but readers may be confused by what it means to "produce" (i.e. complete) a drawing when the sketcher can be interrupted any time.}
 This efficiency score is computed by first $z$-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
 It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}.
 
@@ -298,7 +298,7 @@ We excluded data from 22 participants who did not meet our inclusion criterion f
 %Here, we define interaction specificity based on both temporal structure (path dependence) and partner specificity.
 %Therefore, we design several experiments that measure the recognizability of drawings and reaction times produced in the drawing task by third-party observers.
 
-On each trial, participants were presented with a drawing and the same set of four objects viewers originally saw accompanying that drawing.
+On each trial, participants were presented with a drawing and the same set of four objects that accompanied that drawing in the original visual communication experiment.
 They also received the same accuracy and speed bonuses as viewers in the communication experiment.
 %Their task was thus the same as the viewer's in the communication experiment, except they knew their responses were not being provided as real-time feedback to the sketcher.
 To ensure task engagement, we included five identical attention-check trials that appeared once every eight trials.
@@ -311,7 +311,7 @@ Those in the shuffled group were matched with a random sample of 10 distinct pai
 For example, if a drawing was produced in the fifth block of repetitions in the original experiment, then it also appeared in the fifth block here.
 
 At the trial level, groups in both conditions thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately.
-At the session level, both groups received exactly the same amount of practice recognizing drawings.
+At the repetition level, both groups received exactly the same amount of practice recognizing drawings.
 Thus any differences between these groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal.
 
 \subsection{Results}
@@ -508,7 +508,9 @@ Our recognition control experiments suggested that the graphical conventions dis
 This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
 We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different interactions.
-To do this, for each object, we consider the set of all interactions in which the object appeared as a repeated object. Now, for a pair of interactions in this set, we compute the similarity between the drawings from these interactions such that they refer to the same given object and are drawn in the same repetition. Averaging this similarity value over all possible pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.
+To do this, for each object, we consider the set of all interactions in which the object appeared as a repeated object.
+Now, for a pair of interactions in this set, we compute the similarity between the drawings from these interactions such that they refer to the same given object and are drawn in the same repetition.
+Averaging this similarity value over all possible pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-interaction drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
 We found that the observed \emph{slope} was highly unlikely under this distribution $(CI = [-0.57, 0.60],~p~<~0.001)$, even if the similarity at each round was not so unlikely.
