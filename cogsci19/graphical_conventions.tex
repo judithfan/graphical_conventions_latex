@@ -37,7 +37,7 @@
 \usepackage{array}
 \usepackage{nicefrac}
 
-\setlength{\textfloatsep}{10pt plus 1.0pt minus 3.0pt}
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 4.0pt}
 
 \graphicspath{{./figures/}}
 
@@ -168,7 +168,7 @@ We hypothesized that learning would be \emph{object-specific}: that over repeate
 %% methods
 \subsection{Methods: Visual communication experiment}
 
-\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were automatically matched to form 69 pairs. Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
+\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs. Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
 %They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.\footnote{All materials and data are available at: \url{https://github.com/cogtoolslab/graphical_conventions}.}
 
@@ -210,7 +210,7 @@ If the viewer responded correctly under this time limit, participants also recei
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
 \subsubsection{Design}
-For each pair of participants, we randomly sampled two sets of four objects that served as contexts in the reference game: one was designated as a \emph{repeated} set while the other was a \emph{control} set (Fig.~\ref{task_stimuli}B)\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.}.% (N=34 for same; N=33 for different)
+For each pair of participants, we randomly sampled two sets of four objects that served as contexts in the reference game: one was designated as a \emph{repeated} set while the other was a \emph{control} set (Fig.~\ref{task_stimuli}B).\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.} % (N=34 for same; N=33 for different)
 % These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects.
 %In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
 The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
@@ -238,7 +238,7 @@ We found no difference in accuracy across conditions (mean difference: 0.3\%, bo
 In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., latency before viewer response) into account. 
 %\meg{would it make sense to change this to time taken for viewer to respond? I get that the way we measured this was drawDuration, but readers may be confused by what it means to "produce" (i.e. complete) a drawing when the sketcher can be interrupted any time.}
 This efficiency score is computed by first $z$-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
-It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}.
+It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials.\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}
 
 % Formula: bis_score ~ phase * condition + (1 + phase * condition | gameID)
 %    Data: input
@@ -318,8 +318,8 @@ Each attention-check trial presented the same set of objects and drawing, which 
 Participants who responded incorrectly on at least four out of five of these trials were excluded from subsequent analyses.
 
 Each participant was randomly assigned to one of two conditions: a \textit{yoked} group and a \textit{shuffled} group.
-Those in the yoked group were matched with one pair in the communication experiment and viewed 40 drawings in the same sequence the original viewer had.
-Those in the shuffled group were matched with a random sample of 10 distinct pairs from the communication experiment and viewed four drawings from each in turn, which appeared within the same repetition block as they had appeared originally.
+Each yoked participant was matched with a single communication experiment and viewed 40 drawings in the same sequence the original viewer had.
+Those in the shuffled group were matched with a random sample of 10 distinct communication experiments and viewed four drawings from each in turn, which appeared within the same repetition block as they had originally.
 For example, if a drawing was produced in the fifth repetition block in the original experiment, then it also appeared in the fifth block here.
 
 At the trial level, groups in both conditions thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately.
