@@ -37,6 +37,8 @@
 \usepackage{array}
 \usepackage{nicefrac}
 
+\setlength{\textfloatsep}{10pt plus 1.0pt minus 3.0pt}
+
 \graphicspath{{./figures/}}
 
 \cogscifinalcopy % Uncomment this line for the final submission
@@ -86,10 +88,10 @@ Here we evaluate this possibility in a drawing-based reference game in which two
 Across a series of controlled experiments, we found that pairs of participants discover increasingly sparse yet effective ways of depicting objects.
 These gains were specific to those objects that were repeatedly referenced, and went beyond what could be explained by task practice or the visual properties of the drawings alone.
 We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different interactions.
-Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
+Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than solely their visual properties.
 
 \textbf{Keywords:}
-drawing understanding; alignment; drawing; iconicity; visual abstraction
+iconicity; alignment; sketch understanding
 
 % On each trial, both players were shown an array of objects; the sketcher’s goal was to draw one of these, the target, so that the viewer could guess the target as quickly as possible.
 % The game included two sets of objects: objects in one set were drawn repeatedly, while those in a control set were drawn once at the beginning and again at the end of the game.
@@ -105,14 +107,14 @@ From ancient etchings on cave walls to modern digital displays, visual communica
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u}.
 What began as simple mark making has since been adapted to a wide array of applications, ranging from photorealistic rendering to schematic diagrams consisting entirely of symbols.
 
-Even in the relatively straightforward case of drawing from observation, there are countless ways of depicting the same object.
+Even in the relatively straightforward case of drawing from observation, there are countless ways to depict the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
 On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
-On the other hand, other work has emphasized the role of socially-mediated information and context for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
+On the other hand, other work has emphasized the role of socially-mediated information for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=0.75\linewidth]{figures/sketch_gallery.pdf}
+\includegraphics[width=0.7\linewidth]{figures/sketch_gallery.pdf}
 \caption{Repeated visual communication about the same object.}
 \label{sketch_gallery}
 \end{center}
@@ -124,7 +126,9 @@ Our approach is to consider the joint contributions of visual information and so
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
-Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{krauss1964changes,ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental,fay2010interactive}.
+Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence}, and drawings \cite{garrod_foundations_2007}.
+
+%% galantucci2005experimental, fay2014creating, krauss1964changes, fay2010interactive
 
 %% Figure 1 around here: (A) Stimuli. (B) Task (Sketcher/Viewer interface)
 \begin{figure*}
@@ -232,7 +236,8 @@ We found that pairs identified the target at rates well above chance in this pha
 %67	-0.003731343	-0.07089552	-0.001317164	0.07089552
 We found no difference in accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
 
-In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., time taken to produce each drawing) into account. \meg{would it make sense to change this to time taken for viewer to respond? I get that the way we measured this was drawDuration, but readers may be confused by what it means to "produce" (i.e. complete) a drawing when the sketcher can be interrupted any time.}
+In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., latency before viewer response) into account. 
+%\meg{would it make sense to change this to time taken for viewer to respond? I get that the way we measured this was drawDuration, but readers may be confused by what it means to "produce" (i.e. complete) a drawing when the sketcher can be interrupted any time.}
 This efficiency score is computed by first $z$-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
 It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}.
 
@@ -286,6 +291,14 @@ Under our \emph{interaction-specificity} hypothesis, we predicted that the latte
 %\ndg{there's something missing on this motivation... maybe a hypothesis like "we expect viewer who see the same sequence of referential drawings to do as well, but viewers who see different ones not to? err...}
 % , and they made their decision based on the final drawing, rather than being able to interrupt await additional information.
 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=0.92 \linewidth]{figures/recog_BIS_timeseries.pdf}
+\caption{Comparing drawing recognition timecourse between viewers in communication experiment with those of yoked and shuffled control groups. Error ribbons represent 95\% CI.}
+\label{recog_bis}
+\end{center}
+\end{figure}
+
 \subsection{Methods: Recognition Control Experiments}
 
 \subsubsection{Participants}
@@ -313,6 +326,15 @@ For example, if a drawing was produced in the fifth repetition block in the orig
 At the trial level, groups in both conditions thus received exactly the same visual information and performed the task under the same incentives to respond quickly and accurately.
 At the repetition level, both groups received exactly the same amount of practice recognizing drawings.
 Thus any differences between these groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal.
+
+\begin{figure*}
+\includegraphics[width=0.94\linewidth]{figures/drawing_changes.pdf}
+\caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent.
+(E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions.
+Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
+\label{within-across}
+\end{figure*}
+
 
 \subsection{Results}
 
@@ -360,8 +382,6 @@ Observers in the shuffled condition who were deprived of this interaction contin
 
 % We found a significant difference in recognizability: while there was some improvement across repetitions in the shuffled condition, likely attributable to a practice effect, they achieved significantly worse performance than participants in the yoked condition who saw the same drawings in their original context.
 
-\vspace{2mm}
-
 \subsubsection{Viewer feedback also contributes to gains in performance}
 % \todo[inline]{I think the `takeaway' here is still not 100\% clear; it's not clear whether we want to claim that there's a big difference between yoked \& orig. or want to minimize it?}
 
@@ -372,10 +392,11 @@ Sketchers could have used this feedback to modify their drawings on subsequent r
 %  about which object the viewer had selected and how quickly they were able to select it,
 As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance \cite{schober_understanding_1989}.
 In a mixed effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
-strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$) and a weaker but significant interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a dampened rate as viewers in the original communication experiment.
+strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as a weaker but reliable interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a dampened rate as viewers in the original communication experiment.
  %1x10^{-15}
-When considering pure recognition accuracy, however, the feedback gap was more substantial.
-Viewers in the original experiment had an overall success rate of 88\% compared to 75\% in the yoked condition, $t = 6.2, ~p < 0.001$\footnote{Note that response times in the yoked condition were purely a function of viewer performance whereas in the original experiment they were a joint function of sketcher \emph{and} listener behavior, so accuracy may be a purer measure for comparison.}.
+% When considering recognition accuracy, however, the feedback gap was more substantial.
+We found a similar pattern of results when comparing recognition accuracy between groups:
+Viewers in the original experiment identified 88\% of drawings correctly, compared to 75\% by participants in the yoked condition, $t = 6.2, ~p < 0.001$.\footnote{Note that response times in the yoked condition were a function of viewer performance, whereas in the communication experiment they were a function of both sketcher \emph{and} viewer performance.}
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
@@ -408,24 +429,7 @@ Viewers in the original experiment had an overall success rate of 88\% compared 
 % versionyoked  -0.12542    0.02028 171.00000  -6.184 4.46e-09 ***
 % ---
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.92 \linewidth]{figures/recog_BIS_timeseries.pdf}
-\caption{Comparing drawing recognition timecourse between viewers in communication experiment with those of yoked and shuffled control groups. Error ribbons represent 95\% CI.}
-\label{recog_bis}
-\vspace{-1em}
-\end{center}
-\end{figure}
-
 \section{Part III: How do visual features of drawings change over the course of an interaction?}
-
-\begin{figure*}
-\includegraphics[width=0.94\linewidth]{figures/drawing_changes.pdf}
-\caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent.
-(E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions.
-Error ribbons represent 95\% CI, dotted lines represent permuted baseline.}
-\label{within-across}
-\end{figure*}
 
 The results so far show that repeated visual communication establishes object-specific, interaction-specific ways of efficiently referring to objects.
 An intriguing implication is that interacting pairs achieved this by gradually forming \textit{ad hoc} graphical conventions about what was relevant and sufficient to include in a drawing to support rapid identification of the target object.
