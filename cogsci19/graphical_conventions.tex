@@ -69,7 +69,7 @@
 
 \setlength\titlebox{4cm}
 
-\title{Graphical convention formation during visual communication}
+\title{Repeated visual communication supports formation of graphical conventions}
 
  \author{
 Robert X. D. Hawkins*  \\ Department of Psychology \\  Stanford University \\  \texttt{rxdh@stanford.edu}
@@ -185,8 +185,7 @@ In order to make our task sufficiently challenging, we sought to construct commu
 To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing a large number of 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
 To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN) architecture, VGG-19 \cite{simonyan2014very}.
-This network had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}.
-% This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
+This network had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
 Trained DCNN models have been shown to predict human perceptual similarity judgments about objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
 Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
@@ -545,11 +544,11 @@ As such, the sketcher and viewer were presented with the same concrete visual in
 As their communication became increasingly efficient across repetitions, their drawings also became simpler and apparently more `abstract'.
 An exciting direction for future work is to develop robust and principled computational measures of the degree of visual correspondence between any drawing and any target object, thereby shedding light on the nature of visual abstraction and iconicity.
 
-A second design choice was the use of a speed bonus incentivizing participants to complete trials quickly.
-What role do such time pressures play in the formation of conventions?
-Recent models have emphasized the role of broader \emph{production costs} in conjunction with informativity in explaining how sketchers automatically and flexibly adjust their level of detail in communication \cite{fan2019pragmatic}. 
-An intrinsic preference for less costly messages may contribute to the increasing simplification of conventions: shared social context allows agents to be equally informative with fewer strokes \cite<see>[for a formal model]{HawkinsFrankGoodman17_ConventionFormation}.
-These intrinsic costs may vary across individuals, however, and our speed bonus made them explicit.
+A second important design choice was the use of a speed bonus incentivizing participants to complete trials quickly.
+What role do such incentives play in the formation of graphical conventions?
+Recent computational models of visual communication have found that both how costly a drawing is produce and how informative a drawing is in context are critical for explaining the way people spontaneously adjust the level of detail to include in their drawings in one-shot visual communication tasks \cite{fan2019pragmatic}. 
+The consequences of this intrinsic preference for less costly drawings (i.e., less time, fewer strokes) may be compounded across repetitions, as the accumulation of shared experience allows people to be equally informative with fewer strokes \cite<see>[for a formal model]{HawkinsFrankGoodman17_ConventionFormation}.
+The magnitude of these intrinsic costs may vary across individuals, however, and the speed bonus made them explicit.
 
 %Although we measured patterns in recognizability and visual similarity between sketches that are consistent with a trajectory of increasing `abstraction' from these initial visual features, future work should directly examine the visual similarity between drawings and their corresponding target images for a more operational measure of changes in iconicity.
 %we are able to better control for individual differences in the visualization of an abstract concept, a process that was necessary in prior designs.
@@ -595,7 +594,7 @@ may lead to a deeper understanding of the origins of modern symbolic systems for
 
 \section{Acknowledgments}
 
-Blah blah blah
+RXDH was supported by the National Science Foundation Graduate Research Fellowship (DGE-114747). 
 
 \bibliographystyle{apacite}
 
