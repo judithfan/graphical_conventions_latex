@@ -235,10 +235,9 @@ We found that pairs identified the target at rates well above chance in this pha
 %67	-0.003731343	-0.07089552	-0.001317164	0.07089552
 We found no difference in accuracy across conditions (mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$).
 
-In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., latency before viewer response) into account. 
-%\meg{would it make sense to change this to time taken for viewer to respond? I get that the way we measured this was drawDuration, but readers may be confused by what it means to "produce" (i.e. complete) a drawing when the sketcher can be interrupted any time.}
+In order to measure how well pairs learned to communicate throughout the rest of their interaction, we used a measure of communicative efficiency \cite<the \emph{balanced integration score,}>{Liesefeld2018} that takes both accuracy (i.e., proportion of correct viewer responses) and response time (i.e., latency before viewer response) into account to control for tradeoffs. 
 This efficiency score is computed by first $z$-scoring the accuracy and response time variables to map these values to the same scale and then subtracting the standardized response time from standardized accuracy.
-It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials.\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}
+It is highest when pairs are both fast and accurate, and lowest when they make more errors and take longer, relative to their own performance on other trials.%\footnote{Results are similar for accuracy alone, but we adopted this integrated measure to better control for speed-accuracy tradeoffs.}
 
 % Formula: bis_score ~ phase * condition + (1 + phase * condition | gameID)
 %    Data: input
@@ -251,9 +250,10 @@ It is highest when pairs are both fast and accurate, and lowest when they make m
 % ---
 % Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-To evaluate changes in communicative efficiency, we fit a linear mixed-effects model with maximal random effect structure, including random intercepts, slopes, and interactions for each pair of participants.
+To evaluate changes in communicative efficiency, we fit a linear mixed-effects model including random intercepts, slopes, and interactions for each pair of participants.
 We found a main effect of increasing communicative efficiency for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting general improvements due to task practice.
 Critically, however, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Fig.~\ref{refgame_bis}).
+In terms of raw accuracy, performance on repeated objects improved by 14.5\% while performance on control objects only improved by 7.1\%.
 Thus, there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
 %\ndg{optionally: add the observation that the object-general boost seems to be achieved after the first trial, and is likely very general orientation to the task?}
 
