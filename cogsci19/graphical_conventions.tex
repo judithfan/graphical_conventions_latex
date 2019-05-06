@@ -127,7 +127,7 @@ How can these two perspectives be reconciled?
 Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
-To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
+To investigate this, we used an interactive drawing-based reference game in which two participants repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
 Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental}.
 
 %% galantucci2005experimental, fay2014creating, krauss1964changes, fay2010interactive
@@ -154,8 +154,8 @@ There are three aspects of the current work that advance our prior understanding
 
 %% intro to this section
 Our first goal was to understand how people learn to communicate about visual objects across repeated visual communication.
-To accomplish this, we developed a drawing-based reference game for two players.
-On each trial, both players were shown an array of four objects, one of which was privately designated as the `target' to the sketcher.
+To accomplish this, we developed a drawing-based reference game for two participants.
+On each trial, both participants were shown the same array of four objects, one of which was privately designated as the `target' to the sketcher.
 The sketcher's goal was to draw the target so that the viewer could select it from the array as quickly and accurately as possible.
 We hypothesized that learning would be \emph{object-specific}: that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively relative to non-repeated control objects.
 
@@ -178,15 +178,14 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-In order to make our task sufficiently challenging, we sought to construct contexts of objects whose members were both geometrically complex and visually similar.
-To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing more than 51,300 3D mesh models of real-world objects. % belonging to 55 different object classes.
+In order to make our task sufficiently challenging, we sought to construct combinations of objects whose members were both geometrically complex and visually similar.
+To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing a large number of 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN), VGG-19 \cite{simonyan2014very}.
-This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
-Trained models from the DCNN architecture class have been shown to predict judgments about perceptual similarity between objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN) architecture, VGG-19 \cite{simonyan2014very}, that had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}.
+% This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
+Trained DCNN models have been shown to predict human perceptual similarity judgments about objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
-
-Following previous work that has employed DCNN models to investigate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}), one of the highest layers in the network.
+Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Among clusters that contained at least 8 objects, we manually identified two visual categories containing 8 objects each (Fig.~\ref{task_stimuli}A).
 
@@ -198,12 +197,12 @@ Among clusters that contained at least 8 objects, we manually identified two vis
 On each trial, both participants were shown the same set of four objects in randomized locations.
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
 %% Trial-level objective of sketcher and viewer
-Sketchers drew using their mouse cursor in black ink on a digital canvas embedded in their web browser ($300 \times 300$ pixels; pen width of 5 pixels).
-Each stroke was transmitted to the viewer's screen in real-time and sketchers were not able to delete previous strokes.
-The viewer was allowed to guess the identity of the drawn object by clicking one of the four objects as soon as they were confident, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
-Finally, participants were incentivized to perform both quickly and accurately.
-Both participants earned an accuracy bonus for each correct response, and the sketcher was instructed to take no longer than 30 seconds to produce their drawings.
-If the viewer responded correctly under this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
+Sketchers drew using their mouse cursor in black ink on a digital canvas embedded in their web browser ($300 \times 300$ pixels; pen width = 5px).
+Each stroke was rendered on the viewer's screen in real time and sketchers could not delete previous strokes.
+The viewer aimed to click one of the four objects as soon as they were confident of the identity of the target, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
+Both participants were incentivized to perform both quickly and accurately.
+They both earned an accuracy bonus for each correct response, and the sketcher was required to complete their drawings in 30 seconds or less.
+If the viewer responded correctly within the time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
 %Otherwise, the viewer had no other means of communicating with the sketcher.
 
 %% Two conditions: repeated and control
