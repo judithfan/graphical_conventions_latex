@@ -184,8 +184,7 @@ This network had been previously trained to categorize objects in a large subset
 Trained models from the DCNN architecture class have been shown to predict judgments about perceptual similarity between objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
 
-Following previous work that has employed DCNN models to investigate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, we extract feature activations from a higher layer of the network, which may be expressed as a vector in a high-dimensional feature space.
-Specifically, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}).
+Following previous work that has employed DCNN models to investigate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}), one of the highest layers in the network.
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Among clusters that contained at least 8 objects, we manually identified two visual categories containing 8 objects each (Fig.~\ref{task_stimuli}A).
 
@@ -395,7 +394,9 @@ strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as 
  %1x10^{-15}
 % When considering recognition accuracy, however, the feedback gap was more substantial.
 We found a similar pattern of results when comparing recognition accuracy between groups:
-Viewers in the original experiment identified 88\% of drawings correctly, compared to 75\% by participants in the yoked condition, $t = 6.2, ~p < 0.001$.\footnote{Note that response times in the yoked condition were a function of viewer performance, whereas in the communication experiment they were a function of both sketcher \emph{and} viewer performance.}
+Viewers in the original experiment identified 88\% of drawings correctly, compared to 75\% by participants in the yoked condition, $t = 6.2, ~p < 0.001$.
+
+% \footnote{Note that response times in the yoked condition were a function of viewer performance, whereas in the communication experiment they were a function of both sketcher \emph{and} viewer performance.}
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
@@ -529,7 +530,7 @@ Taken together, our findings suggest that repeated visual communication promotes
 
 % highlighting generative innovations relative to previous work
 % (i.e. we're not just doing reproducing the same thing but with better controls & analyses; we're exploring a different part of the space)
-A key design choice in our visual communication paradigm was to use visual objects as the targets of reference, by contrast with the verbal cues (e.g. ``art gallery'') or audio clips used in prior work \cite{GalantucciGarrod11_ExperimentalSemiotics}. % both builds on and offers several innovative findings.
+A key design choice in our visual communication paradigm was to use visual objects as the targets of reference, by contrast with the verbal cues (e.g. ``art gallery'') or audio clips used in prior work \cite{GalantucciGarrod11_ExperimentalSemiotics,fay2010interactive}. % both builds on and offers several innovative findings.
 %First, it enabled greater exploration of iconicity and abstraction.
 % By using visual referents that belonged to the same modality as drawings,
 As such, pairs were presented with the same visual information about the shape and appearance of targets, encouraging the production of more `iconic' initial drawings that more strongly resembled the target object.
