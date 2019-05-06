@@ -155,7 +155,7 @@ There are three aspects of the current work that advance our prior understanding
 %% intro to this section
 Our first goal was to understand how people learn to communicate about visual objects across repeated visual communication.
 To accomplish this, we developed a drawing-based reference game for two participants.
-On each trial, both participants were shown the same array of four objects, one of which was privately designated as the `target' to the sketcher.
+On each trial, both participants shared a \textit{communicative context}, represented by an array of four objects, one of which was privately designated the `target' to the sketcher.
 The sketcher's goal was to draw the target so that the viewer could select it from the array as quickly and accurately as possible.
 We hypothesized that learning would be \emph{object-specific}: that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively relative to non-repeated control objects.
 
@@ -178,10 +178,11 @@ Data from two pairs were excluded due to unusually low performance (i.e., accura
 %% provide justification for why we're using sets of similar objects
 %% provide justification for why we're using images of real-world objects
 
-In order to make our task sufficiently challenging, we sought to construct combinations of objects whose members were both geometrically complex and visually similar.
+In order to make our task sufficiently challenging, we sought to construct communicative contexts consisting of objects whose members were both geometrically complex and visually similar.
 To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing a large number of 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
-To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN) architecture, VGG-19 \cite{simonyan2014very}, that had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}.
+To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN) architecture, VGG-19 \cite{simonyan2014very}.
+This network had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}.
 % This network had been previously trained to categorize objects in a large subset of Imagenet \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
 Trained DCNN models have been shown to predict human perceptual similarity judgments about objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
@@ -210,12 +211,12 @@ If the viewer responded correctly within the time limit, participants also recei
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
 \subsubsection{Design}
-For each pair of participants, we randomly sampled two sets of four objects that served as contexts in the reference game: one was designated as a \emph{repeated} set while the other was a \emph{control} set (Fig.~\ref{task_stimuli}B).\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.} % (N=34 for same; N=33 for different)
+For each pair of participants, two sets of four objects were randomly sampled to serve as communication contexts: one was designated the \emph{repeated} set while the other served as the \emph{control} set (Fig.~\ref{task_stimuli}B).\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.} % (N=34 for same; N=33 for different)
 % These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects.
 %In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
 The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
-During the central \textit{repeated reference} phase, there were six repetition blocks of four trials, and each of the four \emph{repeated} objects appeared as the target once in each repetition block.
-In a pre-test phase at the beginning of the experiment, and a post-test phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in randomly interleaved order.
+During the repeated reference phase, there were six repetition blocks of four trials, and each of the four \emph{repeated} objects appeared as the target once in each repetition block.
+In a pre-test phase at the beginning of the experiment and a post-test phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in a randomly interleaved order.
 %Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
 % These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
@@ -276,19 +277,26 @@ Thus, there are benefits of repeatedly communicating about an object that accrue
 \section{Part II: What explains gains in efficiency?}
 
 Our visual communication experiment established that pairs of participants coordinate on more efficient and \emph{object-specific} ways of depicting targets. % more efficiently across repetitions.
-This raises the question: to what extent do these gains in efficiency reflect the accumulation of \emph{interaction-specific} shared knowledge between a sketcher and viewer, as opposed to a combination of task practice and the inherent visual properties of their drawings?
+This raises the question: to what extent do these gains in efficiency reflect the accumulation of \emph{interaction-specific} shared knowledge between a sketcher and viewer, as opposed to the combination of task practice and the inherent visual properties of their drawings?
 
-To measure the contribution of the latter, we conducted two control experiments that tested the recognizability of these drawings both inside and outside the social context in which they were drawn.
+To measure the contribution of the latter, we conducted two control experiments to estimate the how recognizable these drawings were to naive viewers outside the social context in which they were produced.
 %Naive participants performed a drawing recognition task that closely matched the task of the viewer in
 %In these experiments, we manipulated the sequence of drawings shown to naive participants in a recognition task.
-One group of naive participants were shown a sequence of drawings constructed exclusively from a single interaction, thus closely matching the experience of a particular viewer in the visual communication experiment.
-For a second group, however, the sequence of drawings was pieced together from many different interactions.
-Under our \emph{interaction-specificity} hypothesis, we predicted that the latter group would be impaired in their recognition performance compared to the former.
+Participants in one control group were shown a sequence of drawings taken from a single interaction, closely matching the experience of viewers in the communication experiment.
+Participants in a second control group were instead shown a sequence of drawings pieced together from many different interactions, thus disrupting the continuity experienced by viewers paired with a single sketcher. 
+Insofar as interaction-specific shared knowledge contributed to the efficiency gains observed previously, we hypothesized that the second group would not improve as much over the course of the experimental session as the first group would. 
 
 %We manipulated the sequence of drawings participants saw such that
 % with drawings produced in the earlier experiment.% and asked them to that closely matched the viewer's task in the earlier experiment, except here they knew their responses were not being provided as real-time feedback to the sketcher. %they were presented with drawings and guessed which of the four objects it referred to.
 %\ndg{there's something missing on this motivation... maybe a hypothesis like "we expect viewer who see the same sequence of referential drawings to do as well, but viewers who see different ones not to? err...}
 % , and they made their decision based on the final drawing, rather than being able to interrupt await additional information.
+
+\subsection{Methods: Recognition Control Experiments}
+
+\subsubsection{Participants}
+
+We recruited 245 participants via Amazon Mechanical Turk.
+We excluded data from 22 participants who did not meet our inclusion criterion for accurate and consistent response on attention-check trials (see below).
 
 \begin{figure}[ht]
 \begin{center}
@@ -298,12 +306,6 @@ Under our \emph{interaction-specificity} hypothesis, we predicted that the latte
 \end{center}
 \end{figure}
 
-\subsection{Methods: Recognition Control Experiments}
-
-\subsubsection{Participants}
-
-We recruited 245 participants via Amazon Mechanical Turk.
-We excluded data from 22 participants who did not meet our inclusion criterion for accurate and consistent response on attention-check trials (see below).
 
 \subsubsection{Task, Design, \& Procedure}
 %How does efficiency of graphical communication, measured by how accurately and quickly the viewer can select the target intended by the sketcher, change when we change the degree of interaction specificity?
