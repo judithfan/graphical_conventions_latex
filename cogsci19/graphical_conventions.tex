@@ -126,7 +126,7 @@ Our approach is to consider the joint contributions of visual information and so
 Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this, we used an interactive drawing-based reference game in which two players repeatedly communicate about visual objects, and examined both how their task performance and the drawings they produced changed over time (see Fig.~\ref{sketch_gallery}).
-Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence}, and drawings \cite{garrod_foundations_2007}.
+Our approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,HawkinsFrankGoodman17_ConventionFormation}, gesture \cite{goldin1996silence}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental}.
 
 %% galantucci2005experimental, fay2014creating, krauss1964changes, fay2010interactive
 
@@ -512,8 +512,17 @@ Our recognition control experiments suggested that the graphical conventions dis
 This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
 We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different interactions.
-To do this, for each object, we considered the set of all interactions in which the object appeared as a repeated object.
-Now, for a pair of interactions in this set, we computed the similarity between a drawing made in one interaction and a drawing made in the other such that they refer to the same given object and are drawn in the same repetition.
+To compute this, for each object, we considered the set of all interactions in which that object was repeatedly drawn. 
+
+Sep each pair of interactions 
+
+For each pair of interactions in this set, 
+
+we computed the similarity between a drawing made in one interaction and a drawing made in the other 
+
+such that they refer to the same object and are drawn in the same repetition.
+
+
 Averaging this similarity value over all possible pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-interaction drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
