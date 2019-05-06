@@ -511,22 +511,13 @@ The observed increase fell outside this null distribution, $CI = [-3.21, -0.60],
 Our recognition control experiments suggested that the graphical conventions discovered by different pairs were increasingly opaque to outside observers.
 This effect could arise if early drawings were more strongly constrained by the visual properties of a shared target object, but later drawings diverged as different pairs discovered different equilibria in the space of viable graphical conventions.
 Under this account, drawings of the same object from different pairs would become increasingly dissimilar from each other across repetitions.
-We tested this prediction by computing the mean pairwise similarity between drawings of the same object from each repetition, but from different interactions.
-To compute this, for each object, we considered the set of all interactions in which that object was repeatedly drawn. 
-
-Sep each pair of interactions 
-
-For each pair of interactions in this set, 
-
-we computed the similarity between a drawing made in one interaction and a drawing made in the other 
-
-such that they refer to the same object and are drawn in the same repetition.
-
-
-Averaging this similarity value over all possible pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.
+We tested this prediction by computing the mean pairwise similarity between drawings of the same object within each repetition, produced in different interactions.
+To compute this, for each object, we considered all interactions in which that object was repeatedly drawn. 
+We then computed the similarity between every pair of drawings of that object produced within the same repetition index, and took the mean across all such pairs of drawings. 
+% Averaging this similarity value over all possible pairs of interactions gives us the mean between-interaction similarity for a given object and a given repetition.
 In a mixed-effects regression model including linear and quadratic terms, as well as random slopes and intercepts for object and pair, we found a small but reliable negative effect of repetition on between-interaction drawing similarity ($b = -1.4, ~t = -2.5$; Fig.~\ref{within-across}E). %and quadratic ($b= 0.42, t = 3.9$)
 We again conducted a permutation test to compare this $t$ value with what would be expected from scrambling sketches across repetitions for each sketcher and target object.
-We found that the observed \emph{slope} was highly unlikely under this distribution $(CI = [-0.57, 0.60],~p~<~0.001)$, even if the similarity at each round was not so unlikely.
+We found that the observed slope was highly unlikely under this distribution $(CI = [-0.57, 0.60],~p~<~0.001)$, even if the similarity at each round was not so unlikely.
 
 \section{Discussion}
 
