@@ -164,7 +164,7 @@ We hypothesized that learning would be \emph{object-specific}: that over repeate
 %% methods
 \subsection{Methods: Visual communication experiment}
 
-\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs \cite{Hawkins15_RealTimeWebExperiments}. 
+\subsubsection{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs \cite{Hawkins15_RealTimeWebExperiments}.
 Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
 %They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
 Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.
@@ -177,7 +177,7 @@ In order to make our task sufficiently challenging, we sought to construct commu
 To accomplish this, we sampled objects from the ShapeNet \cite{chang2015shapenet}, a database containing a large number of 3D mesh models of real-world objects. % belonging to 55 different object classes.
 We restricted our search to 3096 objects belonging to the \texttt{chair} class, which is among the most diverse and abundant in ShapeNet.
 To identify groups of visually similar chairs, we first extracted high-level visual features from 2D renderings of each object using a deep convolutional neural network (DCNN) architecture, VGG-19 \cite{simonyan2014very}.
-This network had been previously trained to recognize objects in photos from the Imagenet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
+This network had been previously trained to recognize objects in photos from the ImageNet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
 Trained DCNN models have been shown to predict human perceptual similarity judgments about objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
 Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
@@ -197,7 +197,7 @@ Each stroke was rendered on the viewer's screen in real time and sketchers could
 The viewer aimed to click one of the four objects as soon as they were confident of the identity of the target, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
 Both participants were incentivized to perform both quickly and accurately.
 They both earned an accuracy bonus for each correct response, and the sketcher was required to complete their drawings in 30 seconds or less.
-If the viewer responded correctly within the time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
+If the viewer responded correctly within this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
 %Otherwise, the viewer had no other means of communicating with the sketcher.
 
 %% Two conditions: repeated and control
@@ -356,8 +356,8 @@ we also found a large and reliable interaction:
 yoked participants improved to a substantially greater degree than shuffled participants ($b = 0.10, ~t = 4.9, ~p<0.001$; Fig.~4).
 Examining accuracy alone yielded similar results: the yoked group improved to a greater degree across the session (yoked: +15.8\%, shuffled: +5.6\%).
 % was more accurate overall at identifying the target object (yoked: 75\%, shuffled: 69\%, $~t = 3.6, ~p < 0.001$)
-Taken together, these results suggest that third-party observers in the yoked condition who viewed drawings from a single interaction were able to take advantage of this continuity to more accurately identify what successive drawings represented. 
-While observers in the shuffled condition still improved over time, being deprived of this interaction continuity made it relatively more difficult to interpret later drawings. 
+Taken together, these results suggest that third-party observers in the yoked condition who viewed drawings from a single interaction were able to take advantage of this continuity to more accurately identify what successive drawings represented.
+While observers in the shuffled condition still improved over time, being deprived of this interaction continuity made it relatively more difficult to interpret later drawings.
 
 % in their ability to understand drawings even as the temporal order of the drawing was preserved.
 
@@ -384,12 +384,12 @@ While observers in the shuffled condition still improved over time, being depriv
 % \todo[inline]{I think the `takeaway' here is still not 100\% clear; it's not clear whether we want to claim that there's a big difference between yoked \& orig. or want to minimize it?}
 
 %Because participants in the yoked group viewed drawings in exactly the same sequence as the original viewer had, we predicted that their recognition performance would improve to a comparable degree across repetitions.
-Unlike viewers in the interactive visual communication game, participants in the yoked condition made their decision based only on the final drawing and were unable to interrupt or await additional information if they were still uncertain.
+Unlike viewers in the interactive visual communication experiment, participants in the yoked condition made their decision based only on the final drawing and were unable to interrupt or await additional information if they were still uncertain.
 %Instead, yoked participants , and were unable to interrupt or await additional information from the sketcher if they were still uncertain.
 Sketchers could have used this feedback to modify their drawings on subsequent repetitions.
 %  about which object the viewer had selected and how quickly they were able to select it,
 As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance \cite{schober_understanding_1989}.
-In a mixed effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
+In a mixed-effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
 strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as a weaker but reliable interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a dampened rate as viewers in the original communication experiment.
  %1x10^{-15}
 % When considering recognition accuracy, however, the feedback gap was more substantial.
@@ -397,7 +397,7 @@ strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as 
 To better understand this interaction, we further examined changes in the accuracy and response time components of the efficiency score.
 We found that while viewers in the communication experiment were more accurate than yoked participants overall (communication: 88\%, yoked: 75\%), %, $t = 6.2, ~p < 0.001$
 \emph{improvements} in accuracy over the course of the experiment were similar in both groups (communication: +14.5\%, yoked: +15.8\%).
-The interaction instead appeared to be driven by differential reductions in response time between the first and final repetitions (communication: 10.9s to 5.84s; yoked: 4.66s to 3.31s). 
+The interaction instead appeared to be driven by differential reductions in response time between the first and final repetitions (communication: 10.9s to 5.84s; yoked: 4.66s to 3.31s).
 These reductions were more modest in the yoked group, given that these participants did not need to wait for each stroke to appear before making a decision, and thus may have already been closer to floor.
 
 %%% BIS LMER
@@ -467,7 +467,7 @@ suggesting that pairs were increasingly able to rely upon shared knowledge to co
 This result raises a question about \emph{which} strokes are preserved across successive repetitions during the formation of graphical conventions.
 In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
 We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for an example visualization).
-The more dissimilar the lesioned drawing without a particular stroke is to the next repetition's drawing, the more ``important'' we considered that stroke to be. 
+The more dissimilar the lesioned drawing without a particular stroke is to the next repetition's drawing, the more ``important'' we considered that stroke to be.
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: numStrokes ~ repetition + (1 + repetition | gameID)
@@ -542,7 +542,7 @@ An exciting direction for future work is to develop robust and principled comput
 
 A second important design choice was the use of a speed bonus incentivizing participants to complete trials quickly.
 What role do such incentives play in the formation of graphical conventions?
-Recent computational models of visual communication have found that both how costly a drawing is produce (i.e., time/ink) and how informative a drawing is in context are critical for explaining the way people spontaneously adjust the level of detail to include in their drawings in one-shot visual communication tasks \cite{fan2019pragmatic}. 
+Recent computational models of visual communication have found that both how costly a drawing is to produce (i.e., time/ink) and how informative a drawing is in context are critical for explaining the way people spontaneously adjust the level of detail to include in their drawings in one-shot visual communication tasks \cite{fan2019pragmatic}.
 The consequences of this intrinsic preference for less costly drawings may be compounded across repetitions, as the accumulation of interaction history allows people to be equally informative with fewer strokes \cite{HawkinsFrankGoodman17_ConventionFormation}.
 The magnitude of these intrinsic costs may vary across individuals, however, and the speed bonus made them explicit.
 
@@ -555,10 +555,10 @@ The magnitude of these intrinsic costs may vary across individuals, however, and
 %Future work should explore experimental variations involving intermediate gradations of feedback to distinguish between the effect of various types of feedback such as temporal (e.g., when the viewer guessed) and performance-based (e.g., whether or not the viewer guessed correctly) in graphical convention formation.
 
 A major open question raised by our work concerns how people decide what information to preserve or discard across repetitions.
-One possibility is that successful viewer comprehension is attributed to the most recent strokes produced, leading these to be more strongly preserved. 
-For example, if the viewer was able to correctly identify the target only after the backrest was drawn, the sketcher may continue to selectively draw this part. 
+One possibility is that successful viewer comprehension is attributed to the most recent strokes produced, leading these to be more strongly preserved.
+For example, if the viewer was able to correctly identify the target only after the backrest was drawn, the sketcher may continue to selectively draw this part.
 Another possibility is that sketchers preserve what they judge to be the most diagnostic information about the target, regardless of when the viewer made their response.
-For example, sketchers may focus on drawing the backrest if it strongly distinguishes the target from distractors in context. 
+For example, sketchers may focus on drawing the backrest if it strongly distinguishes the target from distractors in context.
 % It may also be the case that these decisions are more strongly guided by the communicative informativity or diagnosticity of each stroke than by their temporal sequence.
 %A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others.
  % that relate to the semantic structure of the object, while keeping diagnostic parts intact.
@@ -571,14 +571,14 @@ Over time, advancing our knowledge of the cognitive mechanisms underlying the fo
 
 \section{\bf Acknowledgments}
 \small
-Thanks to Mike Frank and Hyo Gweon for helpful discussion. 
-RXDH was supported by the E. K. Potter Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747). 
+Thanks to Mike Frank and Hyo Gweon for helpful discussion.
+RXDH was supported by the E. K. Potter Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747).
 
 \vspace{1em}
 \fbox{\parbox[b][][c]{7.3cm}{\centering {All code and materials available at: \\
 \href{https://github.com/cogtoolslab/graphical_conventions}{\url{https://github.com/cogtoolslab/graphical_conventions}}
 }}}
-\vspace{1em} \noindent 
+\vspace{1em} \noindent
 
 \bibliographystyle{apacite}
 
