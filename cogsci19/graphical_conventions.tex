@@ -323,7 +323,7 @@ At the repetition level, both groups received exactly the same amount of practic
 Thus any differences between these groups are attributable to whether drawings came from the same communicative interaction, which would support the accumulation of interaction-specific experience, or from several different interactions, where such accumulation would be minimal.
 
 \begin{figure*}
-\includegraphics[width=0.94\linewidth]{figures/drawing_changes.pdf}
+\includegraphics[width=0.92\linewidth]{figures/drawing_changes.pdf}
 \centering
 \caption{(A) Sketchers use fewer strokes over time. (B) Visualizing importance of individual strokes in successive drawings. (C) Drawings become increasingly dissimilar from initial drawing. (D) Drawings become more consistent from repetition to repetition. %, becoming more internally consistent.
 (E) The same object is drawn increasingly dissimilarly by different sketchers. %, suggesting multiple viable graphical conventions.
@@ -391,7 +391,7 @@ Sketchers could have used this feedback to modify their drawings on subsequent r
 %  about which object the viewer had selected and how quickly they were able to select it,
 As such, comparing the yoked and original communication groups provides an estimate of the contribution of these viewer feedback channels to gains in performance \cite{schober_understanding_1989}.
 In a mixed-effects model with random intercepts, slopes, and interactions for each unique trial sequence, we found a %estimated the magnitude of these changes by fitting a linear mixed-effects model that included group (i.e., communication vs. yoked), repetition (i.e., 1st through 8th), and their interaction as fixed effects, and maximal random effects structure, with random intercepts, slopes and interactions between group and repetition for each unique trial sequence.
-strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as a weaker but reliable interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a dampened rate as viewers in the original communication experiment.
+strong main effect of repetition ($b = 0.23, ~t = 12.8,~p < 0.001$), as well as a weaker but reliable interaction with group membership ($b = -0.05, ~t = -2.2, ~p = 0.032$, Fig.~\ref{recog_bis}), showing that the yoked group improved at a more modest rate than viewers in the original communication experiment had.
  %1x10^{-15}
 % When considering recognition accuracy, however, the feedback gap was more substantial.
 
@@ -399,7 +399,7 @@ To better understand this interaction, we further examined changes in the accura
 We found that while viewers in the communication experiment were more accurate than yoked participants overall (communication: 88\%, yoked: 75\%), %, $t = 6.2, ~p < 0.001$
 \emph{improvements} in accuracy over the course of the experiment were similar in both groups (communication: +14.5\%, yoked: +15.8\%).
 The interaction instead appeared to be driven by differential reductions in response time between the first and final repetitions (communication: 10.9s to 5.84s; yoked: 4.66s to 3.31s).
-These reductions were more modest in the yoked group, given that these participants did not need to wait for each stroke to appear before making a decision, and thus may have already been closer to floor.
+These reductions were smaller in the yoked group, given that these participants did not need to wait for each stroke to appear before making a decision, and thus may have already been closer to floor.
 
 %%% BIS LMER
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
@@ -468,7 +468,7 @@ suggesting that pairs were increasingly able to rely upon shared knowledge to co
 This result raises a question about \emph{which} strokes are preserved across successive repetitions during the formation of graphical conventions.
 In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
 We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for an example visualization).
-The more dissimilar the lesioned drawing without a particular stroke is to an intact version of the next repetition's drawing, the more ``important'' we considered that stroke to be.
+The more dissimilar the lesioned drawing without a particular stroke is to an intact version of the next repetition's drawing, the more ``important'' we consider that stroke to be.
 
 % Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
 % Formula: numStrokes ~ repetition + (1 + repetition | gameID)
@@ -507,7 +507,7 @@ The observed effect fell outside this null distribution $(CI= [-3.53 -0.88], ~p 
 As sketchers modified their drawings across successive repetitions, we additionally hypothesized that they would converge on increasingly consistent ways of depicting each object.
 To test this prediction, we computed the similarity of successive drawings of the same object made in the same interaction (i.e.~repetition $k$ to $k+1$). %.^, and evaluated how this similarity changed across repetitions.
 A mixed-effects model with random intercepts for both object and pair showed that similarity between successive drawings increased substantially throughout an interaction ($b = 0.53,~t = 5.03$; Fig.~\ref{within-across}).
-Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated by scrambling drawings across pairs.% to disrupt the consistency of interactions.
+Again, we compared our empirical estimate of the magnitude of this trend to a null distribution of slope $t$ values generated by scrambling drawings across pairs. % to disrupt the consistency of interactions.
 The observed increase fell outside this null distribution ($CI = [-3.21, -0.60], p < .001$), providing evidence that increasingly consistent ways of drawing each object manifested only for series of drawings produced within the same interaction.
 
 \subsubsection{Increasingly different drawings across interactions}
@@ -534,10 +534,10 @@ Taken together, our findings suggest that repeated visual communication promotes
 
 % highlighting generative innovations relative to previous work
 % (i.e. we're not just doing reproducing the same thing but with better controls & analyses; we're exploring a different part of the space)
-A key experimental design choice was the use of visual objects as the targets of reference, by contrast with the verbal labels (e.g. ``art gallery'') or audio clips used in prior work \cite{GalantucciGarrod11_ExperimentalSemiotics,fay2010interactive}. % both builds on and offers several innovative findings.
+A key experimental design choice was the use of visual objects as the targets of reference, by contrast with the verbal labels or audio clips used in prior work \cite{GalantucciGarrod11_ExperimentalSemiotics,fay2010interactive}. % both builds on and offers several innovative findings.
 %First, it enabled greater exploration of iconicity and abstraction.
 % By using visual referents that belonged to the same modality as drawings,
-As such, the sketcher and viewer were grounded in the same visual information about the shape and appearance of targets, encouraging the production of more `iconic' initial drawings that more strongly resembled the target object \cite{verhoef2016iconicity,perlman2015iconicity}.
+As such, communication between the sketcher and viewer was grounded in the same visual information about the appearance of these objects, encouraging the production of more `iconic' initial drawings that more strongly resembled the target object \cite{verhoef2016iconicity,perlman2015iconicity}.
 As their communication became increasingly efficient across repetitions, their drawings became simpler and apparently more `abstract'.
 An exciting direction for future work is to develop robust and principled computational measures of the degree of visual correspondence between any drawing and any target object, thereby shedding light on the nature of visual abstraction and iconicity.
 
@@ -563,7 +563,7 @@ For example, sketchers may focus on drawing the backrest if it strongly distingu
 % It may also be the case that these decisions are more strongly guided by the communicative informativity or diagnosticity of each stroke than by their temporal sequence.
 %A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others.
  % that relate to the semantic structure of the object, while keeping diagnostic parts intact.
-Toward distinguishing among these possibilities in future work, it would be valuable to develop computational models of visual communication that can learn from task-related feedback, as well as judge which strokes would provide the most diagnostic information.
+Future work should disentangle these possibilities empirically and via development of computational models of visual communication that can learn from task-related feedback, as well as judge which strokes would be most diagnostic.
 %, in combination with the development of computational models of drawing production that account for part-level semantic structure.
 %\ndg{this last part is a little too technical and in the weeds for this point in the paper? at any rate its not clear why you need those particular ingredients... perhaps instead say that the importance / lesion analysis is a future direction with applications such as determining which strokes are dropped?}
 
