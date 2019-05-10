@@ -92,7 +92,7 @@ Here we evaluate this possibility in a drawing-based reference game in which two
 Across a series of controlled experiments, we found that pairs of participants discover increasingly sparse yet effective ways of depicting objects.
 These gains were specific to those objects that were repeatedly referenced, and went beyond what could be explained by task practice or the visual properties of the drawings alone.
 We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different interactions.
-Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than solely their visual properties.
+Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
 
 \textbf{Keywords:}
 alignment; coordination; iconicity; sketch understanding; visual communication
@@ -180,7 +180,7 @@ To identify groups of visually similar chairs, we first extracted high-level vis
 This network had been previously trained to recognize objects in photos from the ImageNet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
 Trained DCNN models have been shown to predict human perceptual similarity judgments about objects \cite{kubilius2016deep,peterson2018evaluating}, as well as neural population responses in visual cortex during object recognition \cite{yamins2014performance,gucclu2015deep}.
 As such, they provide a principled choice of encoding model for extracting high-level visual information from images.
-Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{FanCommon2018,peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
+Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Among clusters that contained at least eight objects, we manually identified two visual categories containing eight objects each (Fig.~\ref{task_stimuli}A).
 
@@ -210,7 +210,7 @@ For each pair of participants, two sets of four objects were randomly sampled to
 %In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
 The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
 During the repeated reference phase, there were six repetition blocks of four trials, and each of the four \emph{repeated} objects appeared as the target once in each repetition block.
-In a pre-test phase at the beginning of the experiment and a post-test phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in a randomly interleaved order.
+In a pretest phase at the beginning of the experiment and a posttest phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in a randomly interleaved order.
 %Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
 % These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
@@ -224,7 +224,7 @@ In a pre-test phase at the beginning of the experiment and a post-test phase at 
 
 \subsection{Results}
 
-Because objects were randomly assigned to repeated and control conditions, we expected no differences in task performance in the pre-test phase.
+Because objects were randomly assigned to repeated and control conditions, we expected no differences in task performance in the pretest phase.
 We found that pairs identified the target at rates well above chance in this phase (75.7\% repeated, 76.1\% control, chance = 25\%), suggesting that they were engaged with the task but not at ceiling performance.
 % n  empirical_stat      ci_lower            mean               ci_upper
 %67	-0.003731343	-0.07089552	-0.001317164	0.07089552
@@ -248,8 +248,8 @@ It is highest when pairs are both fast and accurate, and lowest when they make m
 To evaluate changes in communicative efficiency, we fit a linear mixed-effects model including random intercepts, slopes, and interactions for each pair of participants.
 We found a main effect of increasing communicative efficiency for all targets between the \textit{pre} and \textit{post} phases ($b = 1.45,~t = 14.3,~p <0.001$), reflecting general improvements due to task practice.
 Critically, however, this analysis also revealed a reliable interaction between phase and condition: communicative efficiency improved to a greater extent for repeated objects than control objects ($b = 0.648, ~t = 3.09,~p = 0.003$; see Fig.~\ref{refgame_bis}).
-In terms of raw accuracy, performance on repeated objects improved by 14.5\% while performance on control objects only improved by 7.1\%.
-Thus, there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
+Analysis of changes in raw accuracy yielded a similar result: performance on repeated objects improved by 14.5\%, while performance on control objects only improved by 7.1\%.
+Together, these data show that there are benefits of repeatedly communicating about an object that accrue specifically to that object, suggesting the formation of object-specific graphical conventions.
 %\ndg{optionally: add the observation that the object-general boost seems to be achieved after the first trial, and is likely very general orientation to the task?}
 
 % the benefits of repeatedly communicating about an object accrue more strongly to that object
