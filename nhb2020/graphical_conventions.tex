@@ -410,16 +410,16 @@ Rather than randomly dropping strokes, we hypothesized that sketchers would pres
 For example, in the context shown in Fig.~\ref{fig:diagnosticity_schema}, the target chair has roughly similar legs compared to the distractors, but differs primarily in its unique armrests.
 While a convention of referring to this chair by only drawing parts of its legs is possible in principle, given a long enough history to establish such an understanding, we predict that a convention depicting the armrest is more likely in practice, given contextual pressure on the sketcher to be informative \cite<see>[for a related finding in the linguistic modality]{hawkins2020characterizing}.
 
-To test this hypothesis, we ran several additional studies.
-First, to obtain reliable estimates of diagnosticity in context, we required a variant of our task using stable contexts instead of randomly sampling different contexts for each pair of participants.
+To test this hypothesis, we ran an additional variant of our task.
+To obtain reliable estimates of diagnosticity in context, we required stable contexts instead of randomly sampling different contexts for each pair of participants.
 We thus collected a new sample of games using only two fixed contexts, which were counter-balanced across the \emph{repeated} and \emph{control} conditions. %, with objects in the control condition only shown at the beginning and end of the task.
 This close internal replication also provided an opportunity to control for the robustness of our results to the feedback mechanism: rather than allowing the viewer to \emph{interrupt} the sketcher with an early response, we required the sketcher to click a ``done'' button before the drawing was shown to the viewer.
 Otherwise, the design and stimuli were identical to the task described above (see Appendix for replications of our earlier analyses on these new data).
 
-Second, we recruited independent judges to provide annotations of these drawings. 
+We then recruited independent judges to provide annotations of these drawings. 
 One group of judges performed a \emph{sketch-mapping} task, which aligned the strokes of a drawing with regions of the target object (see Fig.~\ref{fig:diagnosticity_schema}).
 A second group of judges performed an \emph{object-diagnosticity} task, painting over regions of each target object that differed the most from the distractor objects.
-These ratings can be combined to measure changes in diagnosticity as conventions are formed.
+We then combined these ratings to measure changes in diagnosticity as conventions are formed.
 
 %In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
 %We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for an example visualization).
@@ -493,6 +493,8 @@ Over time, advancing our knowledge of the cognitive mechanisms underlying the fo
 \section{Methods}
 
 \subsection{Repeated reference game experiment}
+
+\todo[inline]{TODO: do we need a dedicated section for our fixed-context variant, or should we work it into here?}
 
 \paragraph{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs \cite{Hawkins15_RealTimeWebExperiments}.
 Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
@@ -568,9 +570,24 @@ For example, if a drawing was produced in the fifth repetition block in the orig
 As when identifying clusters of similar object stimuli, we again used VGG-19 to extract 4096-dimensional feature vector representations for drawings of every object, in every repetition, from every interaction.
 Using this feature basis, we compute the similarity between any two drawings as the Pearson correlation between their feature vectors (i.e., $s_{ij} =  \nicefrac{cov(\vec{r}_{i}, \vec{r}_{j})}{\sqrt{var(\vec{r}_{i}) \cdot var(\vec{r}_{j})}}$).
 
-\todo[inline]{TODO: fill in more details}
+\todo[inline]{TODO: fill in more details of feature extraction}
+
 
 \subsection{Empirical measurement of sketch-object correspondences}
+
+\todo[inline]{Include screenshot of sketch-mapping interface in Supplemental Material?}
+A major challenge that arises when comparing multiple drawings is the \emph{alignment problem.} 
+Different drawings of the same object may be made at different scales, or translated with some spatial offset on the canvas.
+Additionally, when different drawings depict different partial views of an object, it is not straightforward to determine how exactly strokes in one drawing should map onto strokes in the other.
+To address these challenges, we designed a \emph{sketch-mapping} task that allows all drawings in our dataset to be projected into a common space.
+This task was implemented with a simple annotation interface.
+On one side of the screen, participants were shown a line drawing.
+On the other side of the screen, they were shown a paint canvas containing the target object the drawing was intended to depict.
+For each stroke in the line drawing, participants were asked to paint over the corresponding region of the target object.
+We highlighted one stroke at a time, using a bright green color to visually distinguish it, and participants clicked ``Done" when they were finished making their annotation for that stroke.
+To provide context, we also showed participants the history of the interaction in which the drawing appeared, so it would be clear, for instance, that an isolated half-circle corresponds to the top of the back rest, given more exhaustive earlier drawings.
+They continued through all strokes of the given drawing in this way, and then proceeded to the next drawing, annotating a total of 10 different drawings.
+We recruited XXX participants from Amazon Mechanical Turk to annotate all YYY sketches in our dataset. 
 
 \subsection{Empirical measurement of object-diagnostic features}
 
