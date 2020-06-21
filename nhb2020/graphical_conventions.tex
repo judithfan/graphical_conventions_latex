@@ -148,12 +148,13 @@ There are three aspects of the current work that advance our prior understanding
 
 \section{Results}
 
+\todo[inline]{Minor organization question: currently we don't introduce the repeated vs. control until the second results subsection, which means that we need to refer panel C of the figure before we refer to panel B. I was thinking we may want to fold panel B into panel A... Alternatively, we could briefly describe the repeated vs. control design in this paragraph.}
 %% intro to this section
-To understand how people learn to communicate about visual objects across repeated visual communication, we developed a drawing-based reference game for two participants (Fig.~\ref{task_stimuli}).
-On each trial, both participants shared a \textit{communicative context}, represented by an array of four objects.
+To understand how people learn to communicate about visual objects across repeated visual communication, we developed a drawing-based reference game for two participants.
+On each trial, both participants shared a \textit{communicative context}, represented by an array of four objects drawn from a cluster of visually similar 2D renderings of chairs (Fig.~\ref{task_stimuli}A).
 One of these objects was privately designated as the \emph{target} for the sketcher.
 The sketcher's goal was to draw the target so that the viewer could select it from the array of distractor objects as quickly and accurately as possible.
-Importantly, sketchers drew the same objects multiple times over the course of the experiment, receiving feedback about the viewer's response after each trial.
+Importantly, sketchers drew the same objects multiple times over the course of the experiment, receiving feedback about the viewer's response after each trial  (Fig.~\ref{task_stimuli}C).
 This \emph{repeated reference game} design thus allows us to track changes in both the overall task performance of the dyad as well as changes in the content of the drawings.
 
 %% methods
@@ -221,7 +222,7 @@ Overall, these results suggest that pairs were increasingly able to rely upon sh
 \subsection{Conventions are object-specific}
 
 Do these improvements in performance reflect convergence on conventional \emph{object-specific} depictions, or more general practice effects of drawing with our interface?
-We tested this hypothesis by examining performance in an additional \emph{control} condition including objects that were only drawn once at the beginning (the \emph{pre}-phase) and at the end (the \emph{post}-phase).
+We tested this hypothesis by examining performance in an additional \emph{control} condition including objects that were only drawn once at the beginning (the \emph{pre}-phase) and at the end (the \emph{post}-phase;  Fig.~\ref{task_stimuli}B).
 We hypothesized that that over repeated visual reference to a particular object, participants would discover ways of depicting that object more effectively than the non-repeated control objects.
 We found no difference in accuracy between conditions during the pre-phase (75.7\% repeated, 76.1\% control, mean difference: 0.3\%, bootstrapped CI: $[-7\%, 7\%]$), as objects were randomly assigned to repeated and control conditions.
 To evaluate changes in communicative efficiency, we fit a linear mixed-effects model including random intercepts, slopes, and interactions for each pair of participants.
@@ -411,15 +412,22 @@ For example, in the context shown in Fig.~\ref{fig:diagnosticity_schema}, the ta
 While a convention of referring to this chair by only drawing parts of its legs is possible in principle, given a long enough history to establish such an understanding, we predict that a convention depicting the armrest is more likely in practice, given contextual pressure on the sketcher to be informative \cite<see>[for a related finding in the linguistic modality]{hawkins2020characterizing}.
 
 To test this hypothesis, we ran an additional variant of our task.
-To obtain reliable estimates of diagnosticity in context, we required stable contexts instead of randomly sampling different contexts for each pair of participants.
-We thus collected a new sample of games using only two fixed contexts, which were counter-balanced across the \emph{repeated} and \emph{control} conditions. %, with objects in the control condition only shown at the beginning and end of the task.
-This close internal replication also provided an opportunity to control for the robustness of our results to the feedback mechanism: rather than allowing the viewer to \emph{interrupt} the sketcher with an early response, we required the sketcher to click a ``done'' button before the drawing was shown to the viewer.
-Otherwise, the design and stimuli were identical to the task described above (see Appendix for replications of our earlier analyses on these new data).
+To obtain reliable estimates of diagnosticity in context, we required more data for a particular set of contexts instead of randomly sampling different contexts for each pair of participants.
+We thus recruited additional participants to play reference games using a set of two fixed contexts, which were counter-balanced across the \emph{repeated} and \emph{control} conditions. %, with objects in the control condition only shown at the beginning and end of the task.
+These additional participants also provided an opportunity to conduct an internal replication to evaluate the robustness of our results.
+Rather than allowing the viewer to \emph{interrupt} the sketcher with an early response, we required the sketcher to click a ``done'' button when they were ready to show their drawing the viewer.
+This design choice removes useful information about the timing of the viewer's response that the sketcher could use to calibrate their drawings on future rounds, but also controlled for a potential confound in our original design. 
+Here, drawing duration is purely a function of the sketcher's independent decisions about what needs to be included in a drawing, whereas in our original design, it was a joint combination of the sketcher's decision and the \emph{viewer's decision threshold} for when to interrupt.
+It was possible in the original design that any apparent effects of conventionalization were purely driven by the viewer, with the sketcher simply following a heuristic to continue adding more detail until the viewer made a decision.
+Aside from this change, the design was identical to the task described above (see Appendix for replications of our earlier analyses on these new data).
 
 We then recruited independent judges to provide annotations of these drawings. 
 One group of judges performed a \emph{sketch-mapping} task, which aligned the strokes of a drawing with regions of the target object (see Fig.~\ref{fig:diagnosticity_schema}).
 A second group of judges performed an \emph{object-diagnosticity} task, painting over regions of each target object that differed the most from the distractor objects.
 We then combined these ratings to measure changes in diagnosticity as conventions are formed.
+
+\todo[inline]{TODO: Write diagnosticity analysis.}
+
 
 %In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
 %We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for an example visualization).
@@ -496,10 +504,12 @@ Over time, advancing our knowledge of the cognitive mechanisms underlying the fo
 
 \todo[inline]{TODO: do we need a dedicated section for our fixed-context variant, or should we work it into here?}
 
-\paragraph{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs \cite{Hawkins15_RealTimeWebExperiments}.
-Within each experimental session, one participant was assigned the sketcher role and the other the viewer role, and these role assignments remained the same throughout the experiment.
-%They were provided a base compensation of \$1.50 for participation and up to \$1.60 in bonus for high task performance.
-Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean). In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.
+\paragraph{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs to play an interactive communication game \cite{Hawkins15_RealTimeWebExperiments}.
+Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
+For our diagnosticity analyses, which required higher power to measure the effect of a specific context of distractors, we  recruited an additional XXX participants to fill out a fixed subset of two contexts.
+This sample also functioned as an internal replication using a more minimal feedback mechanism.
+Participants were provided a base compensation of \$1.50 for participation and were able to earn an additional \$1.60 in bonus pay based on task performance.
+In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.
 
 \paragraph{Stimuli}
 
@@ -510,26 +520,23 @@ To identify groups of visually similar chairs, we first extracted high-level vis
 This network had been previously trained to recognize objects in photos from the ImageNet database \cite{deng2009imagenet}, containing 1.2 million natural photographs of 1000 different object classes.
 Following previous work that has employed DCNN models to evaluate perceptual similarity \cite{peterson2018evaluating,kubilius2016deep}, for each image we extract a 4096-dimensional feature vector reflecting activations in the second fully-connected layer (i.e., \texttt{fc6}) of VGG-19, a higher layer in the network.
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
-Among clusters that contained at least eight objects, we manually identified two visual categories containing eight objects each (Fig.~\ref{task_stimuli}A).
+Among clusters that contained at least eight objects, we manually identified two visual categories containing eight objects each, which roughly correspond to `dining chairs' and `waiting-room chairs'.
 
 \paragraph{Task Procedure}
 
 %% Trial-level event structure
-% Drawings were collected in the context of an online, sketching-based reference game using the framework described in \citeA{Hawkins15_RealTimeWebExperiments}.
-% The game involved two players: a \textit{sketcher} who aims to help a \textit{viewer} pick out a target object from a set of distractor objects by representing it in a sketch.
+Upon entering the session, one participant was assigned the sketcher role and the other was assigned the viewer role. 
+These role assignments remained the same throughout the experiment.
 On each trial, both participants were shown the same set of four objects in randomized locations.
 One of the four objects was highlighted on the sketcher's screen to designate it as the target.
-%% Trial-level objective of sketcher and viewer
 Sketchers drew using their mouse cursor in black ink on a digital canvas embedded in their web browser ($300 \times 300$ pixels; pen width = 5px).
 Each stroke was rendered on the viewer's screen in real time and sketchers could not delete previous strokes.
-The viewer aimed to click one of the four objects as soon as they were confident of the identity of the target, and participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
-Both participants were incentivized to perform both quickly and accurately.
+The viewer aimed to select the true target object from the context of four objects as soon as they were confident of its identity, and both participants received immediate feedback: the sketcher learned when and which object the viewer had clicked, and the viewer learned the true identity of the target.
+Participants were incentivized to perform both quickly and accurately.
 They both earned an accuracy bonus for each correct response, and the sketcher was required to complete their drawings in 30 seconds or less.
 If the viewer responded correctly within this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
-%Otherwise, the viewer had no other means of communicating with the sketcher.
-
-%% Two conditions: repeated and control
-
+There was only one procedural difference in the internal replication we used for diagnosticity analyses.
+Instead of allowing the viewer to interrupt the production of the drawing at any point (as in Pictionary), we required them to wait until the sketcher decided to finish and press a ``Done'' button.
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
 
 \paragraph{Design}
@@ -585,9 +592,12 @@ On one side of the screen, participants were shown a line drawing.
 On the other side of the screen, they were shown a paint canvas containing the target object the drawing was intended to depict.
 For each stroke in the line drawing, participants were asked to paint over the corresponding region of the target object.
 We highlighted one stroke at a time, using a bright green color to visually distinguish it, and participants clicked ``Done" when they were finished making their annotation for that stroke.
+Participants were not allowed to proceed to the next stroke until some paint was placed on the canvas.
 To provide context, we also showed participants the history of the interaction in which the drawing appeared, so it would be clear, for instance, that an isolated half-circle corresponds to the top of the back rest, given more exhaustive earlier drawings.
-They continued through all strokes of the given drawing in this way, and then proceeded to the next drawing, annotating a total of 10 different drawings.
-We recruited XXX participants from Amazon Mechanical Turk such that all YYY sketches in our dataset were annotated at least once. 
+They continued through all strokes of the given drawing in this way, and then proceeded to the next drawing, annotating a total of 10 different drawings in a session.
+We recruited XXX participants from Amazon Mechanical Turk to perform the annotation task.
+We excluded participants who consistently provided low-quality annotations (i.e. participants who made random marks to finish the task as quickly as possible) through a combination of manual examination and response latencies.
+We continued to recruit until all YYY sketches in our dataset were annotated at least once. 
 
 \subsection{Empirical measurement of object-diagnostic features}
 
@@ -605,6 +615,13 @@ This yielded at least 30 ratings for each pair of chairs, and we aggregated diag
 Thanks to Mike Frank and Hyo Gweon for helpful discussion.
 RDH was supported by the E. K. Potter Stanford Graduate Fellowship and the National Science Foundation Graduate Research Fellowship (DGE-114747).
 MS was supported by the Masason Foundation Scholarship and the Center for the Study of Language and Information at Stanford. 
+
+\begin{figure*}[t!]
+\includegraphics[width=.8\linewidth]{figures/stroke_mapping_screenshot.pdf}
+\centering
+\caption{Screenshots of annotations interfaces for (A) diagnosticity mapping task and (B) sketch-object alignment task.}
+\label{fig:object_mapping_screenshot}
+\end{figure*}
 
 % \vspace{2em}
 % \fbox{\parbox[b][][c]{7.3cm}{\centering {All code and materials available at: \\
