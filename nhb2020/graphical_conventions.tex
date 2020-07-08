@@ -505,9 +505,8 @@ Over time, advancing our knowledge of the cognitive mechanisms underlying the fo
 \todo[inline]{TODO: do we need a dedicated section for our fixed-context variant, or should we work it into here?}
 
 \paragraph{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs to play an interactive communication game \cite{Hawkins15_RealTimeWebExperiments}.
-Data from two pairs were excluded due to unusually low performance (i.e., accuracy $<$ 3 s.d. below the mean).
-For our diagnosticity analyses, which required higher power to measure the effect of a specific context of distractors, we  recruited an additional XXX participants to fill out a fixed subset of two contexts.
-This sample also functioned as an internal replication using a more minimal feedback mechanism.
+For our diagnosticity analyses, which required higher power for a smaller number of specific contexts, we recruited an additional XXX participants in YYY.
+Data from two pairs were excluded due to unusually low performance in the first sample (i.e., accuracy $<$ 3 s.d. below the mean), and Y were excluded in the second sample.
 Participants were provided a base compensation of \$1.50 for participation and were able to earn an additional \$1.60 in bonus pay based on task performance.
 In this and subsequent experiments, participants provided informed consent in accordance with the Stanford IRB.
 
@@ -522,6 +521,15 @@ Following previous work that has employed DCNN models to evaluate perceptual sim
 We then applied dimensionality reduction (PCA) and $k$-means clustering on these feature vectors, yielding 70 clusters containing between 2 and 80 objects each.
 Among clusters that contained at least eight objects, we manually identified two visual categories containing eight objects each, which roughly correspond to `dining chairs' and `waiting-room chairs'.
 
+\paragraph{Design}
+For each pair of participants, two sets of four objects were randomly sampled to serve as communication contexts: one was designated the \emph{repeated} set while the other served as the \emph{control} set (Fig.~\ref{task_stimuli}B).\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.} 
+Our second sample simply restricted the stimuli to two fixed sets of four objects, which were counter-balanced to \emph{repeated} and \emph{control}, instead of randomly sampling sets, in order to obtain sufficient observations per set.
+The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
+During the repeated reference phase, there were six repetition blocks of four trials, and each of the four repeated objects appeared as the target once in each repetition block.
+In a pretest phase at the beginning of the experiment and a posttest phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in a randomly interleaved order.
+%Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
+% These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
+
 \paragraph{Task Procedure}
 
 %% Trial-level event structure
@@ -535,25 +543,15 @@ The viewer aimed to select the true target object from the context of four objec
 Participants were incentivized to perform both quickly and accurately.
 They both earned an accuracy bonus for each correct response, and the sketcher was required to complete their drawings in 30 seconds or less.
 If the viewer responded correctly within this time limit, participants also received a speed bonus inversely proportional to the time taken until the response.
-There was only one procedural difference in the internal replication we used for diagnosticity analyses.
-Instead of allowing the viewer to interrupt the production of the drawing at any point (as in Pictionary), we required them to wait until the sketcher decided to finish and press a ``Done'' button.
+There was only one procedural difference our second sample: instead of allowing the viewer to interrupt the production of the drawing at any point (as in Pictionary), we required them to wait until the sketcher decided to finish and press a ``Done'' button.
+This change removed potential confounds between the speaker's decision-making and the listener's decision-making, as the drawing time is now purely under the speaker's control.
 % Each pair of participants was randomly assigned two of these categories, and only the 16 objects from these two categories appeared as drawing targets during their session.
-
-\paragraph{Design}
-For each pair of participants, two sets of four objects were randomly sampled to serve as communication contexts: one was designated the \emph{repeated} set while the other served as the \emph{control} set (Fig.~\ref{task_stimuli}B).\footnote{In half of the pairs, the four control objects were from the same stimulus cluster as repeated objects; in the other half, they were from different clusters. The rationale for this was to support investigation of between-cluster generalization in future analyses. In current analyses, we collapse across these groups.} 
-Our internal replication restricted the stimuli to two fixed sets of four objects, which were counter-balanced to \emph{repeated} and \emph{control}, instead of randomly sampling sets.
-% These control objects were thus maximally perceptually similar to the repeated objects but were not repeatedly drawn and provided a tight baseline for object-specific effects.
-%In the other half of pairs (N=XX pairs), the repeated set contained four randomly sampled objects from one category and the control set contained four randomly sampled objects from the other category.
-The experiment consisted of three phases (Fig.~\ref{task_stimuli}C).
-During the repeated reference phase, there were six repetition blocks of four trials, and each of the four repeated objects appeared as the target once in each repetition block.
-In a pretest phase at the beginning of the experiment and a posttest phase at the end, both repeated and control objects appeared once as targets (in their respective contexts) in a randomly interleaved order.
-%Within this phase were six repetition cycles wherein each repeated object served as the target exactly once, and object order was randomized across repetition cycles.
-% These control objects still shared many perceptual features with the repeated objects, but provided a measure of the more generic effects of task practice.
 
 \subsection{Recognition experiments}
 
 \paragraph{Participants}
 
+\todo[inline]{Should we report participant recruitment numbers for both samples? i.e. 1.0 and 2.0?}
 We recruited 245 participants via Amazon Mechanical Turk.
 We excluded data from 22 participants who did not meet our inclusion criterion for accurate and consistent response on attention-check trials.
 
@@ -586,7 +584,7 @@ Using this feature basis, we compute the similarity between any two drawings as 
 A major challenge that arises when comparing multiple drawings is the \emph{alignment problem.} 
 Different drawings of the same object may be made at different scales, or translated with some spatial offset on the canvas.
 Additionally, when different drawings depict different partial views of an object, it is not straightforward to determine how exactly strokes in one drawing should map onto strokes in the other.
-To address these challenges, we designed a \emph{sketch-mapping} task that allows all drawings in our dataset to be projected into a common space.
+To address these challenges, we designed a \emph{sketch-mapping} task that allows all drawings in our dataset to be projected into a common space (see Fig.~\ref{fig:object_mapping_screenshot}A).
 This task was implemented with a simple annotation interface.
 On one side of the screen, participants were shown a line drawing.
 On the other side of the screen, they were shown a paint canvas containing the target object the drawing was intended to depict.
@@ -602,12 +600,12 @@ We continued to recruit until all YYY sketches in our dataset were annotated at 
 \subsection{Empirical measurement of object-diagnostic features}
 
 We recruited XXX participants from Amazon Mechanical Turk to provide diagnosticity maps for each target object, relative to its context.
-The task interface was similar to the one we used to elicit sketch-object correspondences.
+The task interface was similar to the one we used to elicit sketch-object correspondences  (see Fig.~\ref{fig:object_mapping_screenshot}B).
 A target object was displayed on the left side of the screen and a foil was displayed on the right side. 
 Participants were instructed to paint over the parts of the target chair that were most distinctive and different from the foil.
 We elicited pairwise comparisons instead of showing the full context to reduce confusion about what was meant by ``most different'' (i.e. in a large enough context, every part of an object has some difference from at least one distractor). 
 Each participant provided exactly one response for all 16 target objects used in our fixed-context experiment, and we randomly assigned participants to one of 24 possible permutations of the contexts. 
-This yielded at least 30 ratings for each pair of chairs, and we aggregated diagnosticity ratings across pairs in post-processing.
+This yielded at least 30 ratings for each pair of chairs, and we aggregated diagnosticity ratings across pairs in post-processing by taking the mean pixel intensity for each pixel.
 %Thus, each session collected responses for only one of the three possible pairwise 
 
 \section{\bf Acknowledgments}
