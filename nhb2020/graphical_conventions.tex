@@ -411,8 +411,7 @@ Rather than randomly dropping strokes, we hypothesized that sketchers would pres
 For example, in the context shown in Fig.~\ref{fig:diagnosticity_schema}, the target chair has roughly similar legs compared to the distractors, but differs primarily in its unique armrests.
 While a convention of referring to this chair by only drawing parts of its legs is possible in principle, given a long enough history to establish such an understanding, we predict that a convention depicting the armrest is more likely in practice, given contextual pressure on the sketcher to be informative \cite<see>[for a related finding in the linguistic modality]{hawkins2020characterizing}.
 
-To test this hypothesis, we ran an additional variant of our task.
-To obtain reliable estimates of diagnosticity in context, we required more data for a particular set of contexts instead of randomly sampling different contexts for each pair of participants.
+To test this hypothesis, and obtain reliable estimates of diagnosticity in context, we required more data for a particular set of contexts instead of randomly sampling different contexts for each pair of participants.
 We thus recruited additional participants to play reference games using a set of two fixed contexts, which were counter-balanced across the \emph{repeated} and \emph{control} conditions. %, with objects in the control condition only shown at the beginning and end of the task.
 These additional participants also provided an opportunity to conduct an internal replication to evaluate the robustness of our results.
 Rather than allowing the viewer to \emph{interrupt} the sketcher with an early response, we required the sketcher to click a ``done'' button when they were ready to show their drawing the viewer.
@@ -421,13 +420,19 @@ Here, drawing duration is purely a function of the sketcher's independent decisi
 It was possible in the original design that any apparent effects of conventionalization were purely driven by the viewer, with the sketcher simply following a heuristic to continue adding more detail until the viewer made a decision.
 Aside from this change, the design was identical to the task described above (see Appendix for replications of our earlier analyses on these new data).
 
-We then recruited independent judges to provide annotations of these drawings. 
+Next, we recruited independent judges to provide annotations of these drawings. 
 One group of judges performed a \emph{sketch-mapping} task, which aligned the strokes of a drawing with regions of the target object (see Fig.~\ref{fig:diagnosticity_schema}).
 A second group of judges performed an \emph{object-diagnosticity} task, painting over regions of each target object that differed the most from the distractor objects.
-We then combined these ratings to measure changes in diagnosticity as conventions are formed.
+We then combined these ratings to measure changes in diagnosticity as conventions are formed (see Fig.~\ref{}).
 
 \todo[inline]{TODO: Write diagnosticity analysis.}
 
+\begin{figure*}[b!]
+\includegraphics[width=\linewidth]{figures/diagnosticity.pdf}
+\centering
+\caption{Schematic of our diagnosticity analysis.}
+\label{fig:diagnosticity_schema}
+\end{figure*}
 
 %In ongoing work, we are using a lesion method to investigate the ``importance'' of each stroke within a drawing for explaining similarity to the next repetition's drawing of that object.
 %We re-render the drawing without each stroke and compute the similarity, yielding a heat map across strokes (see Fig.~\ref{within-across}B for an example visualization).
@@ -492,8 +497,6 @@ For example, sketchers may focus on drawing the backrest if it strongly distingu
 %A more complex yet revealing analysis would be examining whether certain semantic parts of a drawing are more diagnostic than others.
  % that relate to the semantic structure of the object, while keeping diagnostic parts intact.
 Future work should disentangle these possibilities empirically and via development of computational models of visual communication that can learn from task-related feedback, as well as judge which strokes would be most diagnostic.
-%, in combination with the development of computational models of drawing production that account for part-level semantic structure.
-%\ndg{this last part is a little too technical and in the weeds for this point in the paper? at any rate its not clear why you need those particular ingredients... perhaps instead say that the importance / lesion analysis is a future direction with applications such as determining which strokes are dropped?}
 
 Visual communication is a powerful vehicle for the cultural transmission of knowledge.
 Over time, advancing our knowledge of the cognitive mechanisms underlying the formation of graphical conventions may lead to a deeper understanding of the origins of modern symbolic systems for communication and the design of better visual communication tools.
@@ -501,8 +504,6 @@ Over time, advancing our knowledge of the cognitive mechanisms underlying the fo
 \section{Methods}
 
 \subsection{Repeated reference game experiment}
-
-\todo[inline]{TODO: do we need a dedicated section for our fixed-context variant, or should we work it into here?}
 
 \paragraph{Participants} We recruited 138 participants from Amazon Mechanical Turk, who were grouped into 69 pairs to play an interactive communication game \cite{Hawkins15_RealTimeWebExperiments}.
 For our diagnosticity analyses, which required higher power for a smaller number of specific contexts, we recruited an additional XXX participants in YYY.
@@ -552,6 +553,7 @@ This change removed potential confounds between the speaker's decision-making an
 \paragraph{Participants}
 
 \todo[inline]{Should we report participant recruitment numbers for both samples? i.e. 1.0 and 2.0?}
+
 We recruited 245 participants via Amazon Mechanical Turk.
 We excluded data from 22 participants who did not meet our inclusion criterion for accurate and consistent response on attention-check trials.
 
@@ -595,7 +597,10 @@ To provide context, we also showed participants the history of the interaction i
 They continued through all strokes of the given drawing in this way, and then proceeded to the next drawing, annotating a total of 10 different drawings in a session.
 We recruited XXX participants from Amazon Mechanical Turk to perform the annotation task.
 We excluded participants who consistently provided low-quality annotations (i.e. participants who made random marks to finish the task as quickly as possible) through a combination of manual examination and response latencies.
-We continued to recruit until all YYY sketches in our dataset were annotated at least once. 
+We continued to recruit until all YYY sketches in our dataset had at least one high-quality sketch-object correspondence map.
+Finally, to reduce noise from annotators who drew outside the bounds of the image (where diagnosticity was low by definition), we applied a simple masking step in post-processing.
+Specifically, we extracted a segmentation map from the ground truth image of the object to zero out any pixels in the map that corresponded to the background rather than the object.
+\todo[inline]{Mention any additional preprocessing?}
 
 \subsection{Empirical measurement of object-diagnostic features}
 
@@ -604,8 +609,9 @@ The task interface was similar to the one we used to elicit sketch-object corres
 A target object was displayed on the left side of the screen and a foil was displayed on the right side. 
 Participants were instructed to paint over the parts of the target chair that were most distinctive and different from the foil.
 We elicited pairwise comparisons instead of showing the full context to reduce confusion about what was meant by ``most different'' (i.e. in a large enough context, every part of an object has some difference from at least one distractor). 
-Each participant provided exactly one response for all 16 target objects used in our fixed-context experiment, and we randomly assigned participants to one of 24 possible permutations of the contexts. 
-This yielded at least 30 ratings for each pair of chairs, and we aggregated diagnosticity ratings across pairs in post-processing by taking the mean pixel intensity for each pixel.
+Each participant provided exactly one response for all 16 target objects used in our fixed-context experiment, and we randomly assigned participants to one of 24 possible permutations of the contexts, such that different participants saw each target object paired with different distractors. 
+This yielded at least 30 ratings for each pair of chairs. 
+We aggregated diagnosticity ratings across pairs in post-processing by taking the mean pixel intensity for each pixel.
 %Thus, each session collected responses for only one of the three possible pairwise 
 
 \section{\bf Acknowledgments}
