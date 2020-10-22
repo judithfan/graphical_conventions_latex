@@ -92,7 +92,7 @@ Across a series of controlled experiments, we found that pairs of participants d
 These gains were specific to those objects that were repeatedly referenced, and went beyond what could be explained by task practice or the visual properties of the drawings alone.
 We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different interactions.
 However, we found that this divergence was not entirely arbitrary, as participants tended to preserve visual properties that distinguished each object from the others. 
-Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are increasingly determined by shared knowledge rather than their visual properties alone.
+Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are determined by a shared communicative context rather than their visual properties alone.
 
 \textbf{Keywords:}
 alignment; coordination; iconicity; sketch understanding; visual communication
@@ -112,8 +112,24 @@ What began as simple mark making has since been adapted to a wide array of appli
 
 Even in the relatively straightforward case of drawing from life, there are countless ways to depict the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
-On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
-On the other hand, other work has emphasized the role of socially-mediated information for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
+% On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
+%% XXX add more about this here
+% On the other hand, other work has emphasized the role of socially-mediated information for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
+%% XXX add more about this here
+
+% A long-standing debate in theories of depiction concerns how drawings derive their meaning.
+On the one hand, there is strong evidence suggesting that general-purpose visual processing is sufficient to explain how people are able to perceive their semantic content.
+Recent work has shown that features learned by deep convolutional neural network models (DCNNs) trained only to recognize objects in photos, but have never seen a line drawing, nevertheless succeed in recognizing simple sketches, suggesting that the ability to perceive the correspondence between drawings and real-world objects can arise from the same general-purpose neural architecture evolved to handle natural visual inputs \cite{Sayim:2011bz,gibson1979ecological,fan2018common}. 
+Moreover, human participants who practiced drawing certain objects learned to produce increasingly recognizable drawings and exhibited enhanced perceptual discrimination of morphs of those objects, suggesting that production practice can refine the object representation used for both production and recognition \cite{fan2018common}.
+Further, visually evoked representations of an object in human visual cortex measured with fMRI can be leveraged to decode the identity of that object during drawing production, suggesting functionally similar neural representations recruited in both tasks \cite{fan2020relating}.
+These findings are consistent with evidence from other domains, including comparative, developmental, and cross-cultural studies of drawing perception. 
+For example, higher non-human primates \cite{tanaka2007recognition}, human infants \cite{hochberg1962pictorial}, and human adults living in remote regions without pictorial art traditions and without substantial contact with Western visual media \cite{kennedy1975outline} are all able to recognize line drawings of familiar objects, even without prior experience with drawings.
+
+On the other hand, other work has argued that what semantic structure is relevant and apparent may depend critically on prior knowledge and the task context \cite{schyns1998development,goldstone1998perceptual}.
+This view resonates with classic work in philosophy that has emphasized the role of context and learned conventions in determining how drawings denote objects \cite{goodman1976languages}.
+It is also supported by recent computational modeling work proposing a rational account of why humans modulate the amount of detail they include when drawing an object, according to whether the current context requires them to make fine distinctions between exemplars or coarse distinctions between categories during social communication \cite{fan2020pragmatic}.
+Specific support for the importance of learned conventions has come from recent laboratory studies of visual communication, which have found that pairs of interacting participants can produce drawings that are referentially meaningful to their partner in context, even when these drawings do not strongly resemble any particular real-world referent out of context \cite{garrod_foundations_2007,fay2010interactive,GalantucciGarrod11_ExperimentalSemiotics,galantucci2005experimental}.
+Such findings are broadly consistent with substantial variation in pictorial art traditions across cultures \cite{gombrich1989story} and the existence of culturally specific conventions for encoding meaning in pictorial form \cite{boltz1994origin,allen2000middle}.
 
 \begin{figure}
 \begin{center}
@@ -478,7 +494,7 @@ An exciting direction for future work is to develop robust and principled comput
 
 A second important design choice was the use of a speed bonus incentivizing participants to complete trials quickly.
 What role do such incentives play in the formation of graphical conventions?
-Recent computational models of visual communication have found that both how costly a drawing is to produce (i.e., time/ink) and how informative a drawing is in context are critical for explaining the way people spontaneously adjust the level of detail to include in their drawings in one-shot visual communication tasks \cite{fan2019pragmatic}.
+Recent computational models of visual communication have found that both how costly a drawing is to produce (i.e., time/ink) and how informative a drawing is in context are critical for explaining the way people spontaneously adjust the level of detail to include in their drawings in one-shot visual communication tasks \cite{fan2020pragmatic}.
 The consequences of this intrinsic preference for less costly drawings may be compounded across repetitions, as the accumulation of interaction history allows people to be equally informative with fewer strokes \cite{HawkinsFrankGoodman17_ConventionFormation}.
 The magnitude of these intrinsic costs may vary across individuals, however, and the speed bonus made them explicit.
 
