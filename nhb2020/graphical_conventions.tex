@@ -109,28 +109,22 @@ alignment; coordination; iconicity; sketch understanding; visual communication
 From ancient etchings on cave walls to modern digital displays, visual communication lies at the heart of key human innovations (e.g., cartography, data visualization) and forms a durable foundation for the cultural transmission of knowledge and higher-level reasoning.
 Perhaps the most basic and versatile technique supporting visual communication is drawing, the earliest examples of which date to at least 40,000-60,000 years ago \cite{hoffmann2018u}.
 What began as simple mark making has since been adapted to a wide array of applications, ranging from photorealistic rendering to schematic diagrams consisting entirely of symbols.
-
 Even in the relatively straightforward case of drawing from life, there are countless ways to depict the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
-% On the one hand, prior work has found that semantic information in a figurative drawing, i.e., the object it represents, can be derived purely from its visual properties \cite{FanCommon2018}.
-%% XXX add more about this here
-% On the other hand, other work has emphasized the role of socially-mediated information for making appropriate inferences about what even a figurative drawing represents \cite{goodman1976languages}.
-%% XXX add more about this here
 
-% A long-standing debate in theories of depiction concerns how drawings derive their meaning.
 On the one hand, there is strong evidence suggesting that general-purpose visual processing is sufficient to explain how people are able to perceive their semantic content.
 Recent work has shown that features learned by deep convolutional neural network models (DCNNs) trained only to recognize objects in photos, but have never seen a line drawing, nevertheless succeed in recognizing simple sketches \cite{fan2018common}. 
-These results suggest that the ability to perceive the correspondence between drawings and real-world objects can arise from the same general-purpose neural architecture evolved to handle natural visual inputs \cite{Sayim:2011bz,gibson1979ecological}. 
+These results suggest that the ability to perceive the correspondence between drawings and real-world objects can arise from the same general-purpose neural architecture evolved to handle natural visual inputs \cite{Sayim:2011bz,gibson1979ecological}.
 Moreover, human participants who practiced drawing certain objects learned to produce increasingly recognizable drawings and exhibited enhanced perceptual discrimination of morphs of those objects, suggesting that production practice can refine the object representation used for both production and recognition \cite{fan2018common}.
 Further, visually evoked representations of an object in human visual cortex measured with fMRI can be leveraged to decode the identity of that object during drawing production, suggesting functionally similar neural representations recruited in both tasks \cite{fan2020relating}.
-These findings are consistent with evidence from other domains, including comparative, developmental, and cross-cultural studies of drawing perception. 
+These findings are consistent with evidence from other domains, including comparative, developmental, and cross-cultural studies of drawing perception.
 For example, higher non-human primates \cite{tanaka2007recognition}, human infants \cite{hochberg1962pictorial}, and human adults living in remote regions without pictorial art traditions and without substantial contact with Western visual media \cite{kennedy1975outline} are all able to recognize line drawings of familiar objects, even without prior experience with drawings.
 
 On the other hand, other work has argued that what semantic structure is relevant and apparent may depend critically on prior knowledge and the task context \cite{schyns1998development,goldstone1998perceptual}.
-This view resonates with classic work in philosophy that has emphasized the role of context and learned conventions in determining how drawings denote objects \cite{goodman1976languages}.
+This view resonates with classic work that has emphasized the role of context and learned conventions in determining how drawings denote objects \cite{goodman1976languages,miller1973cross}.
 It is also supported by recent computational modeling work proposing a rational account of why humans modulate the amount of detail they include when drawing an object, according to whether the current context requires them to make fine distinctions between exemplars or coarse distinctions between categories during social communication \cite{fan2020pragmatic}.
 Specific support for the importance of learned conventions has come from recent laboratory studies of visual communication, which have found that pairs of interacting participants can produce drawings that are referentially meaningful to their partner in context, even when these drawings do not strongly resemble any particular real-world referent out of context \cite{garrod_foundations_2007,fay2010interactive,GalantucciGarrod11_ExperimentalSemiotics,galantucci2005experimental}.
-Such findings are broadly consistent with substantial variation in pictorial art traditions across cultures \cite{gombrich1989story} and the existence of culturally specific conventions for encoding meaning in pictorial form \cite{boltz1994origin,allen2000middle}.
+Such findings are broadly consistent with substantial variation in pictorial art traditions across cultures \cite{gombrich1989story} and the existence of culturally specific conventions for encoding meaning in pictorial form \cite{hudson1960pictorial,deregowski1989real}.
 
 \begin{figure}
 \begin{center}
@@ -141,10 +135,10 @@ Such findings are broadly consistent with substantial variation in pictorial art
 \end{figure}
 
 How can these two perspectives be reconciled?
-Our approach is to consider the joint contributions of visual information and social context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
-Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these \textit{ad hoc} graphical conventions may be less readily apprehended by others who lack this shared knowledge.
+Our approach is to consider the joint contributions of visual information and communicative context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
+Specifically, here we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these emergent graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
-To investigate this hypothesis, we used an interactive Pictionary game where two participants repeatedly communicated about visual objects.
+To investigate this hypothesis, we used a drawing-based reference game where two participants repeatedly communicated about visual objects.
 We examined both how their task performance and the drawings they produced changed over time as they accumulated shared knowledge (see Fig.~\ref{sketch_gallery}).
 This approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,hawkins2020characterizing}, gesture \cite{goldin1996silence}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental}.
 There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn but only shown at the beginning and end of the interaction, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
