@@ -87,11 +87,11 @@
 Drawing is a versatile technique for visual communication, ranging from photorealistic renderings to schematic diagrams consisting entirely of symbols.
 How does a medium spanning such a broad range of appearances reliably convey meaning?
 A natural possibility is that drawings derive meaning from both their visual properties as well as shared knowledge between people who use them to communicate.
-Here we evaluate this possibility in a drawing-based reference game in which two participants repeatedly communicated about visual objects.
+Here we evaluate this possibility using a drawing-based reference game in which two participants repeatedly communicated about visual objects.
 Across a series of controlled experiments, we found that pairs of participants discover increasingly sparse yet effective ways of depicting objects.
 These gains were specific to those objects that were repeatedly referenced, and went beyond what could be explained by task practice or the visual properties of the drawings alone.
 We employed modern techniques from computer vision to characterize how the high-level visual features of drawings changed, finding that drawings of the same object became more consistent within a pair of participants and divergent across participants from different interactions.
-However, we found that this divergence was not entirely arbitrary, as participants tended to preserve visual properties that distinguished each object from the others. 
+However, we found that this divergence was not entirely arbitrary, as participants tended to preserve those visual properties that distinguished each object from the others. 
 Taken together, these findings suggest that visual communication promotes the emergence of depictions whose meanings are determined by a shared communicative context rather than their visual properties alone.
 
 \textbf{Keywords:}
@@ -112,15 +112,15 @@ What began as simple mark making has since been adapted to a wide array of appli
 Even in the relatively straightforward case of drawing from life, there are countless ways to depict the same object.
 How does a communication medium spanning such a broad range of appearances reliably convey meaning?
 
-On the one hand, there is strong evidence suggesting that general-purpose visual processing is sufficient to explain how people are able to perceive their semantic content.
+On the one hand, there is strong evidence that general-purpose visual processing mechanisms may be sufficient to explain how people are able to understand what drawings mean.
 Recent work has shown that features learned by deep convolutional neural network models (DCNNs) trained only to recognize objects in photos, but have never seen a line drawing, nevertheless succeed in recognizing simple sketches \cite{fan2018common}. 
 These results suggest that the ability to perceive the correspondence between drawings and real-world objects can arise from the same general-purpose neural architecture evolved to handle natural visual inputs \cite{Sayim:2011bz,gibson1979ecological}.
 Moreover, human participants who practiced drawing certain objects learned to produce increasingly recognizable drawings and exhibited enhanced perceptual discrimination of morphs of those objects, suggesting that production practice can refine the object representation used for both production and recognition \cite{fan2018common}.
 Further, visually evoked representations of an object in human visual cortex measured with fMRI can be leveraged to decode the identity of that object during drawing production, suggesting functionally similar neural representations recruited in both tasks \cite{fan2020relating}.
-These findings are consistent with evidence from other domains, including comparative, developmental, and cross-cultural studies of drawing perception.
+Together, these findings are convergent with evidence from comparative, developmental, and cross-cultural studies of drawing perception.
 For example, higher non-human primates \cite{tanaka2007recognition}, human infants \cite{hochberg1962pictorial}, and human adults living in remote regions without pictorial art traditions and without substantial contact with Western visual media \cite{kennedy1975outline} are all able to recognize line drawings of familiar objects, even without prior experience with drawings.
 
-On the other hand, other work has argued that what semantic structure is relevant and apparent may depend critically on prior knowledge and the task context \cite{schyns1998development,goldstone1998perceptual}.
+On the other hand, other work has argued that what semantic content is relevant and apparent may depend critically on prior knowledge and the task context \cite{schyns1998development,goldstone1998perceptual}.
 This view resonates with classic work that has emphasized the role of context and learned conventions in determining how drawings denote objects \cite{goodman1976languages,miller1973cross}.
 It is also supported by recent computational modeling work proposing a rational account of why humans modulate the amount of detail they include when drawing an object, according to whether the current context requires them to make fine distinctions between exemplars or coarse distinctions between categories during social communication \cite{fan2020pragmatic}.
 Specific support for the importance of learned conventions has come from recent laboratory studies of visual communication, which have found that pairs of interacting participants can produce drawings that are referentially meaningful to their partner in context, even when these drawings do not strongly resemble any particular real-world referent out of context \cite{garrod_foundations_2007,fay2010interactive,GalantucciGarrod11_ExperimentalSemiotics,galantucci2005experimental}.
@@ -136,12 +136,12 @@ Such findings are broadly consistent with substantial variation in pictorial art
 
 How can these two perspectives be reconciled?
 Our approach is to consider the joint contributions of visual information and communicative context in determining how drawings derive meaning \cite{abell2009canny}, and to propose that a critical factor affecting the balance between the two may be the amount of shared knowledge between communicators.
-Specifically, here we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these emergent graphical conventions may be less readily apprehended by others who lack this shared knowledge.
+Specifically, we explore the hypothesis that accumulation of shared knowledge via extended visual communication may promote the development of increasingly schematic yet effective ways of depicting an object, even as these emergent graphical conventions may be less readily apprehended by others who lack this shared knowledge.
 
 To investigate this hypothesis, we used a drawing-based reference game where two participants repeatedly communicated about visual objects.
 We examined both how their task performance and the drawings they produced changed over time as they accumulated shared knowledge (see Fig.~\ref{sketch_gallery}).
 This approach was inspired by a large literature that has explored how extended interaction influences communicative behavior in several modalities, including language \cite{ClarkWilkesGibbs86_ReferringCollaborative,hawkins2020characterizing}, gesture \cite{goldin1996silence,fay2014creating}, and drawings \cite{garrod_foundations_2007,galantucci2005experimental}.
-There are three aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn but only shown at the beginning and end of the interaction, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; and \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions.
+There are four aspects of the current work that advance our prior understanding: \emph{first}, we include a control set of objects that were not repeatedly drawn but only shown at the beginning and end of the interaction, allowing us to measure the specific contribution of repeated reference vs. general practice effects; \emph{second}, we measure how strongly the visual properties of drawings drive recognition in the absence of interaction history for naive viewers, while equating other task variables; \emph{third}, we employ recent advances in computer vision to quantitatively characterize changes in the high-level visual properties of drawings across repetitions; and \emph{fourth}, we crowdsource fine-grained information about the relationships between parts of drawings and parts of objects to test the hypothesis that communicators tend to prioritize those visual properties that distinguished each object from the others. 
 
 %% galantucci2005experimental, fay2014creating, krauss1964changes, fay2010interactive
 
@@ -149,10 +149,13 @@ There are three aspects of the current work that advance our prior understanding
 \begin{figure*}
 \begin{center}
 \includegraphics[width=1\linewidth]{figures/task_stimuli_2.pdf}
-\caption{(A) Stimuli from ShapeNet. (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of the two categories. (C) Repeated objects drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.}
+\caption{(A) Two object collections were used, each containing eight similar objects. (B) Pairs of participants performed a drawing-based repeated reference game in which a sketcher communicated about objects multiple times throughout their interaction.}
 \label{task_stimuli}
 \end{center}
 \end{figure*}
+
+ % (B) Each pair of participants was randomly assigned two sets of four objects, each set from one of the two collections.
+ % (C) Repeated objects drawn eight times throughout; control objects drawn once at the beginning and end of each interaction.
 
 % extra: Galantucci:2005uh,healey2007graphical,theisen2010systematicity
 
